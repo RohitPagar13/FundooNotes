@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8RdFqxEVTJg9mqxZ5oaWcsf9q13Jj0n46nRHH1/Q3VzQHI/pnm0PbXApXp8lm7AJi4VsVQCxFejVw+oTDCIEdA==",
+  "dgSpecHash": "gbUGX1bi38CNWjKIVltbrd3NCcMxWqp7/4a+ZXl84R/5D+/trjmbvEHa+guzH9zdy1UU0E/MUJ8/B5T+s5bqpQ==",
   "success": true,
   "projectFilePath": "E:\\BridgeLabz\\ASP.net\\Fundoo\\RepositoryLayer\\RepositoryLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

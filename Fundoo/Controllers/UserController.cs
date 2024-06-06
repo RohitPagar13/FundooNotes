@@ -29,16 +29,16 @@ namespace Fundoo.Controllers
                 if (result != null)
                 {
                     responseML.Success = true;
-                    responseML.Message = "Created successfully";
+                    responseML.Message = "Created successfully with id: "+result.Id;
                     responseML.Data = result;
                 }
                 return StatusCode(201, responseML);
             }
             catch (UserException ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ErrorCode +": "+ex.Message);
                 responseML.Success = false;
-                responseML.Message = ex.Message;
+                responseML.Message = ex.ErrorCode + ": " + ex.Message;
                 return StatusCode(202, responseML);
             }
             catch (Exception ex)
@@ -60,16 +60,16 @@ namespace Fundoo.Controllers
                 if (result != null)
                 {
                     responseML.Success = true;
-                    responseML.Message = "Created successfully";
+                    responseML.Message = "Login successful with id: "+result.ID;
                     responseML.Data = result;
                 }
                 return StatusCode(201, responseML);
             }
             catch (UserException ex)
             {
-                Console.WriteLine(ex.Message) ;
+                Console.WriteLine(ex.Message);
                 responseML.Success = false;
-                responseML.Message = ex.Message;
+                responseML.Message = ex.ErrorCode + ": " + ex.Message;
                 return StatusCode(202, responseML);
             }
             catch (Exception ex)

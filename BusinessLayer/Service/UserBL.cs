@@ -20,7 +20,7 @@ namespace BusinessLayer.Service
             this.userRL = userRL;
         }
 
-        public User LoginUser(UserLoginModel loginModel)
+        public LoginResponse LoginUser(UserLoginModel loginModel)
         {
             try
             {

@@ -12,6 +12,6 @@ namespace RepositoryLayer.Interface
     {
         public User RegisterUser(UserModel model);
 
-        public User LoginUser(UserLoginModel loginModel);
+        public LoginResponse LoginUser(UserLoginModel loginModel);
     }
 }

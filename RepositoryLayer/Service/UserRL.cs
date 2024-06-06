@@ -4,6 +4,7 @@ using RepositoryLayer.Context;
 using RepositoryLayer.CustomException;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
+using RepositoryLayer.Utilities;
 using System.ComponentModel.DataAnnotations;
 
 namespace RepositoryLayer.Service
@@ -17,16 +18,30 @@ namespace RepositoryLayer.Service
             this._db = db;
         }
 
-        public User LoginUser(UserLoginModel loginModel)
+        public LoginResponse LoginUser(UserLoginModel loginModel)
         {
             try
             {
-                var result = _db.users.Where(user=>user.Email.Equals(loginModel.Email) && user.Password.Equals(loginModel.Password)).FirstOrDefault();
+                var result = _db.users.Where(user=>user.Email.Equals(loginModel.Email)).FirstOrDefault();
                 if (result == null)
                 {
-                    throw new UserException("Please enter valid email or password", "InvalidEmailOrPasswordException");
+                    throw new UserException("User not found with given Email", "UserNotFoundException");
                 }
-                return result;
+                else if (HashPassword.verifyHash(loginModel.Password, result.Password))
+                {
+                    LoginResponse lr = new LoginResponse();
+                    lr.ID = result.Id;
+                    lr.FirstName=result.FirstName;
+                    lr.LastName=result.LastName;
+                    lr.Email=result.Email;
+                    lr.Phone=result.Phone;
+                    lr.BirthDate=result.BirthDate;
+                    return lr;
+                }
+                else
+                {
+                    throw new UserException("Please enter correct Password", "IncorrectPasswordException");
+                }
             }
             catch (SqlException se)
             {
@@ -56,7 +71,7 @@ namespace RepositoryLayer.Service
 
                     user.Phone = model.Phone;
 
-                    user.Password=model.Password;
+                    user.Password = HashPassword.convertToHash(model.Password);
 
                     user.BirthDate = model.BirthDate;
 

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EU8mW3opjArmeZjOzDk1bIkyO5vnWFMwoCe2fa4fJZliKxB2Ci/s6YBSJKe627GeHmLa+evXMrpP+yYHg/F/zQ==",
+  "dgSpecHash": "Ix8GPz1Lwwn2Y22g5wbCjeg+kbZyMT7RLp7R0v2yayFsF9L2ME5Hrzlbs2WJ5md7drKMcbeue3adO+Dj0/1vAA==",
   "success": true,
   "projectFilePath": "E:\\BridgeLabz\\ASP.net\\Fundoo\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.5\\microsoft.data.sqlclient.5.1.5.nupkg.sha512",

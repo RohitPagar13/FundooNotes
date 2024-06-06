@@ -1,17 +1,18 @@
 ﻿using ModelLayer;
+using RepositoryLayer.Context;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RepositoryLayer.Service
 {
     public class UserRL : IUserRL
     {
-        private readonly 
+        private readonly  FundooContext _db;
+
+        public UserRL(FundooContext db)
+        {
+            this._db = db;
+        }
         public User RegisterUser(UserModel model)
         {
             

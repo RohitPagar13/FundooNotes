@@ -11,5 +11,6 @@ namespace BusinessLayer.Interface
     public interface IUserBL
     {
         public User RegisterUser(UserModel model);
+        public User LoginUser(UserLoginModel loginModel);
     }
 }

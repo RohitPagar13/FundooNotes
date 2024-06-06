@@ -16,6 +16,26 @@ namespace RepositoryLayer.Service
         {
             this._db = db;
         }
+
+        public User LoginUser(UserLoginModel loginModel)
+        {
+            try
+            {
+                var result = _db.users.Where(user=>user.Email.Equals(loginModel.Email) && user.Password.Equals(loginModel.Password)).FirstOrDefault();
+                if (result == null)
+                {
+                    throw new UserException("Please enter valid email or password", "InvalidEmailOrPasswordException");
+                }
+                return result;
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
+            }
+        }
+    
+
         public User RegisterUser(UserModel model)
         {
             using (var transaction = _db.Database.BeginTransaction())
@@ -26,24 +46,24 @@ namespace RepositoryLayer.Service
                     {
                         throw new UserException("Customer with specified Email or Phone Already Exists", "CustomerAlreadyExists");
                     }
-                    User customer = new User();
+                    User user = new User();
 
-                    customer.FirstName = model.FirstName;
+                    user.FirstName = model.FirstName;
 
-                    customer.LastName = model.LastName;
+                    user.LastName = model.LastName;
 
-                    customer.Email = model.Email;
+                    user.Email = model.Email;
 
-                    customer.Phone = model.Phone;
+                    user.Phone = model.Phone;
 
-                    customer.Password=model.Password;
+                    user.Password=model.Password;
 
-                    customer.BirthDate = model.BirthDate;
+                    user.BirthDate = model.BirthDate;
 
-                    _db.users.Add(customer);
+                    _db.users.Add(user);
                     _db.SaveChanges();
                     transaction.Commit();
-                    return customer;
+                    return user;
                 }
                 catch (SqlException se)
                 {

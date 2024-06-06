@@ -19,6 +19,6 @@ namespace ModelLayer
 
         public string Password { get; set; }
 
-        public string date { get; set; }
+        public string BirthDate { get; set; }
     }
 }

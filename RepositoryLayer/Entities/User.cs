@@ -25,22 +25,22 @@ namespace RepositoryLayer.Entities
 
 
         [Required(ErrorMessage = "Please Enter Email")]
-        [EmailAddress(ErrorMessage = "Please enter valid email address")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Please Enter Phone number")]
-        [RegularExpression("^\\+?\\d{1,3}?\\d{10}$", ErrorMessage = "Enter valid Phone number")]
-        [StringLength(14)]
+        [RegularExpression(@"^\+?\d{1,3}?\d{10}$", ErrorMessage = "Enter a valid Phone number")]
+        [StringLength(14, ErrorMessage = "Phone number cannot be longer than 14 characters")]
         public string Phone { get; set; }
 
-        [MinLength(8, ErrorMessage = "Enter password with minimum length 8 characters")]
         [Required(ErrorMessage = "Please Enter Password")]
-        [RegularExpression("\\b[^\\s](?=.*[A-Z])(?=.*[*+=_|<>,#?!@$%^&-])(?=.*[0-9]).[^\\s]{5,}\\b", ErrorMessage = "Enter Valid Password")]
+        [MinLength(8, ErrorMessage = "Enter password with a minimum length of 8 characters")]
+        [RegularExpression(@"^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,}$", ErrorMessage = "Enter a valid Password")]
         public string Password { get; set; }
 
-        [RegularExpression("^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}$", ErrorMessage = "Enter valid date")]
+        [RegularExpression(@"^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}$", ErrorMessage = "Enter valid date")]
         [Required(ErrorMessage = "Please Enter date")]
         [StringLength(10)]
-        public string date { get; set; }
+        public string BirthDate { get; set; }
     }
 }

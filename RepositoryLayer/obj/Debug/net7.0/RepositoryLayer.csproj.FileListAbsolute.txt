@@ -12,3 +12,6 @@ E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\refint\RepositoryL
 E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.pdb
 E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.genruntimeconfig.cache
 E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\ref\RepositoryLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\bin\Debug\net7.0\ModelLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\bin\Debug\net7.0\ModelLayer.pdb
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.csproj.CopyComplete

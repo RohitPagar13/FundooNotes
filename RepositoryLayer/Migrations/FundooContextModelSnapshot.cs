@@ -31,8 +31,7 @@ namespace RepositoryLayer.Migrations
 
                     b.Property<string>("BirthDate")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -40,8 +39,7 @@ namespace RepositoryLayer.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
                         .HasMaxLength(50)
@@ -53,8 +51,7 @@ namespace RepositoryLayer.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasMaxLength(14)
-                        .HasColumnType("nvarchar(14)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

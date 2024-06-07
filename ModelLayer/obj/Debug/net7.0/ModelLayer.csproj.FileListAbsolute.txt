@@ -1,0 +1,11 @@
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\bin\Debug\net7.0\ModelLayer.deps.json
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\bin\Debug\net7.0\ModelLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\bin\Debug\net7.0\ModelLayer.pdb
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\obj\Debug\net7.0\ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\obj\Debug\net7.0\ModelLayer.AssemblyInfoInputs.cache
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\obj\Debug\net7.0\ModelLayer.AssemblyInfo.cs
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\obj\Debug\net7.0\ModelLayer.csproj.CoreCompileInputs.cache
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\obj\Debug\net7.0\ModelLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\obj\Debug\net7.0\refint\ModelLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\obj\Debug\net7.0\ModelLayer.pdb
+E:\BridgeLabz\ASP.net\Fundoo\ModelLayer\obj\Debug\net7.0\ref\ModelLayer.dll

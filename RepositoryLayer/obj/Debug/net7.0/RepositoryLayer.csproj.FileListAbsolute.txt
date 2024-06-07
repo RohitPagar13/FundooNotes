@@ -1,0 +1,17 @@
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\bin\Debug\net7.0\RepositoryLayer.deps.json
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\bin\Debug\net7.0\RepositoryLayer.runtimeconfig.json
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\bin\Debug\net7.0\RepositoryLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\bin\Debug\net7.0\RepositoryLayer.pdb
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.csproj.AssemblyReference.cache
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.AssemblyInfoInputs.cache
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.AssemblyInfo.cs
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\refint\RepositoryLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.pdb
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.genruntimeconfig.cache
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\ref\RepositoryLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\bin\Debug\net7.0\ModelLayer.dll
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\bin\Debug\net7.0\ModelLayer.pdb
+E:\BridgeLabz\ASP.net\Fundoo\RepositoryLayer\obj\Debug\net7.0\RepositoryLayer.csproj.CopyComplete

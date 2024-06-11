@@ -53,9 +53,16 @@ namespace BusinessLayer.Service
             }
         }
 
-        public List<Note> GetNotes(int id)
+        public List<NoteResponseModel> GetNotes(int userid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return noteRL.GetNotes(userid);
+            }
+            catch
+            {
+                throw;
+            }
         }
 
         public NoteResponseModel removeNote(int id)

@@ -78,9 +78,29 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public List<Note> GetNotes(int id)
+        public List<NoteResponseModel> GetNotes(int userid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = _db.notes.Where(n=>n.userId.Equals(userid)).ToList();
+                List<NoteResponseModel>responseNotes = new List<NoteResponseModel>();
+                foreach (var note in result)
+                {
+                    NoteResponseModel noteResponse = new NoteResponseModel();
+                    noteResponse.Id = note.Id;
+                    noteResponse.Title = note.Title;
+                    noteResponse.Description = note.Description;
+                    noteResponse.CreatedOn = note.CreatedOn;
+
+                    responseNotes.Add(noteResponse);
+                }
+                return responseNotes;
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
+            }
         }
 
         public NoteResponseModel removeNote(int id)
@@ -114,7 +134,32 @@ namespace RepositoryLayer.Service
 
         public NoteResponseModel updateNoteById(int id, NoteInputModel note)
         {
-            throw new NotImplementedException();
+            using (var transaction = _db.Database.BeginTransaction())
+            {
+                try
+                {
+                    Note? n = _db.notes.Find(id);
+                    if (n == null)
+                    {
+                        throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
+                    }
+                    NoteResponseModel response = new NoteResponseModel();
+                    n.Title = response.Title = note.Title;
+                    n.Description = response.Description = note.Description;
+                    _db.notes.Update(n);
+                    _db.SaveChanges();
+                    transaction.Commit();
+                    response.Id = n.Id;
+                    response.CreatedOn = n.CreatedOn;
+                    return response;
+                }
+                catch (SqlException se)
+                {
+                    transaction.Rollback();
+                    Console.WriteLine(se.ToString());
+                    throw;
+                }
+            }
         }
     }
 }

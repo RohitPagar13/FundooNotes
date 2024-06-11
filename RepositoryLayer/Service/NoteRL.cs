@@ -23,7 +23,7 @@ namespace RepositoryLayer.Service
         {
             this._db = db;
         }
-        public NoteResponseModel addNote(NoteInputModel note)
+        public NoteResponseModel addNote(NoteInputModel note, int userId)
         {
             using (var transaction = _db.Database.BeginTransaction())
             {
@@ -38,7 +38,7 @@ namespace RepositoryLayer.Service
 
                     n.Title=response.Title = note.Title;
                     n.Description = response.Description= note.Description;
-
+                    n.userId=userId;
                     _db.notes.Add(n);
                     _db.SaveChanges();
                     transaction.Commit();
@@ -57,7 +57,25 @@ namespace RepositoryLayer.Service
 
         public NoteResponseModel getNoteById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Note? note = _db.notes.Find(id);
+                if (note == null)
+                {
+                    throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
+                }
+                NoteResponseModel response = new NoteResponseModel();
+                response.Title = note.Title;
+                response.Description = note.Description;
+                response.Id = note.Id;
+                response.CreatedOn = note.CreatedOn;
+                return response;
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
+            }
         }
 
         public List<Note> GetNotes(int id)

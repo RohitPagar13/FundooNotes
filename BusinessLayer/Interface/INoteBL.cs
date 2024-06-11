@@ -16,7 +16,7 @@ namespace BusinessLayer.Interface
 
         public NoteResponseModel updateNoteById(int id, NoteInputModel note);
 
-        public NoteResponseModel addNote(NoteInputModel note);
+        public NoteResponseModel addNote(NoteInputModel note, int userId);
 
         public NoteResponseModel removeNote(int id);
     }

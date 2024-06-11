@@ -24,11 +24,11 @@ namespace BusinessLayer.Service
         {
             this.noteRL = noteRL;
         }
-        public NoteResponseModel addNote(NoteInputModel notemodel)
+        public NoteResponseModel addNote(NoteInputModel notemodel, int userId)
         {
             try
             {
-                var note = noteRL.addNote(notemodel);
+                var note = noteRL.addNote(notemodel, userId);
                 if (note != null)
                 {
                     return note;
@@ -43,7 +43,14 @@ namespace BusinessLayer.Service
 
         public NoteResponseModel getNoteById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return noteRL.getNoteById(id);
+            }
+            catch
+            {
+                throw;
+            }
         }
 
         public List<Note> GetNotes(int id)

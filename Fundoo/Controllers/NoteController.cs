@@ -21,11 +21,12 @@ namespace Fundoo.Controllers
         }
 
         [HttpPost("Add")]
-        public ActionResult addNote(NoteInputModel noteModel)
+        public IActionResult addNote(NoteInputModel noteModel)
         {
             try
             {
-                var result = noteBL.addNote(noteModel);
+                int userId = Convert.ToInt32(User.FindFirst("Id")?.Value);
+                var result = noteBL.addNote(noteModel, userId);
                 if (result != null)
                 {
                     responseML.Success = true;
@@ -50,18 +51,66 @@ namespace Fundoo.Controllers
             }
         }
 
-        [HttpDelete]
-        public IActionResult DeleteCustomer(int id)
+        [HttpDelete("Delete")]
+        [Route("/{id}")]
+        public IActionResult DeleteNoteById(int id)
         {
             try
             {
-                noteBL.removeNote(id);
-                return Ok("Note deleted Successfully");
+                var result = noteBL.removeNote(id);
+                if (result != null)
+                {
+                    responseML.Success = true;
+                    responseML.Message = "Note deleted Successfully with id: " + result.Id;
+                    responseML.Data = result;
+                }
+                return StatusCode(204, responseML);
+            }
+            catch (UserException ex)
+            {
+                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.ErrorCode + ": " + ex.Message;
+                return StatusCode(202, responseML);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-                return NotFound("Note Id not found");
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
+
+        [HttpGet("Get")]
+        [Route("/{id}")]
+        public IActionResult GetNoteById(int id)
+        {
+            try
+            {
+                var result = noteBL.getNoteById(id);
+
+                if (result != null)
+                {
+                    responseML.Success = true;
+                    responseML.Message = "Request successful for id: " + result.Id;
+                    responseML.Data = result;
+                }
+                return StatusCode(200, responseML);
+            }
+            catch (UserException ex)
+            {
+                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.ErrorCode + ": " + ex.Message;
+                return StatusCode(202, responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
             }
         }
     }

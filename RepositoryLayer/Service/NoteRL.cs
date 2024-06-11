@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Azure;
+using Microsoft.Data.SqlClient;
 using Microsoft.VisualBasic;
 using ModelLayer;
 using RepositoryLayer.Context;
@@ -66,7 +67,31 @@ namespace RepositoryLayer.Service
 
         public NoteResponseModel removeNote(int id)
         {
-            throw new NotImplementedException();
+            using (var transaction = _db.Database.BeginTransaction())
+            {
+                try
+                {
+                    Note? note = _db.notes.Find(id);
+                    if (note == null)
+                    {
+                        throw new UserException("Note with the specified ID does not exist.", "CustomerNotFoundException");
+                    }
+                    NoteResponseModel response = new NoteResponseModel();
+                    response.Title = note.Title;
+                    response.Description = note.Description;
+                    response.Id = note.Id;
+                    response.CreatedOn = note.CreatedOn;
+                    _db.notes.Remove(note);
+                    _db.SaveChanges();
+                    transaction.Commit();
+                    return response;
+                }
+                catch (SqlException se)
+                {
+                    Console.WriteLine(se.ToString());
+                    throw;
+                }
+            }
         }
 
         public NoteResponseModel updateNoteById(int id, NoteInputModel note)

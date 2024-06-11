@@ -53,7 +53,14 @@ namespace BusinessLayer.Service
 
         public NoteResponseModel removeNote(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return noteRL.removeNote(id);
+            }
+            catch
+            {
+                throw;
+            }
         }
 
         public NoteResponseModel updateNoteById(int id, NoteInputModel note)

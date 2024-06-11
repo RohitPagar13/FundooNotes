@@ -49,5 +49,20 @@ namespace Fundoo.Controllers
                 return StatusCode(400, responseML);
             }
         }
+
+        [HttpDelete]
+        public IActionResult DeleteCustomer(int id)
+        {
+            try
+            {
+                noteBL.removeNote(id);
+                return Ok("Note deleted Successfully");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return NotFound("Note Id not found");
+            }
+        }
     }
 }

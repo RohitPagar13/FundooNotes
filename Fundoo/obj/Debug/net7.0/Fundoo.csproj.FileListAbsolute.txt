@@ -81,3 +81,4 @@ E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\BusinessLayer.pdb
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\RepositoryLayer.pdb
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\ModelLayer.pdb
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\BCrypt.Net-Next.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

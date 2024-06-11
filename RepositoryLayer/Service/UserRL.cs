@@ -5,7 +5,6 @@ using RepositoryLayer.CustomException;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Utilities;
-using System.ComponentModel.DataAnnotations;
 
 namespace RepositoryLayer.Service
 {
@@ -51,7 +50,7 @@ namespace RepositoryLayer.Service
         }
     
 
-        public User RegisterUser(UserModel model)
+        public LoginResponse RegisterUser(UserModel model)
         {
             using (var transaction = _db.Database.BeginTransaction())
             {
@@ -62,23 +61,25 @@ namespace RepositoryLayer.Service
                         throw new UserException("Customer with specified Email or Phone Already Exists", "CustomerAlreadyExists");
                     }
                     User user = new User();
+                    LoginResponse lr = new LoginResponse();
 
-                    user.FirstName = model.FirstName;
+                    user.FirstName=lr.FirstName = model.FirstName;
 
-                    user.LastName = model.LastName;
+                    user.LastName=lr.LastName = model.LastName;
 
-                    user.Email = model.Email;
+                    user.Email=lr.Email = model.Email;
 
-                    user.Phone = model.Phone;
+                    user.Phone=lr.Phone = model.Phone;
 
                     user.Password = HashPassword.convertToHash(model.Password);
 
-                    user.BirthDate = model.BirthDate;
+                    user.BirthDate=lr.BirthDate = model.BirthDate;
 
                     _db.users.Add(user);
                     _db.SaveChanges();
+                    lr.ID = user.Id;
                     transaction.Commit();
-                    return user;
+                    return lr;
                 }
                 catch (SqlException se)
                 {
@@ -88,5 +89,6 @@ namespace RepositoryLayer.Service
                 }
             }
         }
+
     }
 }

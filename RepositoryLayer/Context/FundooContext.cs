@@ -8,11 +8,7 @@ using System.Threading.Tasks;
 
 namespace RepositoryLayer.Context
 {
-<<<<<<< HEAD
-    public class FundooContext: DbContext
-=======
     public class FundooContext : DbContext
->>>>>>> HashConversion
     {
         public FundooContext(DbContextOptions options) : base(options) { }
 

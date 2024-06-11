@@ -77,8 +77,8 @@ namespace RepositoryLayer.Service
 
                     _db.users.Add(user);
                     _db.SaveChanges();
-                    lr.ID = user.Id;
                     transaction.Commit();
+                    lr.ID = user.Id;
                     return lr;
                 }
                 catch (SqlException se)

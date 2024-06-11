@@ -27,5 +27,7 @@ namespace RepositoryLayer.Entities
         public string Password { get; set; }
 
         public string BirthDate { get; set; }
+
+        public List<Note>? UserNotes { get; set; }
     }
 }

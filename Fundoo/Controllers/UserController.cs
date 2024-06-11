@@ -91,9 +91,9 @@ namespace Fundoo.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("GetUser")]
         [Authorize]
-        public IActionResult GetCustomer()
+        public IActionResult GetUser()
         {
             try
             {

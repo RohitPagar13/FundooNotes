@@ -89,7 +89,7 @@ namespace RepositoryLayer.Service
                     throw;
                 }
             }
-}
+        }
 
         public NoteResponseModel getNoteById(int id)
         {
@@ -166,6 +166,37 @@ namespace RepositoryLayer.Service
                 }
                 catch (SqlException se)
                 {
+                    Console.WriteLine(se.ToString());
+                    throw;
+                }
+            }
+        }
+
+        public NoteResponseModel trashed(int noteId)
+        {
+            using (var transaction = _db.Database.BeginTransaction())
+            {
+                try
+                {
+                    Note? n = _db.notes.Find(noteId);
+                    if (n == null)
+                    {
+                        throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
+                    } 
+                    NoteResponseModel response = new NoteResponseModel();
+                    response.Title = n.Title;
+                    response.Description = n.Description;
+                    response.Id = n.Id;
+                    response.CreatedOn = n.CreatedOn;
+                    n.isTrashed = !n.isTrashed;
+                    _db.notes.Update(n);
+                    _db.SaveChanges();
+                    transaction.Commit();
+                    return response;
+                }
+                catch (SqlException se)
+                {
+                    transaction.Rollback();
                     Console.WriteLine(se.ToString());
                     throw;
                 }

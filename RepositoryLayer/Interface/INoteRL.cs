@@ -22,5 +22,7 @@ namespace RepositoryLayer.Interface
 
         public NoteResponseModel archived(int noteId);
 
+        public NoteResponseModel trashed(int noteId);
+
     }
 }

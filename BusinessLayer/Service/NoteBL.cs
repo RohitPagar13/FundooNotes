@@ -89,6 +89,19 @@ namespace BusinessLayer.Service
                 throw;
             }
         }
+
+        public NoteResponseModel trashed(int noteId)
+        {
+            try
+            {
+                return noteRL.trashed(noteId);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public NoteResponseModel updateNoteById(int id, NoteInputModel note)
         {
             try

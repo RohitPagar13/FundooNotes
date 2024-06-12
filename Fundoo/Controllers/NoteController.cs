@@ -219,5 +219,37 @@ namespace Fundoo.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("Trash/{id}")]
+        [Authorize]
+        public IActionResult Trashed(int NoteId)
+        {
+            try
+            {
+                var result = noteBL.trashed(NoteId);
+
+                if (result != null)
+                {
+                    responseML.Success = true;
+                    responseML.Message = "Request successful";
+                    responseML.Data = result;
+                }
+                return StatusCode(200, responseML);
+            }
+            catch (UserException ex)
+            {
+                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.ErrorCode + ": " + ex.Message;
+                return StatusCode(204, responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
     }
 }

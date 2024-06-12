@@ -82,7 +82,7 @@ namespace RepositoryLayer.Service
         {
             try
             {
-                var result = _db.notes.Where(n=>n.userId.Equals(userid)).ToList();
+                var result = _db.notes.Where(p=>p.userId == userid);
                 List<NoteResponseModel>responseNotes = new List<NoteResponseModel>();
                 foreach (var note in result)
                 {

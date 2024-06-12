@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,9 @@ namespace RepositoryLayer.Entities
         public bool isArchieve { get; set; } = false;
         public bool isTrashed { get; set; } = false;
 
+        [Required]
+        [NotNull]
         [ForeignKey("User")]
-        public int userId;
+        public int userId { get; set; }
     }
 }

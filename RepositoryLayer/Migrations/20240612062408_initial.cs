@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace RepositoryLayer.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,26 +35,28 @@ namespace RepositoryLayer.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     isArchieve = table.Column<bool>(type: "bit", nullable: false),
-                    isDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true)
+                    isTrashed = table.Column<bool>(type: "bit", nullable: false),
+                    userId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_notes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_notes_users_UserId",
-                        column: x => x.UserId,
+                        name: "FK_notes_users_userId",
+                        column: x => x.userId,
                         principalTable: "users",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_notes_UserId",
+                name: "IX_notes_userId",
                 table: "notes",
-                column: "UserId");
+                column: "userId");
         }
 
         /// <inheritdoc />

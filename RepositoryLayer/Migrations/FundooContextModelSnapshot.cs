@@ -37,10 +37,8 @@ namespace RepositoryLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("isArchieve")
                         .HasColumnType("bit");
@@ -48,9 +46,12 @@ namespace RepositoryLayer.Migrations
                     b.Property<bool>("isTrashed")
                         .HasColumnType("bit");
 
+                    b.Property<int>("userId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("userId");
 
                     b.ToTable("notes");
                 });
@@ -96,7 +97,9 @@ namespace RepositoryLayer.Migrations
                 {
                     b.HasOne("RepositoryLayer.Entities.User", null)
                         .WithMany("UserNotes")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("userId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("RepositoryLayer.Entities.User", b =>

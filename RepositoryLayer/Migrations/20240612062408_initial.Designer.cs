@@ -12,8 +12,8 @@ using RepositoryLayer.Context;
 namespace RepositoryLayer.Migrations
 {
     [DbContext(typeof(FundooContext))]
-    [Migration("20240611095045_Initial")]
-    partial class Initial
+    [Migration("20240612062408_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,24 +33,28 @@ namespace RepositoryLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("isArchieve")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("isDeleted")
+                    b.Property<bool>("isTrashed")
                         .HasColumnType("bit");
+
+                    b.Property<int>("userId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("userId");
 
                     b.ToTable("notes");
                 });
@@ -96,7 +100,9 @@ namespace RepositoryLayer.Migrations
                 {
                     b.HasOne("RepositoryLayer.Entities.User", null)
                         .WithMany("UserNotes")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("userId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("RepositoryLayer.Entities.User", b =>

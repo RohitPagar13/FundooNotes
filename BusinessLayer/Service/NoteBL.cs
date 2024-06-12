@@ -12,6 +12,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BusinessLayer.Service
@@ -79,7 +80,14 @@ namespace BusinessLayer.Service
 
         public NoteResponseModel updateNoteById(int id, NoteInputModel note)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return noteRL.updateNoteById(id, note);
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

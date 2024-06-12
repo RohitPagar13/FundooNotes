@@ -42,6 +42,18 @@ namespace BusinessLayer.Service
             }
         }
 
+        public NoteResponseModel archived(int noteId)
+        {
+            try
+            {
+                return noteRL.archived(noteId);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public NoteResponseModel getNoteById(int id)
         {
             try
@@ -77,7 +89,6 @@ namespace BusinessLayer.Service
                 throw;
             }
         }
-
         public NoteResponseModel updateNoteById(int id, NoteInputModel note)
         {
             try

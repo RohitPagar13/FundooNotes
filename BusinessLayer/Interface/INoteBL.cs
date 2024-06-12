@@ -19,5 +19,7 @@ namespace BusinessLayer.Interface
         public NoteResponseModel addNote(NoteInputModel note, int userId);
 
         public NoteResponseModel removeNote(int id);
+
+        public NoteResponseModel archived(int noteId);
     }
 }

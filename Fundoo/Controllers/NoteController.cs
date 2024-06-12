@@ -185,5 +185,39 @@ namespace Fundoo.Controllers
                 return StatusCode(400, responseML);
             }
         }
+
+        [HttpPut]
+        [Route("Archive/{id}")]
+        [Authorize]
+        public IActionResult Archived(int NoteId)
+        {
+            try
+            {
+                var result = noteBL.archived(NoteId);
+
+                if (result != null)
+                {
+                    responseML.Success = true;
+                    responseML.Message = "Request successful";
+                    responseML.Data = result;
+                }
+                return StatusCode(200, responseML);
+            }
+            catch (UserException ex)
+            {
+                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.ErrorCode + ": " + ex.Message;
+                return StatusCode(204, responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
+
     }
 }

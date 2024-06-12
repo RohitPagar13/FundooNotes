@@ -55,6 +55,42 @@ namespace RepositoryLayer.Service
             }
         }
 
+
+        public NoteResponseModel archived(int noteId)
+        {
+            using (var transaction = _db.Database.BeginTransaction())
+            {
+                try
+                {
+                    Note? n = _db.notes.Find(noteId);
+                    if (n == null)
+                    {
+                        throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
+                    }
+                    else if (n.isTrashed)
+                    {
+                        throw new UserException("Unable to Archived as Note is deleted", "NoteArchievedException");
+                    }
+                    NoteResponseModel response = new NoteResponseModel();
+                    response.Title = n.Title;
+                    response.Description = n.Description;
+                    response.Id = n.Id;
+                    response.CreatedOn = n.CreatedOn;
+                    n.isArchieve = !n.isArchieve;
+                    _db.notes.Update(n);
+                    _db.SaveChanges();
+                    transaction.Commit();
+                    return response;
+                }
+                catch (SqlException se)
+                {
+                    transaction.Rollback();
+                    Console.WriteLine(se.ToString());
+                    throw;
+                }
+            }
+}
+
         public NoteResponseModel getNoteById(int id)
         {
             try
@@ -114,6 +150,10 @@ namespace RepositoryLayer.Service
                     {
                         throw new UserException("Note with the specified ID does not exist.", "CustomerNotFoundException");
                     }
+                    else if(note.isTrashed)
+                    {
+                        throw new UserException("Unable to delete Note as Note already deleted", "NoteDeletedException");
+                    }
                     NoteResponseModel response = new NoteResponseModel();
                     response.Title = note.Title;
                     response.Description = note.Description;
@@ -142,6 +182,10 @@ namespace RepositoryLayer.Service
                     if (n == null)
                     {
                         throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
+                    }
+                    else if (n.isTrashed)
+                    {
+                        throw new UserException("Unable to Update Note as Note is deleted", "NoteDeletedException");
                     }
                     NoteResponseModel response = new NoteResponseModel();
                     n.Title = response.Title = note.Title;

@@ -20,6 +20,7 @@ namespace RepositoryLayer.Interface
 
         public NoteResponseModel removeNote(int id);
 
+        public NoteResponseModel archived(int noteId);
 
     }
 }

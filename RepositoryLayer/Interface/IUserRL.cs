@@ -12,7 +12,9 @@ namespace RepositoryLayer.Interface
     {
         public LoginResponse RegisterUser(UserModel model);
 
-        public LoginResponse LoginUser(UserLoginModel loginModel);
+        public string LoginUser(UserLoginModel loginModel);
 
+        public void ForgetPassword(string email);
+        public void ResetPassword(string email, string password);
     }
 }

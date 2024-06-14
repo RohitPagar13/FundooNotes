@@ -35,5 +35,4 @@ namespace RepositoryLayer.Utilities
             return jwttoken;
         }
     }
-    }
 }

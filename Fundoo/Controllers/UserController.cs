@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using ModelLayer;
 using RepositoryLayer.CustomException;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
 
@@ -119,6 +120,49 @@ namespace Fundoo.Controllers
                     responseML.Data = lr;
                     return StatusCode(400, responseML);
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
+
+        [HttpGet("ForgotUser")]
+        [Route("ForgotUser/email")]
+        public IActionResult ForgotUser(string email)
+        {
+            try
+            {
+                userBL.ForgetPassword(email);
+
+                    responseML.Success = true;
+                    responseML.Message = "Request Successful, email has been sent";
+                    return Ok(responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
+
+        [HttpGet("ResetUser")]
+        [Authorize]
+        [Route("ResetUser/password")]
+        public IActionResult ResetUser(string password)
+        {
+            try
+            {
+                string Email = User.FindFirst("Email").Value;
+                userBL.ResetPassword(Email, password);
+                    responseML.Success = true;
+                    responseML.Message = "Request Successful, password reset successfu;";
+                    return Ok(responseML);
             }
             catch (Exception ex)
             {

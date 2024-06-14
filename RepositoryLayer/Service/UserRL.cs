@@ -1,4 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using ModelLayer;
 using RepositoryLayer.Context;
 using RepositoryLayer.CustomException;
@@ -12,12 +14,16 @@ namespace RepositoryLayer.Service
     {
         private readonly  FundooContext _db;
 
-        public UserRL(FundooContext db)
+
+        public IConfiguration _configuration;
+
+        public UserRL(FundooContext db, IConfiguration configuration)
         {
             this._db = db;
+            _configuration = configuration;
         }
 
-        public LoginResponse LoginUser(UserLoginModel loginModel)
+        public string LoginUser(UserLoginModel loginModel)
         {
             try
             {
@@ -28,14 +34,7 @@ namespace RepositoryLayer.Service
                 }
                 else if (HashPassword.verifyHash(loginModel.Password, result.Password))
                 {
-                    LoginResponse lr = new LoginResponse();
-                    lr.ID = result.Id;
-                    lr.FirstName=result.FirstName;
-                    lr.LastName=result.LastName;
-                    lr.Email=result.Email;
-                    lr.Phone=result.Phone;
-                    lr.BirthDate=result.BirthDate;
-                    return lr;
+                    return JWTTokenGenerator.generateToken(result.Id, result.Email, _configuration);
                 }
                 else
                 {
@@ -90,5 +89,51 @@ namespace RepositoryLayer.Service
             }
         }
 
+        public void ForgetPassword(string email)
+        {
+
+            var result = _db.users.Where(s => s.Email == email).FirstOrDefault();
+
+            if (result == null)
+            {
+                throw new UserException("No such user found", "UserNotFoundException");
+            }
+            var jwtToken = JWTTokenGenerator.generateToken(result.Id,result.Email, _configuration);
+
+            EmailModel model = new EmailModel();
+            model.To = result.Email;
+            model.Subject = "Reset Password";
+            model.Body = "http://localhost:5264/api/user/reset-password/jwttoken?" + jwtToken;
+
+            EmailSender.SendEmail(model, _configuration);
+        }
+
+
+        public void ResetPassword(string email, string password)
+        {
+            using (var transaction = _db.Database.BeginTransaction())
+            {
+                try
+                {
+                    var user = _db.users.FirstOrDefault(s => s.Email == email);
+                    if (user == null)
+                    {
+                        throw new UserException("Invalid Credentials", "UserNotFoundException");
+                    }
+
+                    user.Password = HashPassword.convertToHash(password);
+
+                    _db.users.Update(user);
+                    _db.SaveChanges();
+                    transaction.Commit();
+                }
+                catch (SqlException se)
+                {
+                    transaction.Rollback();
+                    Console.WriteLine(se.ToString());
+                    throw;
+                }
+            }
+        }
     }
 }

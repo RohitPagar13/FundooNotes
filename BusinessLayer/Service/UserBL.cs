@@ -24,44 +24,29 @@ namespace BusinessLayer.Service
     {
         private readonly IUserRL userRL;
 
-        public IConfiguration _configuration;
-
-        public UserBL(IUserRL userRL, IConfiguration configuration)
+        public UserBL(IUserRL userRL)
         {
             this.userRL = userRL;
+        }
 
-            _configuration = configuration;
+        public void ForgetPassword(string email)
+        {
+            try
+            {
+                userRL.ForgetPassword(email);
+            }
+            catch
+            {
+                throw;
+            }
+
         }
 
         public string LoginUser(UserLoginModel loginModel)
         {
             try
             {
-                var user =  userRL.LoginUser(loginModel);
-                if (user != null)
-                {
-                    var claims = new[] {
-                    new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
-                    new Claim("Id", user.ID.ToString()),
-                    new Claim("FirstName", user.FirstName),
-                    new Claim("LastName", user.LastName),
-                    new Claim("Email", user.Email),
-                    new Claim("Phone", user.Phone),
-                    new Claim("BirthDate", user.BirthDate)
-                };
-
-                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-                    var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-                    var token = new JwtSecurityToken(
-                        issuer: _configuration["Jwt:Issuer"],
-                        audience: _configuration["Jwt:Audience"],
-                        claims: claims,
-                        expires: DateTime.UtcNow.AddDays(1),
-                        signingCredentials: signIn);
-                    var jwttoken = new JwtSecurityTokenHandler().WriteToken(token);
-                    return jwttoken;
-                }
-                else { throw new UserException("User not found", "UserNotFoundException"); }
+                return userRL.LoginUser(loginModel);
             }
             catch
             {
@@ -74,6 +59,18 @@ namespace BusinessLayer.Service
             try
             {
                 return userRL.RegisterUser(model);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public void ResetPassword(string email, string password)
+        {
+            try
+            {
+                userRL.ResetPassword(email, password);
             }
             catch
             {

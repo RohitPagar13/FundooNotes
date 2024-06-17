@@ -18,6 +18,8 @@ namespace RepositoryLayer.Context
 
         public DbSet<Label> labels { get; set; }
 
+        public DbSet<NoteLabel> NoteLabels { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<NoteLabel>()

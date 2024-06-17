@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RepositoryLayer.Interface
+namespace BusinessLayer.Interface
 {
-    public interface INoteLabelRL
+    public interface INoteLabelBL
     {
         public NoteLabel AddLabelToNote(NoteLabel nl);
 

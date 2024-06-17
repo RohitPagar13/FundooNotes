@@ -107,7 +107,7 @@ namespace RepositoryLayer.Service
             {
                 try
                 {
-                        Label l = _db.labels.Find(id);
+                        Label? l = _db.labels.Find(id);
                         if (l == null)
                         {
                             throw new UserException("Label you are trying to delete is not exists", "LabelNotExistsException");

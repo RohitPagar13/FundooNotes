@@ -42,6 +42,18 @@ namespace BusinessLayer.Service
 
         }
 
+        public LoginResponse getUser(string email)
+        {
+            try
+            {
+                return userRL.getUser(email);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public string LoginUser(UserLoginModel loginModel)
         {
             try

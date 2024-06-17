@@ -92,34 +92,35 @@ namespace Fundoo.Controllers
             }
         }
 
-        [HttpGet("GetUser")]
+        [HttpGet]
+        [Route("Login/GetUser")]
         [Authorize]
         public IActionResult GetUser()
         {
             try
             {
-                LoginResponse lr = new LoginResponse();
-                lr.ID = Convert.ToInt32(User.FindFirst("Id")?.Value);
-                lr.FirstName = User.FindFirst("FirstName").Value;
-                lr.LastName = User.FindFirst("LastName").Value;
-                lr.Email = User.FindFirst("Email").Value;
-                lr.Phone = User.FindFirst("Phone").Value;
-                lr.BirthDate = User.FindFirst("BirthDate").Value;
-
-                if (lr != null)
+                var result = userBL.getUser(User.FindFirst("Email").Value);
+                if (result != null)
                 {
                     responseML.Success = true;
                     responseML.Message = "Request Successful";
-                    responseML.Data = lr;
+                    responseML.Data = result;
                     return Ok(responseML);
                 }
                 else
                 {
                     responseML.Success = true;
                     responseML.Message = "Some Error occurred!!";
-                    responseML.Data = lr;
+                    responseML.Data = result;
                     return StatusCode(400, responseML);
                 }
+            }
+            catch (UserException ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.ErrorCode + ": " + ex.Message;
+                return StatusCode(202, responseML);
             }
             catch (Exception ex)
             {
@@ -130,8 +131,8 @@ namespace Fundoo.Controllers
             }
         }
 
-        [HttpGet("ForgotUser")]
-        [Route("ForgotUser/email")]
+        [HttpGet]
+        [Route("ForgotUser/{email}")]
         public IActionResult ForgotUser(string email)
         {
             try
@@ -151,9 +152,9 @@ namespace Fundoo.Controllers
             }
         }
 
-        [HttpGet("ResetUser")]
+        [HttpPut]
         [Authorize]
-        [Route("ResetUser/password")]
+        [Route("ResetUser")]
         public IActionResult ResetUser(string password)
         {
             try

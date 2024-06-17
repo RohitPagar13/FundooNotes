@@ -10,5 +10,7 @@ namespace BusinessLayer.Interface
 
         public void ForgetPassword(string email);
         public void ResetPassword(string email, string password);
+
+        public LoginResponse getUser(string email);
     }
 }

@@ -22,6 +22,38 @@ namespace RepositoryLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("LabelNote", b =>
+                {
+                    b.Property<int>("labelNotesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("noteLablesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("labelNotesId", "noteLablesId");
+
+                    b.HasIndex("noteLablesId");
+
+                    b.ToTable("LabelNote");
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Entities.Label", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("LabelName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("labels");
+                });
+
             modelBuilder.Entity("RepositoryLayer.Entities.Note", b =>
                 {
                     b.Property<int>("Id")
@@ -54,6 +86,19 @@ namespace RepositoryLayer.Migrations
                     b.HasIndex("userId");
 
                     b.ToTable("notes");
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Entities.NoteLabel", b =>
+                {
+                    b.Property<int>("noteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("labelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("noteId", "labelId");
+
+                    b.ToTable("NoteLabel");
                 });
 
             modelBuilder.Entity("RepositoryLayer.Entities.User", b =>
@@ -91,6 +136,21 @@ namespace RepositoryLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("users");
+                });
+
+            modelBuilder.Entity("LabelNote", b =>
+                {
+                    b.HasOne("RepositoryLayer.Entities.Note", null)
+                        .WithMany()
+                        .HasForeignKey("labelNotesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RepositoryLayer.Entities.Label", null)
+                        .WithMany()
+                        .HasForeignKey("noteLablesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("RepositoryLayer.Entities.Note", b =>

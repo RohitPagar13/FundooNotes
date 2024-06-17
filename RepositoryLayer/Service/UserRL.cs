@@ -89,6 +89,40 @@ namespace RepositoryLayer.Service
             }
         }
 
+        public LoginResponse getUser(string email)
+        {
+            try
+            {
+                var result = _db.users.Where(user => user.Email.Equals(email)).FirstOrDefault();
+                if (result == null)
+                {
+                    throw new UserException("User not found with given Email", "UserNotFoundException");
+                }
+                LoginResponse lr = new LoginResponse();
+
+
+                lr.ID = result.Id;
+
+                lr.FirstName = result.FirstName;
+
+                lr.LastName = result.LastName;
+
+                lr.Email = result.Email;
+
+                lr.Phone = result.Phone;
+                
+                lr.BirthDate = result.BirthDate;
+
+                return lr;
+
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
+            }
+        }
+
         public void ForgetPassword(string email)
         {
 

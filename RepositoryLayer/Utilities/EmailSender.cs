@@ -27,10 +27,10 @@ namespace RepositoryLayer.Utilities
 
             using var smtp = new SmtpClient();
             smtp.Connect(config.GetSection("EmailSettings:EmailHost").Value, 587, SecureSocketOptions.StartTls);
-            smtp.Authenticate(config.GetSection("EmailSettings:EmailUsername").Value, Environment.GetEnvironmentVariable("emailpass(rohitpagar133@gmail.com)"));
+             string pass = Environment.GetEnvironmentVariable("fundoo");
+            smtp.Authenticate(config.GetSection("EmailSettings:EmailUsername").Value, pass);
             smtp.Send(email);
             smtp.Disconnect(true);
-            smtp.Dispose();
         }
     }
 }

@@ -82,3 +82,9 @@ E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\RepositoryLayer.pdb
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\ModelLayer.pdb
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\BCrypt.Net-Next.dll
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\MailKit.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\MimeKit.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\System.Formats.Asn1.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll

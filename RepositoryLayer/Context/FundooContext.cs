@@ -15,5 +15,13 @@ namespace RepositoryLayer.Context
         public DbSet<User> users { get; set; }
 
         public DbSet<Note> notes { get; set; }
+
+        public DbSet<Label> labels { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<NoteLabel>()
+                .HasKey(nl => new { nl.noteId, nl.labelId });
+        }
     }
 }

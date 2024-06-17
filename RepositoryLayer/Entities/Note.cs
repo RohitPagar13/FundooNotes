@@ -5,12 +5,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace RepositoryLayer.Entities
 {
     public class Note
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Title { get; set; }
         public string? Description { get; set; }
@@ -18,6 +21,9 @@ namespace RepositoryLayer.Entities
         public DateTime CreatedOn { get; set; }= DateTime.Now;
         public bool isArchieve { get; set; } = false;
         public bool isTrashed { get; set; } = false;
+
+        [JsonIgnore]
+        public ICollection<Label>? noteLables {  get; set; }
 
         [Required]
         [NotNull]

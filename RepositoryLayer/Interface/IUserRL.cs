@@ -14,6 +14,8 @@ namespace RepositoryLayer.Interface
 
         public string LoginUser(UserLoginModel loginModel);
 
+        public LoginResponse getUser(string email);
+
         public void ForgetPassword(string email);
         public void ResetPassword(string email, string password);
     }

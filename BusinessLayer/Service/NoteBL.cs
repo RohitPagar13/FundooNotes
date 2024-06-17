@@ -34,7 +34,7 @@ namespace BusinessLayer.Service
                 {
                     return note;
                 }
-                else { throw new UserException("Note not found", "NoteNotFoundException"); }
+                else { throw new UserException("Note not found", "NoteNotFoundException"); } 
             }
             catch
             {

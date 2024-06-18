@@ -59,16 +59,16 @@ namespace RepositoryLayer.Service
         {
             try
             {
-                var matchLabelNote = _db.notes.Include(n => n.noteLables).FirstOrDefault(n => n.Id == NoteID);
+                var matchLabelIds = _db.NoteLabels.Where(n=>n.noteId==NoteID).Select(l=>l.labelId);
 
-                if (matchLabelNote == null)
+                if (matchLabelIds.Count()==0)
                 {
 
-                    throw new UserException("Incorrect noteId or note not available", "IncorrectDataException");
+                    throw new UserException("No labels for the Note or NoteID is wrong", "NoLabelsException");
                 }
 
-                var labels = matchLabelNote.noteLables?.ToList();
 
+                var labels = _db.labels.Where(l=>matchLabelIds.Contains(l.Id));
                 return labels;
             }
             catch (SqlException se)
@@ -82,14 +82,14 @@ namespace RepositoryLayer.Service
         {
             try
             {
-                var matchNoteByLabel = _db.labels.Include(l => l.labelNotes).FirstOrDefault(l => l.Id == LabelID);
+                var matchNoteIds = _db.NoteLabels.Where(l=>l.labelId==LabelID).Select(n=>n.noteId);
 
-                if (matchNoteByLabel == null)
+                if (matchNoteIds == null)
                 {
-                    throw new UserException("Incorrect labelId or label not available", "IncorrectDataException");
+                    throw new UserException("No Note for the Label", "NoNoteException");
                 }
 
-                var notes = matchNoteByLabel.labelNotes?.ToList();
+                var notes = _db.notes.Where(n=>matchNoteIds.Contains(n.Id));
 
                 return notes;
             }

@@ -23,7 +23,10 @@ namespace RepositoryLayer.Entities
         public bool isTrashed { get; set; } = false;
 
         [JsonIgnore]
-        public ICollection<Label>? noteLables {  get; set; }
+        public ICollection<NoteLabel>? noteLables {  get; set; }
+
+        [JsonIgnore]
+        public ICollection<Collaborator>? collaborators { get; set; }
 
         [Required]
         [NotNull]

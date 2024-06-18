@@ -20,6 +20,8 @@ namespace RepositoryLayer.Context
 
         public DbSet<NoteLabel> NoteLabels { get; set; }
 
+        public DbSet<Collaborator> Collaborators { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<NoteLabel>()

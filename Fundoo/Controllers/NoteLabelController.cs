@@ -128,7 +128,7 @@ namespace Fundoo.Controllers
 
                 return StatusCode(400, responseML);
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 Console.WriteLine(ex.Message);
                 responseML.Success = false;

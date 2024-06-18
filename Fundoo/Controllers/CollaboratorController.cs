@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Service;
+﻿using BusinessLayer.Interface;
+using BusinessLayer.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer;
@@ -11,10 +12,10 @@ namespace Fundoo.Controllers
     [ApiController]
     public class CollaboratorController : ControllerBase
     {
-        private readonly CollaboratorBL collaboratorBL;
+        private readonly ICollaboratorBL collaboratorBL;
         private readonly ResponseML responseML;
 
-        public CollaboratorController(CollaboratorBL collaboratorBL)
+        public CollaboratorController(ICollaboratorBL collaboratorBL)
         {
             this.collaboratorBL = collaboratorBL;
             responseML = new ResponseML();
@@ -92,7 +93,7 @@ namespace Fundoo.Controllers
                 if (result != null)
                 {
                     responseML.Success = true;
-                    responseML.Message = "Added successfully with id: " + result.Id;
+                    responseML.Message = "Collaborator removed successfully with id: " + result.Id;
                     responseML.Data = result;
                 }
                 return StatusCode(201, responseML);

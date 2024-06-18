@@ -30,7 +30,7 @@ namespace RepositoryLayer.Service
                 try
                 {
                     var checkcollaborator = _db.Collaborators.Where(c => c.Email.Equals(collaboratormodel.Email)).FirstOrDefault();
-                    if (checkcollaborator == null)
+                    if (checkcollaborator != null)
                     {
                         throw new UserException("Collaborator already exists", "AlreadyExistsException");
                     }
@@ -83,6 +83,7 @@ namespace RepositoryLayer.Service
                     {
                         throw new UserException("Collaborator already removed or collaborator does not exists", "CollaboratorNotExistsException");
                     }
+                    _db.Remove(collaborator);
                     _db.SaveChanges();
                     transaction.Commit();
                     return collaborator;

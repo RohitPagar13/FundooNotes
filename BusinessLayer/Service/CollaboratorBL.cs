@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Interface;
 using ModelLayer;
 using RepositoryLayer.Entities;
+using RepositoryLayer.Interface;
 using RepositoryLayer.Migrations;
 using RepositoryLayer.Service;
 using System;
@@ -13,9 +14,9 @@ namespace BusinessLayer.Service
 {
     public class CollaboratorBL:ICollaboratorBL
     {
-        private readonly CollaboratorRL collaboratorRL;
+        private readonly ICollaboratorRL collaboratorRL;
 
-        public CollaboratorBL(CollaboratorRL collaboratorRL)
+        public CollaboratorBL(ICollaboratorRL collaboratorRL)
         {
             this.collaboratorRL = collaboratorRL;
         }

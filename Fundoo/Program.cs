@@ -40,6 +40,9 @@ namespace Fundoo
             builder.Services.AddScoped<INoteLabelRL, NoteLabelRL>();
             builder.Services.AddScoped<INoteLabelBL, NoteLabelBL>();
 
+            builder.Services.AddScoped<ICollaboratorRL, CollaboratorRL>();
+            builder.Services.AddScoped<ICollaboratorBL, CollaboratorBL>();
+
             var jwtSettings = builder.Configuration.GetSection("Jwt");
             var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
 

@@ -6,6 +6,7 @@ using RepositoryLayer.CustomException;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,7 @@ namespace RepositoryLayer.Service
 
                     _db.NoteLabels.Add(noteLabel);
                     _db.SaveChanges();
+                    transaction.Commit();
                     return noteLabel;
                 }
                 catch (SqlException se)
@@ -59,16 +61,11 @@ namespace RepositoryLayer.Service
         {
             try
             {
-                var matchLabelIds = _db.NoteLabels.Where(n=>n.noteId==NoteID).Select(l=>l.labelId);
-
-                if (matchLabelIds.Count()==0)
-                {
-
-                    throw new UserException("No labels for the Note or NoteID is wrong", "NoLabelsException");
-                }
+                var matchLabelIds = _db.NoteLabels.Where(n=>n.noteId==NoteID).Select(l=>l.labelId).ToList();
 
 
-                var labels = _db.labels.Where(l=>matchLabelIds.Contains(l.Id));
+
+                var labels = _db.labels.Where(l=>matchLabelIds.Contains(l.Id)).ToList();
                 return labels;
             }
             catch (SqlException se)
@@ -84,11 +81,11 @@ namespace RepositoryLayer.Service
             {
                 var matchNoteIds = _db.NoteLabels.Where(l=>l.labelId==LabelID).Select(n=>n.noteId);
 
-                if (matchNoteIds == null)
-                {
-                    throw new UserException("No Note for the Label", "NoNoteException");
-                }
 
+                if (!matchNoteIds.Any())
+                {
+                    throw new UserException("No Notes for the Label or LabelID is wrong", "NoNoteException");
+                }
                 var notes = _db.notes.Where(n=>matchNoteIds.Contains(n.Id));
 
                 return notes;
@@ -107,23 +104,17 @@ namespace RepositoryLayer.Service
             {
                 try
                 {
-                    var note = _db.notes.FirstOrDefault(n => n.Id == nl.noteId);
-                    var label = _db.labels.FirstOrDefault(l => l.Id == nl.labelId);
+                    var notelabel = _db.NoteLabels.FirstOrDefault(n=>n.noteId==nl.noteId && n.labelId==nl.labelId);
 
-                    if (note == null || label == null)
+                    if (notelabel==null)
                     {
                         throw new UserException("incorrect noteId or labelId", "IncorrectDataException");
                     }
 
-                    NoteLabel noteLabel = new NoteLabel()
-                    {
-                        noteId = nl.noteId,
-                        labelId = nl.labelId
-                    };
-
-                    _db.NoteLabels.Remove(noteLabel);
+                    _db.NoteLabels.Remove(notelabel);
                     _db.SaveChanges();
-                    return noteLabel;
+                    transaction.Commit();
+                    return notelabel;
                 }
                 catch (SqlException se)
                 {
@@ -131,6 +122,25 @@ namespace RepositoryLayer.Service
                     Console.WriteLine(se.ToString());
                     throw;
                 }
+            }
+        }
+
+        public Dictionary<Note, List<Label>> getNotesWithLabels(int userid)
+        {
+            try
+            {
+                List<Note> notes = _db.notes.ToList();
+                Dictionary<Note, List<Label>> notesWithLabels = new Dictionary<Note, List<Label>>();
+                for (int i = 0; i < notes.Count; i++)
+                {
+                    notesWithLabels.Add(notes[i], GetLabelsFromNote(notes[i].Id).ToList());
+                }
+                return notesWithLabels;
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
             }
         }
     }

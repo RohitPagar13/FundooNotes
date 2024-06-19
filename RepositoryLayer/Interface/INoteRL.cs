@@ -24,5 +24,8 @@ namespace RepositoryLayer.Interface
 
         public NoteResponseModel trashed(int noteId);
 
+        public List<NoteResponseModel> getTrashed(int userid);
+
+        public List<NoteResponseModel> getArchived(int userid);
     }
 }

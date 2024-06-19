@@ -114,6 +114,7 @@ namespace RepositoryLayer.Service
                         }
                         _db.labels.Remove(l);
                         _db.SaveChanges();
+                        transaction.Commit();
                 }
                 catch (SqlException se)
                 {

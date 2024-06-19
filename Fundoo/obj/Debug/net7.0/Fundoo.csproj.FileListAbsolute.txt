@@ -23,7 +23,6 @@ E:\BridgeLabz\ASP.net\Fundoo\Fundoo\obj\Debug\net7.0\Fundoo.GeneratedMSBuildEdit
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\obj\Debug\net7.0\Fundoo.AssemblyInfoInputs.cache
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\obj\Debug\net7.0\Fundoo.AssemblyInfo.cs
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\obj\Debug\net7.0\Fundoo.csproj.CoreCompileInputs.cache
-E:\BridgeLabz\ASP.net\Fundoo\Fundoo\obj\Debug\net7.0\Fundoo.MvcApplicationPartsAssemblyInfo.cs
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\obj\Debug\net7.0\Fundoo.MvcApplicationPartsAssemblyInfo.cache
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\obj\Debug\net7.0\staticwebassets\msbuild.Fundoo.Microsoft.AspNetCore.StaticWebAssets.props
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\obj\Debug\net7.0\staticwebassets\msbuild.build.Fundoo.props

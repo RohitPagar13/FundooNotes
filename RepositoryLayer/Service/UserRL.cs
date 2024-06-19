@@ -127,7 +127,7 @@ namespace RepositoryLayer.Service
         {
 
             var result = _db.users.Where(s => s.Email == email).FirstOrDefault();
-
+           
             if (result == null)
             {
                 throw new UserException("No such user found", "UserNotFoundException");

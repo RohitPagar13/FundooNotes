@@ -23,5 +23,9 @@ namespace BusinessLayer.Interface
         public NoteResponseModel archived(int noteId);
 
         public NoteResponseModel trashed(int noteId);
+
+        public List<NoteResponseModel> getTrashed(int userid);
+
+        public List<NoteResponseModel> getArchived(int userid);
     }
 }

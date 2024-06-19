@@ -54,6 +54,18 @@ namespace BusinessLayer.Service
             }
         }
 
+        public List<NoteResponseModel> getArchived(int userid)
+        {
+            try
+            {
+                return noteRL.getArchived(userid);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public NoteResponseModel getNoteById(int id)
         {
             try
@@ -71,6 +83,18 @@ namespace BusinessLayer.Service
             try
             {
                 return noteRL.GetNotes(userid);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public List<NoteResponseModel> getTrashed(int userid)
+        {
+            try
+            {
+                return noteRL.getTrashed(userid);
             }
             catch
             {

@@ -69,7 +69,7 @@ namespace Fundoo.Controllers
                     responseML.Message = "Note deleted Successfully with id: " + result.Id;
                     responseML.Data = result;
                 }
-                return StatusCode(204, responseML);
+                return StatusCode(200, responseML);
             }
             catch (UserException ex)
             {
@@ -132,7 +132,7 @@ namespace Fundoo.Controllers
                 if (result != null)
                 {
                     responseML.Success = true;
-                    responseML.Message = "Request successful" + " " + userid;
+                    responseML.Message = "Request successful fetch Notes" + " " + userid;
                     responseML.Data = result;
                 }
                 return StatusCode(200, responseML);
@@ -142,7 +142,7 @@ namespace Fundoo.Controllers
                 Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
                 responseML.Success = false;
                 responseML.Message = ex.ErrorCode + ": " + ex.Message;
-                return StatusCode(204, responseML);
+                return StatusCode(400, responseML);
             }
             catch (Exception ex)
             {
@@ -165,7 +165,7 @@ namespace Fundoo.Controllers
                 if (result != null)
                 {
                     responseML.Success = true;
-                    responseML.Message = "Request successful";
+                    responseML.Message = "Request successful for Updation";
                     responseML.Data = result;
                 }
                 return StatusCode(200, responseML);
@@ -175,7 +175,7 @@ namespace Fundoo.Controllers
                 Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
                 responseML.Success = false;
                 responseML.Message = ex.ErrorCode + ": " + ex.Message;
-                return StatusCode(204, responseML);
+                return StatusCode(400, responseML);
             }
             catch (Exception ex)
             {
@@ -187,7 +187,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpPut]
-        [Route("Archive/{id}")]
+        [Route("Archive/{NoteId}")]
         [Authorize]
         public IActionResult Archived(int NoteId)
         {
@@ -198,7 +198,7 @@ namespace Fundoo.Controllers
                 if (result != null)
                 {
                     responseML.Success = true;
-                    responseML.Message = "Request successful";
+                    responseML.Message = "Request successful for Archive";
                     responseML.Data = result;
                 }
                 return StatusCode(200, responseML);
@@ -208,7 +208,7 @@ namespace Fundoo.Controllers
                 Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
                 responseML.Success = false;
                 responseML.Message = ex.ErrorCode + ": " + ex.Message;
-                return StatusCode(204, responseML);
+                return StatusCode(400, responseML);
             }
             catch (Exception ex)
             {
@@ -220,7 +220,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpPut]
-        [Route("Trash/{id}")]
+        [Route("Trash/{NoteId}")]
         [Authorize]
         public IActionResult Trashed(int NoteId)
         {
@@ -231,7 +231,7 @@ namespace Fundoo.Controllers
                 if (result != null)
                 {
                     responseML.Success = true;
-                    responseML.Message = "Request successful";
+                    responseML.Message = "Request successful for Trash";
                     responseML.Data = result;
                 }
                 return StatusCode(200, responseML);
@@ -241,7 +241,74 @@ namespace Fundoo.Controllers
                 Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
                 responseML.Success = false;
                 responseML.Message = ex.ErrorCode + ": " + ex.Message;
-                return StatusCode(204, responseML);
+                return StatusCode(400, responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
+
+        [HttpGet]
+        [Route("GetAllArchived")]
+        [Authorize]
+        public IActionResult GetArchivedNotes()
+        {
+            try
+            {
+                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+                var result = noteBL.getArchived(userid);
+                if (result != null)
+                {
+                    responseML.Success = true;
+                    responseML.Message = "Request successful for Archived Notes" + " " + userid;
+                    responseML.Data = result;
+                }
+                return StatusCode(200, responseML);
+            }
+            catch (UserException ex)
+            {
+                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.ErrorCode + ": " + ex.Message;
+                return StatusCode(400, responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        
+        }
+
+        [HttpGet]
+        [Route("GetAllTrashed")]
+        [Authorize]
+        public IActionResult GetTrashedNotes()
+        {
+            try
+            {
+                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+                var result = noteBL.getTrashed(userid);
+                if (result != null)
+                {
+                    responseML.Success = true;
+                    responseML.Message = "Request successful for Trashed Notes" + " " + userid;
+                    responseML.Data = result;
+                }
+                return StatusCode(200, responseML);
+            }
+            catch (UserException ex)
+            {
+                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.ErrorCode + ": " + ex.Message;
+                return StatusCode(400, responseML);
             }
             catch (Exception ex)
             {

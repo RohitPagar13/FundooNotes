@@ -74,7 +74,7 @@ namespace Fundoo.Controllers
                     responseML.Data = token;
                     
                 }
-                return Ok(responseML);
+                return StatusCode(200, responseML);
             }
             catch (UserException ex)
             {
@@ -105,7 +105,7 @@ namespace Fundoo.Controllers
                     responseML.Success = true;
                     responseML.Message = "Request Successful";
                     responseML.Data = result;
-                    return Ok(responseML);
+                    return StatusCode(200, responseML);
                 }
                 else
                 {
@@ -141,7 +141,7 @@ namespace Fundoo.Controllers
 
                     responseML.Success = true;
                     responseML.Message = "Request Successful, email has been sent";
-                    return Ok(responseML);
+                    return StatusCode(200, responseML); 
             }
             catch (Exception ex)
             {
@@ -155,7 +155,7 @@ namespace Fundoo.Controllers
         [HttpPut]
         [Authorize]
         [Route("ResetUser")]
-        public IActionResult ResetUser(string password)
+        public IActionResult ResetUser([FromBody]string password)
         {
             try
             {
@@ -163,7 +163,7 @@ namespace Fundoo.Controllers
                 userBL.ResetPassword(Email, password);
                     responseML.Success = true;
                     responseML.Message = "Request Successful, password reset successfu;";
-                    return Ok(responseML);
+                    return StatusCode(200, responseML); 
             }
             catch (Exception ex)
             {

@@ -57,6 +57,18 @@ namespace BusinessLayer.Service
             }
         }
 
+        public Dictionary<Note, List<Label>> getNotesWithLabels(int userid)
+        {
+            try
+            {
+                return noteLabelRL.getNotesWithLabels(userid);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public NoteLabel RemoveLabelFromNote(NoteLabel nl)
         {
             try

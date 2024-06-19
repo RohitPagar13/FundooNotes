@@ -29,10 +29,6 @@ namespace RepositoryLayer.Service
             {
                 try
                 {
-                    if (_db.notes.Any(n => n.Title.Equals(note.Title)))
-                    {
-                        throw new UserException("Note with specified Title Already Exists", "NoteAlreadyExists");
-                    }
                     Note n = new Note();
                     NoteResponseModel response = new NoteResponseModel();
 
@@ -118,7 +114,7 @@ namespace RepositoryLayer.Service
         {
             try
             {
-                var result = _db.notes.Where(p=>p.userId == userid);
+                var result = _db.notes.Where(p=>p.userId == userid && !p.isTrashed && !p.isArchieve);
                 List<NoteResponseModel>responseNotes = new List<NoteResponseModel>();
                 foreach (var note in result)
                 {
@@ -148,7 +144,7 @@ namespace RepositoryLayer.Service
                     Note? note = _db.notes.Find(id);
                     if (note == null)
                     {
-                        throw new UserException("Note with the specified ID does not exist.", "CustomerNotFoundException");
+                        throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
                     }
                     else if(note.isTrashed)
                     {
@@ -234,6 +230,64 @@ namespace RepositoryLayer.Service
                     Console.WriteLine(se.ToString());
                     throw;
                 }
+            }
+        }
+
+        public List<NoteResponseModel> getTrashed(int userid)
+        {
+            try
+            {
+                var result = _db.notes.Where(p => p.userId == userid && p.isTrashed==true).ToList();
+                if (!result.Any())
+                {
+                    throw new UserException("No trashed notes found", "EmptyTrashException");
+                }
+                List<NoteResponseModel> responseNotes = new List<NoteResponseModel>();
+                foreach (var note in result)
+                {
+                    NoteResponseModel noteResponse = new NoteResponseModel();
+                    noteResponse.Id = note.Id;
+                    noteResponse.Title = note.Title;
+                    noteResponse.Description = note.Description;
+                    noteResponse.CreatedOn = note.CreatedOn;
+
+                    responseNotes.Add(noteResponse);
+                }
+                return responseNotes;
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
+            }
+        }
+
+        public List<NoteResponseModel> getArchived(int userid)
+        {
+            try
+            {
+                var result = _db.notes.Where(p => p.userId == userid && p.isArchieve==true && p.isTrashed==false).ToList();
+                if (!result.Any())
+                {
+                    throw new UserException("No archived notes found", "EmptyArchiveException");
+                }
+                List<NoteResponseModel> responseNotes = new List<NoteResponseModel>();
+                foreach (var note in result)
+                {
+                    NoteResponseModel noteResponse = new NoteResponseModel();
+                    noteResponse.Id = note.Id;
+                    noteResponse.Title = note.Title;
+                    noteResponse.Description = note.Description;
+                    noteResponse.CreatedOn = note.CreatedOn;
+
+                    responseNotes.Add(noteResponse);
+                }
+                return responseNotes;
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
             }
         }
     }

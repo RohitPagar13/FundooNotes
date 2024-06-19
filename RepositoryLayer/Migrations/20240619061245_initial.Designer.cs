@@ -12,7 +12,7 @@ using RepositoryLayer.Context;
 namespace RepositoryLayer.Migrations
 {
     [DbContext(typeof(FundooContext))]
-    [Migration("20240612062408_initial")]
+    [Migration("20240619061245_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -24,6 +24,45 @@ namespace RepositoryLayer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("RepositoryLayer.Entities.Collaborator", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NoteId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NoteId");
+
+                    b.ToTable("Collaborators");
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Entities.Label", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("LabelName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("labels");
+                });
 
             modelBuilder.Entity("RepositoryLayer.Entities.Note", b =>
                 {
@@ -57,6 +96,21 @@ namespace RepositoryLayer.Migrations
                     b.HasIndex("userId");
 
                     b.ToTable("notes");
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Entities.NoteLabel", b =>
+                {
+                    b.Property<int>("noteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("labelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("noteId", "labelId");
+
+                    b.HasIndex("labelId");
+
+                    b.ToTable("NoteLabels");
                 });
 
             modelBuilder.Entity("RepositoryLayer.Entities.User", b =>
@@ -96,6 +150,15 @@ namespace RepositoryLayer.Migrations
                     b.ToTable("users");
                 });
 
+            modelBuilder.Entity("RepositoryLayer.Entities.Collaborator", b =>
+                {
+                    b.HasOne("RepositoryLayer.Entities.Note", null)
+                        .WithMany("collaborators")
+                        .HasForeignKey("NoteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("RepositoryLayer.Entities.Note", b =>
                 {
                     b.HasOne("RepositoryLayer.Entities.User", null)
@@ -103,6 +166,33 @@ namespace RepositoryLayer.Migrations
                         .HasForeignKey("userId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Entities.NoteLabel", b =>
+                {
+                    b.HasOne("RepositoryLayer.Entities.Label", null)
+                        .WithMany("labelNotes")
+                        .HasForeignKey("labelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RepositoryLayer.Entities.Note", null)
+                        .WithMany("noteLables")
+                        .HasForeignKey("noteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Entities.Label", b =>
+                {
+                    b.Navigation("labelNotes");
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Entities.Note", b =>
+                {
+                    b.Navigation("collaborators");
+
+                    b.Navigation("noteLables");
                 });
 
             modelBuilder.Entity("RepositoryLayer.Entities.User", b =>

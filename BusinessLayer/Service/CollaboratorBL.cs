@@ -2,7 +2,6 @@
 using ModelLayer;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
-using RepositoryLayer.Migrations;
 using RepositoryLayer.Service;
 using System;
 using System.Collections.Generic;

@@ -29,7 +29,7 @@ namespace RepositoryLayer.Service
             {
                 try
                 {
-                    var checkcollaborator = _db.Collaborators.Where(c => c.Email.Equals(collaboratormodel.Email)).FirstOrDefault();
+                    var checkcollaborator = _db.Collaborators.Where(c => c.Email.Equals(collaboratormodel.Email) && c.NoteId==collaboratormodel.NoteId).FirstOrDefault();
                     if (checkcollaborator != null)
                     {
                         throw new UserException("Collaborator already exists", "AlreadyExistsException");

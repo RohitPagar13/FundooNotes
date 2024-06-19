@@ -136,5 +136,35 @@ namespace Fundoo.Controllers
                 return StatusCode(400, responseML);
             }
         }
+
+        [HttpGet("getnoteswithlabels")]
+        public IActionResult GetNotesWithLabels()
+        {
+            try
+            {
+                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+                var result = noteLabelBL.getNotesWithLabels(userid);
+
+                responseML.Success = true;
+                responseML.Message = "Notes including Label fetched successfully";
+                responseML.Data = result;
+
+                return StatusCode(200, responseML);
+            }
+            catch (UserException ex)
+            {
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+
+                return StatusCode(404, responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
     }
 }

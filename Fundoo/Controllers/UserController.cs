@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -95,6 +96,7 @@ namespace Fundoo.Controllers
         [HttpGet]
         [Route("Login/GetUser")]
         [Authorize]
+        [EnableCors("getUserPolicy")]
         public IActionResult GetUser()
         {
             try

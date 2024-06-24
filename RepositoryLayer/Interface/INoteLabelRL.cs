@@ -17,6 +17,6 @@ namespace RepositoryLayer.Interface
         public IEnumerable<Note>? GetNotesFromLabel(int LabelID);
 
         public NoteLabel RemoveLabelFromNote(NoteLabel nl);
-        public Dictionary<Note, List<Label>> getNotesWithLabels(int userid);
+        public List<(Note, List<Label>)> getNotesWithLabels(int userid);
     }
 }

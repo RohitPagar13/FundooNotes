@@ -57,7 +57,7 @@ namespace BusinessLayer.Service
             }
         }
 
-        public Dictionary<Note, List<Label>> getNotesWithLabels(int userid)
+        public List<(Note, List<Label>)> getNotesWithLabels(int userid)
         {
             try
             {

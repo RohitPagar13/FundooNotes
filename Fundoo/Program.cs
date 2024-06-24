@@ -20,7 +20,8 @@ namespace Fundoo
             builder.Services.AddControllers();
 
             builder.Services.AddEndpointsApiExplorer();
-
+            
+           
             builder.Services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -95,6 +96,22 @@ namespace Fundoo
                 };
             });
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("getUserPolicy", builder =>
+                {
+                    builder.WithOrigins("http://localhost:5264")
+                    .WithMethods("GET")
+                    .WithHeaders("*");
+                });
+                options.AddPolicy("default", builder =>
+                {
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -111,6 +128,9 @@ namespace Fundoo
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCors("getUserPolicy");
+            app.UseCors("default");
 
             app.MapControllers();
 

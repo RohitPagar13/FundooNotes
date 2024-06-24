@@ -63,7 +63,10 @@ namespace RepositoryLayer.Service
             {
                 var matchLabelIds = _db.NoteLabels.Where(n=>n.noteId==NoteID).Select(l=>l.labelId).ToList();
 
-
+                if (!matchLabelIds.Any())
+                {
+                    return Enumerable.Empty<Label>();
+                }
 
                 var labels = _db.labels.Where(l=>matchLabelIds.Contains(l.Id)).ToList();
                 return labels;
@@ -125,15 +128,19 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public Dictionary<Note, List<Label>> getNotesWithLabels(int userid)
+        public List<(Note, List<Label>)> getNotesWithLabels(int userid)
         {
             try
             {
-                List<Note> notes = _db.notes.ToList();
-                Dictionary<Note, List<Label>> notesWithLabels = new Dictionary<Note, List<Label>>();
-                for (int i = 0; i < notes.Count; i++)
+                List<Note> notes = _db.notes.Where(note=>note.userId==userid).ToList();
+
+                var notesWithLabels = new List<(Note, List<Label>)>();
+                foreach(var note in notes)
                 {
-                    notesWithLabels.Add(notes[i], GetLabelsFromNote(notes[i].Id).ToList());
+                    var labels = GetLabelsFromNote(note.Id)?.ToList()??new List<Label>();
+
+                    //var labels = new LabelRL(_db).GetLabels().ToList();
+                    notesWithLabels.Add((note, labels));
                 }
                 return notesWithLabels;
             }

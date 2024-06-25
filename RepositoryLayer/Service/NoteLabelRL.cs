@@ -5,6 +5,7 @@ using RepositoryLayer.Context;
 using RepositoryLayer.CustomException;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
+using RepositoryLayer.Utilities.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -128,21 +129,115 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public List<(Note, List<Label>)> getNotesWithLabels(int userid)
+        public List<NoteLabelsDTO> getNotesWithLabels(int userid)
         {
             try
             {
-                List<Note> notes = _db.notes.Where(note=>note.userId==userid).ToList();
+                List<Note> notes = _db.notes.Where(note=>note.userId==userid && note.isTrashed==false && note.isArchieve==false).ToList();
 
-                var notesWithLabels = new List<(Note, List<Label>)>();
+                if (notes == null || notes.Count == 0)
+                {
+                    Console.WriteLine("No notes found for user with ID: " + userid);
+                    return new List<NoteLabelsDTO>();
+                }
+
+                var notesWithLabels = new List<NoteLabelsDTO>();
                 foreach(var note in notes)
                 {
                     var labels = GetLabelsFromNote(note.Id)?.ToList()??new List<Label>();
 
+                    if (labels == null || labels.Count == 0)
+                    {
+                        Console.WriteLine("No labels found for note with ID: " + note.Id);
+                    }
+
                     //var labels = new LabelRL(_db).GetLabels().ToList();
-                    notesWithLabels.Add((note, labels));
+                    notesWithLabels.Add(new NoteLabelsDTO { Id = note.Id,Title=note.Title, CreatedOn=note.CreatedOn,Description=note.Description, Labels=labels }) ;
                 }
                 return notesWithLabels;
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
+            }
+        }
+
+        public List<NoteLabelsDTO> getTrashedWithLabels(int userid)
+        {
+            try
+            {
+                var notes = _db.notes.Where(p => p.userId == userid && p.isTrashed == true).ToList();
+                if (notes == null || notes.Count == 0)
+                {
+                    Console.WriteLine("No notes found for user with ID: " + userid);
+                    return new List<NoteLabelsDTO>();
+                }
+                var notesWithLabels = new List<NoteLabelsDTO>();
+                foreach (var note in notes)
+                {
+                    var labels = GetLabelsFromNote(note.Id)?.ToList() ?? new List<Label>();
+
+                    if (labels == null || labels.Count == 0)
+                    {
+                        Console.WriteLine("No labels found for note with ID: " + note.Id);
+                    }
+
+                    //var labels = new LabelRL(_db).GetLabels().ToList();
+                    notesWithLabels.Add(new NoteLabelsDTO { Id = note.Id, Title = note.Title, CreatedOn = note.CreatedOn, Description = note.Description, Labels = labels });
+                }
+                return notesWithLabels;
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
+            }
+        }
+
+        public List<NoteLabelsDTO> getArchivedWithLabels(int userid)
+        {
+            try
+            {
+                var notes = _db.notes.Where(p => p.userId == userid && p.isArchieve == true && p.isTrashed == false).ToList();
+                if (notes == null || notes.Count == 0)
+                {
+                    Console.WriteLine("No notes found for user with ID: " + userid);
+                    return new List<NoteLabelsDTO>();
+                }
+                var notesWithLabels = new List<NoteLabelsDTO>();
+                foreach (var note in notes)
+                {
+                    var labels = GetLabelsFromNote(note.Id)?.ToList() ?? new List<Label>();
+
+                    if (labels == null || labels.Count == 0)
+                    {
+                        Console.WriteLine("No labels found for note with ID: " + note.Id);
+                    }
+
+                    //var labels = new LabelRL(_db).GetLabels().ToList();
+                    notesWithLabels.Add(new NoteLabelsDTO { Id = note.Id, Title = note.Title, CreatedOn = note.CreatedOn, Description = note.Description, Labels = labels });
+                }
+                return notesWithLabels;
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.ToString());
+                throw;
+            }
+        }
+
+        public NoteLabelsDTO getNoteWithLabelsById(int id)
+        {
+            try
+            {
+                Note? note = _db.notes.Find(id);
+                if (note == null)
+                {
+                    throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
+                }
+                var labels = GetLabelsFromNote(note.Id)?.ToList() ?? new List<Label>();
+                return new NoteLabelsDTO { Id = note.Id, Title = note.Title, CreatedOn = note.CreatedOn, Description = note.Description, Labels = labels };
             }
             catch (SqlException se)
             {

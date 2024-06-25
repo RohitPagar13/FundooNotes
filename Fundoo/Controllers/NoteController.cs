@@ -87,71 +87,71 @@ namespace Fundoo.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("Get/{id}")]
-        [Authorize]
-        public IActionResult GetNoteById(int id)
-        {
-            try
-            {
-                var result = noteBL.getNoteById(id);
+        //[HttpGet]
+        //[Route("Get/{id}")]
+        //[Authorize]
+        //public IActionResult GetNoteById(int id)
+        //{
+        //    try
+        //    {
+        //        var result = noteBL.getNoteById(id);
 
-                if (result != null)
-                {
-                    responseML.Success = true;
-                    responseML.Message = "Request successful for id: " + result.Id;
-                    responseML.Data = result;
-                }
-                return StatusCode(200, responseML);
-            }
-            catch (UserException ex)
-            {
-                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
-                responseML.Success = false;
-                responseML.Message = ex.ErrorCode + ": " + ex.Message;
-                return StatusCode(202, responseML);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                responseML.Success = false;
-                responseML.Message = ex.Message;
-                return StatusCode(400, responseML);
-            }
-        }
+        //        if (result != null)
+        //        {
+        //            responseML.Success = true;
+        //            responseML.Message = "Request successful for id: " + result.Id;
+        //            responseML.Data = result;
+        //        }
+        //        return StatusCode(200, responseML);
+        //    }
+        //    catch (UserException ex)
+        //    {
+        //        Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+        //        responseML.Success = false;
+        //        responseML.Message = ex.ErrorCode + ": " + ex.Message;
+        //        return StatusCode(202, responseML);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        responseML.Success = false;
+        //        responseML.Message = ex.Message;
+        //        return StatusCode(400, responseML);
+        //    }
+        //}
 
-        [HttpGet]
-        [Route("GetAll")]
-        [Authorize]
-        public IActionResult GetNotes()
-        {
-            try
-            {
-                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
-                var result = noteBL.GetNotes(userid);
-                if (result != null)
-                {
-                    responseML.Success = true;
-                    responseML.Message = "Request successful fetch Notes" + " " + userid;
-                    responseML.Data = result;
-                }
-                return StatusCode(200, responseML);
-            }
-            catch (UserException ex)
-            {
-                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
-                responseML.Success = false;
-                responseML.Message = ex.ErrorCode + ": " + ex.Message;
-                return StatusCode(400, responseML);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                responseML.Success = false;
-                responseML.Message = ex.Message;
-                return StatusCode(400, responseML);
-            }
-        }
+        //[HttpGet]
+        //[Route("GetAll")]
+        //[Authorize]
+        //public IActionResult GetNotes()
+        //{
+        //    try
+        //    {
+        //        int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+        //        var result = noteBL.GetNotes(userid);
+        //        if (result != null)
+        //        {
+        //            responseML.Success = true;
+        //            responseML.Message = "Request successful fetch Notes" + " " + userid;
+        //            responseML.Data = result;
+        //        }
+        //        return StatusCode(200, responseML);
+        //    }
+        //    catch (UserException ex)
+        //    {
+        //        Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+        //        responseML.Success = false;
+        //        responseML.Message = ex.ErrorCode + ": " + ex.Message;
+        //        return StatusCode(400, responseML);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        responseML.Success = false;
+        //        responseML.Message = ex.Message;
+        //        return StatusCode(400, responseML);
+        //    }
+        //}
 
         [HttpPut]
         [Route("Update/{id}")]
@@ -252,71 +252,71 @@ namespace Fundoo.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("GetAllArchived")]
-        [Authorize]
-        public IActionResult GetArchivedNotes()
-        {
-            try
-            {
-                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
-                var result = noteBL.getArchived(userid);
-                if (result != null)
-                {
-                    responseML.Success = true;
-                    responseML.Message = "Request successful for Archived Notes" + " " + userid;
-                    responseML.Data = result;
-                }
-                return StatusCode(200, responseML);
-            }
-            catch (UserException ex)
-            {
-                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
-                responseML.Success = false;
-                responseML.Message = ex.ErrorCode + ": " + ex.Message;
-                return StatusCode(400, responseML);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                responseML.Success = false;
-                responseML.Message = ex.Message;
-                return StatusCode(400, responseML);
-            }
+        //[HttpGet]
+        //[Route("GetAllArchived")]
+        //[Authorize]
+        //public IActionResult GetArchivedNotes()
+        //{
+        //    try
+        //    {
+        //        int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+        //        var result = noteBL.getArchived(userid);
+        //        if (result != null)
+        //        {
+        //            responseML.Success = true;
+        //            responseML.Message = "Request successful for Archived Notes" + " " + userid;
+        //            responseML.Data = result;
+        //        }
+        //        return StatusCode(200, responseML);
+        //    }
+        //    catch (UserException ex)
+        //    {
+        //        Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+        //        responseML.Success = false;
+        //        responseML.Message = ex.ErrorCode + ": " + ex.Message;
+        //        return StatusCode(400, responseML);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        responseML.Success = false;
+        //        responseML.Message = ex.Message;
+        //        return StatusCode(400, responseML);
+        //    }
         
-        }
+        //}
 
-        [HttpGet]
-        [Route("GetAllTrashed")]
-        [Authorize]
-        public IActionResult GetTrashedNotes()
-        {
-            try
-            {
-                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
-                var result = noteBL.getTrashed(userid);
-                if (result != null)
-                {
-                    responseML.Success = true;
-                    responseML.Message = "Request successful for Trashed Notes" + " " + userid;
-                    responseML.Data = result;
-                }
-                return StatusCode(200, responseML);
-            }
-            catch (UserException ex)
-            {
-                Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
-                responseML.Success = false;
-                responseML.Message = ex.ErrorCode + ": " + ex.Message;
-                return StatusCode(400, responseML);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                responseML.Success = false;
-                responseML.Message = ex.Message;
-                return StatusCode(400, responseML);
-            }
-        }
+        //[HttpGet]
+        //[Route("GetAllTrashed")]
+        //[Authorize]
+        //public IActionResult GetTrashedNotes()
+        //{
+        //    try
+        //    {
+        //        int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+        //        var result = noteBL.getTrashed(userid);
+        //        if (result != null)
+        //        {
+        //            responseML.Success = true;
+        //            responseML.Message = "Request successful for Trashed Notes" + " " + userid;
+        //            responseML.Data = result;
+        //        }
+        //        return StatusCode(200, responseML);
+        //    }
+        //    catch (UserException ex)
+        //    {
+        //        Console.WriteLine(ex.ErrorCode + ": " + ex.Message);
+        //        responseML.Success = false;
+        //        responseML.Message = ex.ErrorCode + ": " + ex.Message;
+        //        return StatusCode(400, responseML);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        responseML.Success = false;
+        //        responseML.Message = ex.Message;
+        //        return StatusCode(400, responseML);
+        //    }
+        //}
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
@@ -22,6 +23,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpPost("AddNoteToLabel")]
+        [Authorize]
         public IActionResult AddLabelToNote(NoteLabel nl)
         {
             try
@@ -51,6 +53,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpGet("getnotesbylabel/{LabelID}")]
+        [Authorize]
         public IActionResult GetNotesFromLabel(int LabelID)
         {
             try
@@ -80,6 +83,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpGet("getlabelsbyNote/{NoteID}")]
+        [Authorize]
         public IActionResult GetLabelsFromNote(int NoteID)
         {
             try
@@ -109,6 +113,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpDelete("deleteLabelFromNote")]
+        [Authorize]
         public IActionResult RemoveLabelFromNote(NoteLabel model)
         {
             try
@@ -138,12 +143,106 @@ namespace Fundoo.Controllers
         }
 
         [HttpGet("getnoteswithlabels")]
+        [Authorize]
         public IActionResult GetNotesWithLabels()
         {
             try
             {
                 int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
                 var result = noteLabelBL.getNotesWithLabels(userid);
+
+                responseML.Success = true;
+                responseML.Message = "Notes including Label fetched successfully";
+                responseML.Data = result;
+
+                return StatusCode(200, responseML);
+            }
+            catch (UserException ex)
+            {
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+
+                return StatusCode(404, responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
+
+        [HttpGet("getTrashedwithlabels")]
+        [Authorize]
+        public IActionResult GetTrashedWithLabels()
+        {
+            try
+            {
+                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+                var result = noteLabelBL.getTrashedWithLabels(userid);
+
+                responseML.Success = true;
+                responseML.Message = "Notes including Label fetched successfully";
+                responseML.Data = result;
+
+                return StatusCode(200, responseML);
+            }
+            catch (UserException ex)
+            {
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+
+                return StatusCode(404, responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
+
+        [HttpGet("getArchivedwithlabels")]
+        [Authorize]
+        public IActionResult GetArchivedWithLabels()
+        {
+            try
+            {
+                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+                var result = noteLabelBL.getArchivedWithLabels(userid);
+
+                responseML.Success = true;
+                responseML.Message = "Notes including Label fetched successfully";
+                responseML.Data = result;
+
+                return StatusCode(200, responseML);
+            }
+            catch (UserException ex)
+            {
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+
+                return StatusCode(404, responseML);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                responseML.Success = false;
+                responseML.Message = ex.Message;
+                return StatusCode(400, responseML);
+            }
+        }
+
+        [HttpGet]
+        [Route("getNotewithlabelsByNoteId/{id}")]
+        [Authorize]
+        public IActionResult GetNoteWithLabelsByNoteId(int id)
+        {
+            try
+            {
+                var result = noteLabelBL.getNoteWithLabelsByNoteId(id);
 
                 responseML.Success = true;
                 responseML.Message = "Notes including Label fetched successfully";

@@ -87,53 +87,53 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public NoteResponseModel getNoteById(int id)
-        {
-            try
-            {
-                Note? note = _db.notes.Find(id);
-                if (note == null)
-                {
-                    throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
-                }
-                NoteResponseModel response = new NoteResponseModel();
-                response.Title = note.Title;
-                response.Description = note.Description;
-                response.Id = note.Id;
-                response.CreatedOn = note.CreatedOn;
-                return response;
-            }
-            catch (SqlException se)
-            {
-                Console.WriteLine(se.ToString());
-                throw;
-            }
-        }
+        //public NoteResponseModel getNoteById(int id)
+        //{
+        //    try
+        //    {
+        //        Note? note = _db.notes.Find(id);
+        //        if (note == null)
+        //        {
+        //            throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
+        //        }
+        //        NoteResponseModel response = new NoteResponseModel();
+        //        response.Title = note.Title;
+        //        response.Description = note.Description;
+        //        response.Id = note.Id;
+        //        response.CreatedOn = note.CreatedOn;
+        //        return response;
+        //    }
+        //    catch (SqlException se)
+        //    {
+        //        Console.WriteLine(se.ToString());
+        //        throw;
+        //    }
+        //}
 
-        public List<NoteResponseModel> GetNotes(int userid)
-        {
-            try
-            {
-                var result = _db.notes.Where(p=>p.userId == userid && !p.isTrashed && !p.isArchieve);
-                List<NoteResponseModel>responseNotes = new List<NoteResponseModel>();
-                foreach (var note in result)
-                {
-                    NoteResponseModel noteResponse = new NoteResponseModel();
-                    noteResponse.Id = note.Id;
-                    noteResponse.Title = note.Title;
-                    noteResponse.Description = note.Description;
-                    noteResponse.CreatedOn = note.CreatedOn;
+        //public List<NoteResponseModel> GetNotes(int userid)
+        //{
+        //    try
+        //    {
+        //        var result = _db.notes.Where(p=>p.userId == userid && !p.isTrashed && !p.isArchieve);
+        //        List<NoteResponseModel>responseNotes = new List<NoteResponseModel>();
+        //        foreach (var note in result)
+        //        {
+        //            NoteResponseModel noteResponse = new NoteResponseModel();
+        //            noteResponse.Id = note.Id;
+        //            noteResponse.Title = note.Title;
+        //            noteResponse.Description = note.Description;
+        //            noteResponse.CreatedOn = note.CreatedOn;
 
-                    responseNotes.Add(noteResponse);
-                }
-                return responseNotes;
-            }
-            catch (SqlException se)
-            {
-                Console.WriteLine(se.ToString());
-                throw;
-            }
-        }
+        //            responseNotes.Add(noteResponse);
+        //        }
+        //        return responseNotes;
+        //    }
+        //    catch (SqlException se)
+        //    {
+        //        Console.WriteLine(se.ToString());
+        //        throw;
+        //    }
+        //}
 
         public NoteResponseModel removeNote(int id)
         {
@@ -233,62 +233,62 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public List<NoteResponseModel> getTrashed(int userid)
-        {
-            try
-            {
-                var result = _db.notes.Where(p => p.userId == userid && p.isTrashed==true).ToList();
-                if (!result.Any())
-                {
-                    throw new UserException("No trashed notes found", "EmptyTrashException");
-                }
-                List<NoteResponseModel> responseNotes = new List<NoteResponseModel>();
-                foreach (var note in result)
-                {
-                    NoteResponseModel noteResponse = new NoteResponseModel();
-                    noteResponse.Id = note.Id;
-                    noteResponse.Title = note.Title;
-                    noteResponse.Description = note.Description;
-                    noteResponse.CreatedOn = note.CreatedOn;
+        //public List<NoteResponseModel> getTrashed(int userid)
+        //{
+        //    try
+        //    {
+        //        var result = _db.notes.Where(p => p.userId == userid && p.isTrashed==true).ToList();
+        //        if (!result.Any())
+        //        {
+        //            throw new UserException("No trashed notes found", "EmptyTrashException");
+        //        }
+        //        List<NoteResponseModel> responseNotes = new List<NoteResponseModel>();
+        //        foreach (var note in result)
+        //        {
+        //            NoteResponseModel noteResponse = new NoteResponseModel();
+        //            noteResponse.Id = note.Id;
+        //            noteResponse.Title = note.Title;
+        //            noteResponse.Description = note.Description;
+        //            noteResponse.CreatedOn = note.CreatedOn;
 
-                    responseNotes.Add(noteResponse);
-                }
-                return responseNotes;
-            }
-            catch (SqlException se)
-            {
-                Console.WriteLine(se.ToString());
-                throw;
-            }
-        }
+        //            responseNotes.Add(noteResponse);
+        //        }
+        //        return responseNotes;
+        //    }
+        //    catch (SqlException se)
+        //    {
+        //        Console.WriteLine(se.ToString());
+        //        throw;
+        //    }
+        //}
 
-        public List<NoteResponseModel> getArchived(int userid)
-        {
-            try
-            {
-                var result = _db.notes.Where(p => p.userId == userid && p.isArchieve==true && p.isTrashed==false).ToList();
-                if (!result.Any())
-                {
-                    throw new UserException("No archived notes found", "EmptyArchiveException");
-                }
-                List<NoteResponseModel> responseNotes = new List<NoteResponseModel>();
-                foreach (var note in result)
-                {
-                    NoteResponseModel noteResponse = new NoteResponseModel();
-                    noteResponse.Id = note.Id;
-                    noteResponse.Title = note.Title;
-                    noteResponse.Description = note.Description;
-                    noteResponse.CreatedOn = note.CreatedOn;
+        //public List<NoteResponseModel> getArchived(int userid)
+        //{
+        //    try
+        //    {
+        //        var result = _db.notes.Where(p => p.userId == userid && p.isArchieve==true && p.isTrashed==false).ToList();
+        //        if (!result.Any())
+        //        {
+        //            throw new UserException("No archived notes found", "EmptyArchiveException");
+        //        }
+        //        List<NoteResponseModel> responseNotes = new List<NoteResponseModel>();
+        //        foreach (var note in result)
+        //        {
+        //            NoteResponseModel noteResponse = new NoteResponseModel();
+        //            noteResponse.Id = note.Id;
+        //            noteResponse.Title = note.Title;
+        //            noteResponse.Description = note.Description;
+        //            noteResponse.CreatedOn = note.CreatedOn;
 
-                    responseNotes.Add(noteResponse);
-                }
-                return responseNotes;
-            }
-            catch (SqlException se)
-            {
-                Console.WriteLine(se.ToString());
-                throw;
-            }
-        }
+        //            responseNotes.Add(noteResponse);
+        //        }
+        //        return responseNotes;
+        //    }
+        //    catch (SqlException se)
+        //    {
+        //        Console.WriteLine(se.ToString());
+        //        throw;
+        //    }
+        //}
     }
 }

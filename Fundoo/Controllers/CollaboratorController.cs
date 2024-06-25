@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Interface;
 using BusinessLayer.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer;
@@ -23,6 +24,7 @@ namespace Fundoo.Controllers
 
         [HttpPost]
         [Route("AddCollaborator")]
+        [Authorize]
         public IActionResult addCollaborator(CollaboratorModel model)
         {
             try
@@ -54,6 +56,7 @@ namespace Fundoo.Controllers
 
         [HttpGet]
         [Route("GetCollaborators")]
+        [Authorize]
         public IActionResult getCollaborators(int NoteId)
         {
             try
@@ -85,6 +88,7 @@ namespace Fundoo.Controllers
 
         [HttpDelete]
         [Route("RemoveCollaborator")]
+        [Authorize]
         public IActionResult removeCollaborator(string collaboratorEmail)
         {
             try

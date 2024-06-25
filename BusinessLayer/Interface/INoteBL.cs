@@ -10,9 +10,9 @@ namespace BusinessLayer.Interface
 {
     public interface INoteBL
     {
-        public List<NoteResponseModel> GetNotes(int id);
+        //public List<NoteResponseModel> GetNotes(int id);
 
-        public NoteResponseModel getNoteById(int id);
+        //public NoteResponseModel getNoteById(int id);
 
         public NoteResponseModel updateNoteById(int id, NoteInputModel note);
 
@@ -24,8 +24,8 @@ namespace BusinessLayer.Interface
 
         public NoteResponseModel trashed(int noteId);
 
-        public List<NoteResponseModel> getTrashed(int userid);
+        //public List<NoteResponseModel> getTrashed(int userid);
 
-        public List<NoteResponseModel> getArchived(int userid);
+        //public List<NoteResponseModel> getArchived(int userid);
     }
 }

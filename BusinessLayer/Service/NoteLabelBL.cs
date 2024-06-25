@@ -4,6 +4,7 @@ using RepositoryLayer.CustomException;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
+using RepositoryLayer.Utilities.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,18 @@ namespace BusinessLayer.Service
             try
             {
                 return noteLabelRL.AddLabelToNote(nl);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public List<NoteLabelsDTO> getArchivedWithLabels(int userid)
+        {
+            try
+            {
+                return noteLabelRL.getArchivedWithLabels(userid);
             }
             catch
             {
@@ -57,11 +70,23 @@ namespace BusinessLayer.Service
             }
         }
 
-        public List<(Note, List<Label>)> getNotesWithLabels(int userid)
+        public List<NoteLabelsDTO> getNotesWithLabels(int userid)
         {
             try
             {
                 return noteLabelRL.getNotesWithLabels(userid);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public List<NoteLabelsDTO> getTrashedWithLabels(int userid)
+        {
+            try
+            {
+                return noteLabelRL.getTrashedWithLabels(userid);
             }
             catch
             {
@@ -80,5 +105,18 @@ namespace BusinessLayer.Service
                 throw;
             }
         }
+
+        public NoteLabelsDTO getNoteWithLabelsByNoteId(int noteid)
+        {
+            try
+            {
+                return noteLabelRL.getNoteWithLabelsById(noteid);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }

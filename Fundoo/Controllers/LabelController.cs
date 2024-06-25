@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer;
@@ -20,6 +21,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpPost("createLabel")]
+        [Authorize]
         public IActionResult CreateLabel(string labelName)
         {
             try
@@ -49,6 +51,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpPut("updateLabel")]
+        [Authorize]
         public IActionResult UpdateLabel(int id, string newLabelName)
         {
             try
@@ -78,6 +81,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpGet("getById/{id}")]
+        [Authorize]
         public IActionResult GetLabelById(int id)
         {
             try
@@ -107,6 +111,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpGet("getallLabels")]
+        [Authorize]
         public IActionResult GetAllLabels()
         {
             try
@@ -136,6 +141,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpDelete("deleteById/{id}")]
+        [Authorize]
         public IActionResult DeleteLabel(int id)
         {
             try

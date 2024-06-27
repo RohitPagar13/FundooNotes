@@ -88,3 +88,10 @@ E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\System.Formats.Asn1.dll
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\obj\Debug\net7.0\Fundoo.MvcApplicationPartsAssemblyInfo.cs
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\Pipelines.Sockets.Unofficial.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\StackExchange.Redis.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\System.Diagnostics.PerformanceCounter.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll

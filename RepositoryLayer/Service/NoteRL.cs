@@ -6,24 +6,31 @@ using RepositoryLayer.Context;
 using RepositoryLayer.CustomException;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
+using RepositoryLayer.Utilities.DTO;
+using RepositoryLayer.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace RepositoryLayer.Service
 {
     public class NoteRL : INoteRL
     {
         private readonly FundooContext _db;
+        private readonly IDistributedCache _cache;
+        string cacheKey;
 
-        public NoteRL(FundooContext db)
+        public NoteRL(FundooContext _db, IDistributedCache cache)
         {
-            this._db = db;
+            this._db = _db;
+            _cache = cache;
+            cacheKey = $"{123}:GET_ALL_NOTES";
         }
-        public NoteResponseModel addNote(NoteInputModel note, int userId)
+        public NoteResponseModel addNote(NoteInputModel notemodel, int userId)
         {
             using (var transaction = _db.Database.BeginTransaction())
             {
@@ -32,14 +39,25 @@ namespace RepositoryLayer.Service
                     Note n = new Note();
                     NoteResponseModel response = new NoteResponseModel();
 
-                    n.Title=response.Title = note.Title;
-                    n.Description = response.Description= note.Description;
+                    n.Title=response.Title = notemodel.Title;
+                    n.Description = response.Description= notemodel.Description;
                     n.userId=userId;
+
                     _db.notes.Add(n);
                     _db.SaveChanges();
                     transaction.Commit();
                     response.Id = n.Id;
                     response.CreatedOn = n.CreatedOn;
+
+
+                    var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
+                    if (notesWithLabelsCache != null)
+                    {
+                        
+                        notesWithLabelsCache.Add(new NoteLabelsDTO() { Id = n.Id, Title = n.Title, CreatedOn = n.CreatedOn, Description = n.Description, isTrashed = n.isTrashed, isArchieve = n.isArchieve, userId = n.userId, Labels = null });
+                    }
+                    CacheService.SetToCache(cacheKey, _cache, notesWithLabelsCache);
+
                     return response;
                 }
                 catch (SqlException se)
@@ -76,6 +94,20 @@ namespace RepositoryLayer.Service
                     _db.notes.Update(n);
                     _db.SaveChanges();
                     transaction.Commit();
+
+                    var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
+                    if (notesWithLabelsCache != null)
+                    {
+                        foreach(var noteLabel in notesWithLabelsCache)
+                        {
+                            if(noteLabel.Id==noteId)
+                            {
+                                noteLabel.isArchieve=n.isArchieve;
+                            }
+                        }
+                    }
+                    CacheService.SetToCache(cacheKey, _cache, notesWithLabelsCache);
+
                     return response;
                 }
                 catch (SqlException se)
@@ -141,23 +173,36 @@ namespace RepositoryLayer.Service
             {
                 try
                 {
-                    Note? note = _db.notes.Find(id);
-                    if (note == null)
+                    Note? n = _db.notes.Find(id);
+                    if (n == null)
                     {
                         throw new UserException("Note with the specified ID does not exist.", "NoteNotFoundException");
                     }
-                    else if(note.isTrashed)
+                    else if(n.isTrashed)
                     {
                         throw new UserException("Unable to delete Note as Note already deleted", "NoteDeletedException");
                     }
                     NoteResponseModel response = new NoteResponseModel();
-                    response.Title = note.Title;
-                    response.Description = note.Description;
-                    response.Id = note.Id;
-                    response.CreatedOn = note.CreatedOn;
-                    _db.notes.Remove(note);
+                    response.Title = n.Title;
+                    response.Description = n.Description;
+                    response.Id = n.Id;
+                    response.CreatedOn = n.CreatedOn;
+                    _db.notes.Remove(n);
                     _db.SaveChanges();
                     transaction.Commit();
+
+                    var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
+                    if (notesWithLabelsCache != null)
+                    {
+                        var removenote = notesWithLabelsCache.FirstOrDefault(nl=>nl.Id== id);
+                        if (removenote == null)
+                        {
+                            return response;
+                        }
+                        notesWithLabelsCache.Remove(removenote);
+                    }
+                    CacheService.SetToCache(cacheKey, _cache, notesWithLabelsCache);
+
                     return response;
                 }
                 catch (SqlException se)
@@ -188,6 +233,20 @@ namespace RepositoryLayer.Service
                     _db.notes.Update(n);
                     _db.SaveChanges();
                     transaction.Commit();
+
+                    var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
+                    if (notesWithLabelsCache != null)
+                    {
+                        foreach (var noteLabel in notesWithLabelsCache)
+                        {
+                            if (noteLabel.Id == noteId)
+                            {
+                                noteLabel.isArchieve = n.isTrashed;
+                            }
+                        }
+                    }
+                    CacheService.SetToCache(cacheKey, _cache, notesWithLabelsCache);
+
                     return response;
                 }
                 catch (SqlException se)
@@ -199,7 +258,7 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public NoteResponseModel updateNoteById(int id, NoteInputModel note)
+        public NoteResponseModel updateNoteById(int id, NoteInputModel notemodel)
         {
             using (var transaction = _db.Database.BeginTransaction())
             {
@@ -215,13 +274,34 @@ namespace RepositoryLayer.Service
                         throw new UserException("Unable to Update Note as Note is deleted", "NoteDeletedException");
                     }
                     NoteResponseModel response = new NoteResponseModel();
-                    n.Title = response.Title = note.Title;
-                    n.Description = response.Description = note.Description;
+                    n.Title = response.Title = notemodel.Title;
+                    n.Description = response.Description = notemodel.Description;
                     _db.notes.Update(n);
                     _db.SaveChanges();
                     transaction.Commit();
                     response.Id = n.Id;
                     response.CreatedOn = n.CreatedOn;
+
+                    var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
+                    if (notesWithLabelsCache != null)
+                    {
+                        foreach (var noteLabel in notesWithLabelsCache)
+                        {
+                            if (noteLabel.Id == id)
+                            {
+                                noteLabel.Title = n.Title;
+                                noteLabel.Description = n.Description;
+                                noteLabel.Id = n.Id;
+                                noteLabel.CreatedOn = n.CreatedOn;
+                                noteLabel.isTrashed = n.isTrashed;
+                                noteLabel.isArchieve = n.isArchieve;
+                                noteLabel.userId = n.userId;
+                                noteLabel.Labels = null;
+                            }
+                        }
+                    }
+                    CacheService.SetToCache(cacheKey, _cache, notesWithLabelsCache);
+
                     return response;
                 }
                 catch (SqlException se)

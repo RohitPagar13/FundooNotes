@@ -15,6 +15,10 @@ namespace RepositoryLayer.Utilities.DTO
         public string? Description { get; set; }
 
         public DateTime CreatedOn { get; set; }
+        public bool isArchieve { get; set; } = false;
+        public bool isTrashed { get; set; } = false;
+
+        public int userId {  get; set; }
 
         public List<Label>? Labels { get; set; }
     }

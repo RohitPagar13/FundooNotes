@@ -112,6 +112,14 @@ namespace Fundoo
                 });
             });
 
+            //redis services
+            builder.Services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = builder.Configuration["RedisCacheOptions:Configuration"];
+                options.InstanceName = builder.Configuration["RedisCacheOptions:InstanceName"];
+            });
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

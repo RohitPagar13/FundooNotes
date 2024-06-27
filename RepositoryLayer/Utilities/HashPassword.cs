@@ -14,7 +14,7 @@ namespace RepositoryLayer.Utilities
         }
         public static bool verifyHash(string password, string hashPass)
         {
-            return BCrypt.Net.BCrypt.Verify(password,hashPass);
+            return BCrypt.Net.BCrypt.Verify(password, hashPass);
 
         }
     }

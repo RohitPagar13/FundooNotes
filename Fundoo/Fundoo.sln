@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundoo", "Fundoo.csproj", "{44DC1286-BF81-457E-9773-5B3314C7A1F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundoo", "Fundoo.csproj", "{44DC1286-BF81-457E-9773-5B3314C7A1F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "..\BusinessLayer\BusinessLayer.csproj", "{AF7E590D-C8DD-4E5E-81FD-1A68F8B399E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "..\BusinessLayer\BusinessLayer.csproj", "{AF7E590D-C8DD-4E5E-81FD-1A68F8B399E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryLayer", "..\RepositoryLayer\RepositoryLayer.csproj", "{100D87DF-5B4D-4741-8B20-F3FDE53F7074}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryLayer", "..\RepositoryLayer\RepositoryLayer.csproj", "{100D87DF-5B4D-4741-8B20-F3FDE53F7074}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLayer", "..\ModelLayer\ModelLayer.csproj", "{62E10D97-FF19-4A70-A895-477B7E0820C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelLayer", "..\ModelLayer\ModelLayer.csproj", "{62E10D97-FF19-4A70-A895-477B7E0820C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQConsumer", "..\RabbitMQConsumer\RabbitMQConsumer.csproj", "{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{62E10D97-FF19-4A70-A895-477B7E0820C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E10D97-FF19-4A70-A895-477B7E0820C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E10D97-FF19-4A70-A895-477B7E0820C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

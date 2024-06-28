@@ -7,7 +7,6 @@ using RepositoryLayer.CustomException;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Utilities.DTO;
-using RepositoryLayer.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +14,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Distributed;
+using RepositoryLayer.Utilities;
 
 namespace RepositoryLayer.Service
 {

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ModelLayer;
 using RepositoryLayer.CustomException;
+using RepositoryLayer.Utilities;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Headers;
 using System.Security.Claims;
@@ -20,11 +21,12 @@ namespace Fundoo.Controllers
     {
         private readonly IUserBL userBL;
         private readonly ResponseML responseML;
-
-        public UserController(IUserBL userBL)
+        private readonly RabbitMQProducer _rabbitMQProducer;
+        public UserController(IUserBL userBL, RabbitMQProducer rabbitMQProducer)
         {
             this.userBL = userBL;
             responseML = new ResponseML();
+            _rabbitMQProducer = rabbitMQProducer;
         }
 
         [HttpPost("Register")]
@@ -38,6 +40,7 @@ namespace Fundoo.Controllers
                     responseML.Success = true;
                     responseML.Message = "Created successfully with id: "+result.ID;
                     responseML.Data = result;
+                    _rabbitMQProducer.SendMessage(responseML.Message, result.Email, "Registration Successful");
                 }
                 return StatusCode(201, responseML);
             }
@@ -164,8 +167,9 @@ namespace Fundoo.Controllers
                 string Email = User.FindFirst("Email").Value;
                 userBL.ResetPassword(Email, password);
                     responseML.Success = true;
-                    responseML.Message = "Request Successful, password reset successfu;";
-                    return StatusCode(200, responseML); 
+                    responseML.Message = "Request Successful, password reset successful";
+                _rabbitMQProducer.SendMessage(responseML.Message, Email, "Password Reset Successful");
+                return StatusCode(200, responseML); 
             }
             catch (Exception ex)
             {

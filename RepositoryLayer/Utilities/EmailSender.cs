@@ -28,8 +28,11 @@ namespace RepositoryLayer.Utilities
             using var smtp = new SmtpClient();
             smtp.Connect(config.GetSection("EmailSettings:EmailHost").Value, 587, SecureSocketOptions.StartTls);
             string pass = Environment.GetEnvironmentVariable("fundoo");
-            smtp.Authenticate(config.GetSection("EmailSettings:EmailUsername").Value, pass);
-            smtp.Send(email);
+            if (pass != null)
+            {
+                smtp.Authenticate(config.GetSection("EmailSettings:EmailUsername").Value, pass);
+                smtp.Send(email);
+            }
             smtp.Disconnect(true);
         }
     }

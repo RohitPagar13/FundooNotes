@@ -95,3 +95,5 @@ E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\Pipelines.Sockets.Unofficia
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\StackExchange.Redis.dll
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\System.Diagnostics.PerformanceCounter.dll
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\Newtonsoft.Json.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\RabbitMQ.Client.dll

@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
+using RepositoryLayer.Utilities;
 using System.Text;
 
 namespace Fundoo
@@ -77,6 +78,8 @@ namespace Fundoo
 
             builder.Services.AddScoped<ICollaboratorRL, CollaboratorRL>();
             builder.Services.AddScoped<ICollaboratorBL, CollaboratorBL>();
+
+            builder.Services.AddScoped<RabbitMQProducer>();
 
             var jwtSettings = builder.Configuration.GetSection("Jwt");
             var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);

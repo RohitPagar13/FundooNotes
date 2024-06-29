@@ -144,12 +144,12 @@ namespace Fundoo.Controllers
 
         [HttpGet("getnoteswithlabels")]
         [Authorize]
-        public IActionResult GetNotesWithLabels()
+        public async Task<IActionResult> GetNotesWithLabels()
         {
             try
             {
                 int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
-                var result = noteLabelBL.getNotesWithLabels(userid);
+                var result = await noteLabelBL.getNotesWithLabels(userid);
 
                 responseML.Success = true;
                 responseML.Message = "Notes including Label fetched successfully";

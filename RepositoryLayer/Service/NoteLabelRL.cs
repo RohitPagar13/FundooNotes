@@ -176,7 +176,7 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public List<NoteLabelsDTO> getNotesWithLabels(int userid)
+        public async Task<List<NoteLabelsDTO>> getNotesWithLabels(int userid)
         {
             try
             {
@@ -184,7 +184,7 @@ namespace RepositoryLayer.Service
                 
                 if(notesWithLabelsCache == null)
                 {
-                    List<Note> notesall = _db.notes.Where(note => note.userId == userid).ToList();
+                    List<Note> notesall = await _db.notes.Where(note => note.userId == userid).ToListAsync();
 
                     if (notesall == null || notesall.Count == 0)
                     {

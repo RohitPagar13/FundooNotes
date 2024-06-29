@@ -19,7 +19,7 @@ namespace BusinessLayer.Interface
 
         public NoteLabel RemoveLabelFromNote(NoteLabel nl);
 
-        public List<NoteLabelsDTO> getNotesWithLabels(int userid);
+        public Task<List<NoteLabelsDTO>> getNotesWithLabels(int userid);
 
         public List<NoteLabelsDTO> getArchivedWithLabels(int userid);
 

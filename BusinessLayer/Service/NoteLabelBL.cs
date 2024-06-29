@@ -70,11 +70,11 @@ namespace BusinessLayer.Service
             }
         }
 
-        public List<NoteLabelsDTO> getNotesWithLabels(int userid)
+        public async Task<List<NoteLabelsDTO>> getNotesWithLabels(int userid)
         {
             try
             {
-                return noteLabelRL.getNotesWithLabels(userid);
+                return await noteLabelRL.getNotesWithLabels(userid);
             }
             catch
             {

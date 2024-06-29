@@ -1,5 +1,4 @@
-﻿using ModelLayer;
-using RepositoryLayer.Entities;
+﻿using RepositoryLayer.Entities;
 using RepositoryLayer.Utilities.DTO;
 using System;
 using System.Collections.Generic;
@@ -18,7 +17,7 @@ namespace RepositoryLayer.Interface
         public IEnumerable<Note>? GetNotesFromLabel(int LabelID);
 
         public NoteLabel RemoveLabelFromNote(NoteLabel nl);
-        public List<NoteLabelsDTO> getNotesWithLabels(int userid);
+        public  Task<List<NoteLabelsDTO>> getNotesWithLabels(int userid);
 
         public List<NoteLabelsDTO> getArchivedWithLabels(int userid);
 

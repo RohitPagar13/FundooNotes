@@ -76,7 +76,7 @@ namespace Fundoo.Controllers
                     responseML.Success = true;
                     responseML.Message = "Login successful";
                     responseML.Data = token;
-                    
+                    HttpContext.Session.SetString("Email",userLoginModel.Email);
                 }
                 return StatusCode(200, responseML);
             }
@@ -104,7 +104,13 @@ namespace Fundoo.Controllers
         {
             try
             {
-                var result = userBL.getUser(User.FindFirst("Email").Value);
+                string? email = HttpContext.Session.GetString("Email");
+                LoginResponse result;
+                if (email== null)
+                {
+                    email = User.FindFirst("Email").Value;
+                }
+                result = userBL.getUser(email);
                 if (result != null)
                 {
                     responseML.Success = true;

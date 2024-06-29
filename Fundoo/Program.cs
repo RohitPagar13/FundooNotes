@@ -122,6 +122,16 @@ namespace Fundoo
                 options.InstanceName = builder.Configuration["RedisCacheOptions:InstanceName"];
             });
 
+            //session
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(120);
+                options.Cookie.Name = "FundooCookie";
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
 
             var app = builder.Build();
 
@@ -142,6 +152,8 @@ namespace Fundoo
 
             app.UseCors("getUserPolicy");
             app.UseCors("default");
+
+            app.UseSession();
 
             app.MapControllers();
 

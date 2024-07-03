@@ -28,7 +28,6 @@ namespace RepositoryLayer.Service
         {
             this._db = _db;
             _cache = cache;
-            cacheKey= $"{123}:GET_ALL_NOTES";
         }
 
         public NoteLabel AddLabelToNote(NoteLabel nl)
@@ -40,7 +39,7 @@ namespace RepositoryLayer.Service
                      
                     var noteforId = _db.notes.FirstOrDefault(n => n.Id == nl.noteId);
                     var labelcheck = _db.labels.FirstOrDefault(l => l.Id == nl.labelId);
-
+                    
                     if (noteforId == null || labelcheck == null)
                     {
                         throw new UserException("incorrect noteId or labelId", "IncorrectDataException");
@@ -56,6 +55,7 @@ namespace RepositoryLayer.Service
                     _db.SaveChanges();
                     transaction.Commit();
 
+                    cacheKey = noteforId.userId.ToString();
                     var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                     if (notesWithLabelsCache != null)
                     {
@@ -129,7 +129,7 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public NoteLabel RemoveLabelFromNote(NoteLabel nl)
+        public NoteLabel RemoveLabelFromNote(NoteLabel nl,int userId)
         {
 
             using (var transaction = _db.Database.BeginTransaction())
@@ -147,6 +147,7 @@ namespace RepositoryLayer.Service
                     _db.SaveChanges();
                     transaction.Commit();
 
+                    cacheKey = userId.ToString();
                     var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                     if (notesWithLabelsCache != null)
                     {
@@ -180,6 +181,7 @@ namespace RepositoryLayer.Service
         {
             try
             {
+                cacheKey = userid.ToString();
                 var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                 
                 if(notesWithLabelsCache == null)
@@ -218,6 +220,7 @@ namespace RepositoryLayer.Service
         {
             try
             {
+                cacheKey = userid.ToString();
                 var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                 if (notesWithLabelsCache != null)
                 {
@@ -254,6 +257,7 @@ namespace RepositoryLayer.Service
         {
             try
             {
+                cacheKey = userid.ToString();
                 var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                 if (notesWithLabelsCache != null)
                 {
@@ -285,10 +289,11 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public NoteLabelsDTO getNoteWithLabelsById(int id)
+        public NoteLabelsDTO getNoteWithLabelsById(int id, int userid)
         {
             try
             {
+                cacheKey = userid.ToString();
                 var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                 if (notesWithLabelsCache != null)
                 {

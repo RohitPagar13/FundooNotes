@@ -118,7 +118,8 @@ namespace Fundoo.Controllers
         {
             try
             {
-                var result = noteLabelBL.RemoveLabelFromNote(model);
+                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+                var result = noteLabelBL.RemoveLabelFromNote(model, userid);
 
                 responseML.Success = true;
                 responseML.Message = "Label removed from note successfully";
@@ -242,7 +243,8 @@ namespace Fundoo.Controllers
         {
             try
             {
-                var result = noteLabelBL.getNoteWithLabelsByNoteId(id);
+                int userid = Convert.ToInt32(User.FindFirst("Id")?.Value);
+                var result = noteLabelBL.getNoteWithLabelsByNoteId(id, userid);
 
                 responseML.Success = true;
                 responseML.Message = "Notes including Label fetched successfully";

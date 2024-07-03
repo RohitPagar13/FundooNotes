@@ -4,6 +4,7 @@ using BusinessLayer.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using NLog.Web;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
@@ -16,34 +17,37 @@ namespace Fundoo
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-            builder.Services.AddControllers();
-
-            builder.Services.AddEndpointsApiExplorer();
-            
-           
-            builder.Services.AddSwaggerGen(options =>
+            var logger = NLog.LogManager.GetCurrentClassLogger();
+            try
             {
-                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                var builder = WebApplication.CreateBuilder(args);
+
+                builder.Services.AddControllers();
+
+                builder.Services.AddEndpointsApiExplorer();
+
+
+                builder.Services.AddSwaggerGen(options =>
                 {
-                    Title = "Fundoo API",
-                    Version = "v1"
-                });
+                    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                    {
+                        Title = "Fundoo API",
+                        Version = "v1"
+                    });
 
-                // Add Bearer token authentication
-                options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-                {  
-                    Name = "Authorization",
-                    Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
-                    Scheme = "bearer",
-                    BearerFormat = "JWT",
-                    In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-                    Description = "Please enter a valid token"
-                });
+                    // Add Bearer token authentication
+                    options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+                    {
+                        Name = "Authorization",
+                        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+                        Scheme = "bearer",
+                        BearerFormat = "JWT",
+                        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+                        Description = "Please enter a valid token"
+                    });
 
-                options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
-        {
+                    options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+            {
             {
                 new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
@@ -55,109 +59,121 @@ namespace Fundoo
                 },
                 new string[] {}
             }
-        });
             });
-
-
-            builder.Services.AddDbContext<FundooContext>(options =>
-            {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-            });
-
-            builder.Services.AddScoped<IUserRL, UserRL>();
-            builder.Services.AddScoped<IUserBL, UserBL>();
-
-            builder.Services.AddScoped<INoteRL, NoteRL>();
-            builder.Services.AddScoped<INoteBL, NoteBL>();
-
-            builder.Services.AddScoped<ILabelRL, LabelRL>();
-            builder.Services.AddScoped<ILabelBL, LabelBL>();
-
-            builder.Services.AddScoped<INoteLabelRL, NoteLabelRL>();
-            builder.Services.AddScoped<INoteLabelBL, NoteLabelBL>();
-
-            builder.Services.AddScoped<ICollaboratorRL, CollaboratorRL>();
-            builder.Services.AddScoped<ICollaboratorBL, CollaboratorBL>();
-
-            builder.Services.AddScoped<RabbitMQProducer>();
-
-            var jwtSettings = builder.Configuration.GetSection("Jwt");
-            var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
-
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.RequireHttpsMetadata = false;
-                options.SaveToken = true;
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidIssuer = jwtSettings["Issuer"],
-                    ValidAudience = jwtSettings["Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
-                };
-            });
-
-            builder.Services.AddCors(options =>
-            {
-                options.AddPolicy("getUserPolicy", builder =>
-                {
-                    builder.WithOrigins("http://localhost:5264")
-                    .WithMethods("GET")
-                    .WithHeaders("*");
                 });
-                options.AddPolicy("default", builder =>
+
+
+                builder.Services.AddDbContext<FundooContext>(options =>
                 {
-                    builder.AllowAnyOrigin();
-                    builder.AllowAnyMethod();
-                    builder.AllowAnyHeader();
+                    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
                 });
-            });
 
-            //redis services
-            builder.Services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = builder.Configuration["RedisCacheOptions:Configuration"];
-                options.InstanceName = builder.Configuration["RedisCacheOptions:InstanceName"];
-            });
+                builder.Services.AddScoped<IUserRL, UserRL>();
+                builder.Services.AddScoped<IUserBL, UserBL>();
 
-            //session
-            builder.Services.AddDistributedMemoryCache();
-            builder.Services.AddSession(options =>
-            {
-                options.IdleTimeout = TimeSpan.FromSeconds(120);
-                options.Cookie.Name = "FundooCookie";
-                options.Cookie.HttpOnly = true;
-                options.Cookie.IsEssential = true;
-            });
+                builder.Services.AddScoped<INoteRL, NoteRL>();
+                builder.Services.AddScoped<INoteBL, NoteBL>();
 
+                builder.Services.AddScoped<ILabelRL, LabelRL>();
+                builder.Services.AddScoped<ILabelBL, LabelBL>();
 
-            var app = builder.Build();
+                builder.Services.AddScoped<INoteLabelRL, NoteLabelRL>();
+                builder.Services.AddScoped<INoteLabelBL, NoteLabelBL>();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI(options =>
+                builder.Services.AddScoped<ICollaboratorRL, CollaboratorRL>();
+                builder.Services.AddScoped<ICollaboratorBL, CollaboratorBL>();
+
+                builder.Services.AddScoped<RabbitMQProducer>();
+
+                var jwtSettings = builder.Configuration.GetSection("Jwt");
+                var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
+
+                builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
                 {
-                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Fundoo API V1");
-                    options.RoutePrefix = string.Empty;
+                    options.RequireHttpsMetadata = false;
+                    options.SaveToken = true;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidIssuer = jwtSettings["Issuer"],
+                        ValidAudience = jwtSettings["Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(key)
+                    };
                 });
+
+                builder.Services.AddCors(options =>
+                {
+                    options.AddPolicy("getUserPolicy", builder =>
+                    {
+                        builder.WithOrigins("http://localhost:5264")
+                        .WithMethods("GET")
+                        .WithHeaders("*");
+                    });
+                    options.AddPolicy("default", builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                        builder.AllowAnyMethod();
+                        builder.AllowAnyHeader();
+                    });
+                });
+
+                //redis services
+                builder.Services.AddStackExchangeRedisCache(options =>
+                {
+                    options.Configuration = builder.Configuration["RedisCacheOptions:Configuration"];
+                    options.InstanceName = builder.Configuration["RedisCacheOptions:InstanceName"];
+                });
+
+                //session
+                builder.Services.AddDistributedMemoryCache();
+                builder.Services.AddSession(options =>
+                {
+                    options.IdleTimeout = TimeSpan.FromSeconds(120);
+                    options.Cookie.Name = "FundooCookie";
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.IsEssential = true;
+                });
+
+                //Nlog
+                builder.Logging.ClearProviders();
+                builder.Host.UseNLog();
+
+                var app = builder.Build();
+
+                // Configure the HTTP request pipeline.
+                if (app.Environment.IsDevelopment())
+                {
+                    app.UseSwagger();
+                    app.UseSwaggerUI(options =>
+                    {
+                        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Fundoo API V1");
+                        options.RoutePrefix = string.Empty;
+                    });
+                }
+
+
+                app.UseAuthentication();
+                app.UseAuthorization();
+
+                app.UseCors("getUserPolicy");
+                app.UseCors("default");
+
+                app.UseSession();
+
+                app.MapControllers();
+
+                app.Run();
             }
-
-
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.UseCors("getUserPolicy");
-            app.UseCors("default");
-
-            app.UseSession();
-
-            app.MapControllers();
-
-            app.Run();
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+            finally 
+            {
+                NLog.LogManager.Shutdown();
+            }
         }
     }
 }

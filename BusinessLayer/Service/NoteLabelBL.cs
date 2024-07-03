@@ -94,11 +94,11 @@ namespace BusinessLayer.Service
             }
         }
 
-        public NoteLabel RemoveLabelFromNote(NoteLabel nl)
+        public NoteLabel RemoveLabelFromNote(NoteLabel nl, int userid)
         {
             try
             {
-                return noteLabelRL.RemoveLabelFromNote(nl);
+                return noteLabelRL.RemoveLabelFromNote(nl, userid);
             }
             catch
             {
@@ -106,11 +106,11 @@ namespace BusinessLayer.Service
             }
         }
 
-        public NoteLabelsDTO getNoteWithLabelsByNoteId(int noteid)
+        public NoteLabelsDTO getNoteWithLabelsByNoteId(int noteid, int userid)
         {
             try
             {
-                return noteLabelRL.getNoteWithLabelsById(noteid);
+                return noteLabelRL.getNoteWithLabelsById(noteid, userid);
             }
             catch
             {

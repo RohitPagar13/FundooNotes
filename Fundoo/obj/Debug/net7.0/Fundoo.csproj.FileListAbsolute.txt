@@ -97,3 +97,7 @@ E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\System.Diagnostics.Performa
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\Newtonsoft.Json.dll
 E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\RabbitMQ.Client.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\nlog.config
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\NLog.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\NLog.Extensions.Logging.dll
+E:\BridgeLabz\ASP.net\Fundoo\Fundoo\bin\Debug\net7.0\NLog.Web.AspNetCore.dll

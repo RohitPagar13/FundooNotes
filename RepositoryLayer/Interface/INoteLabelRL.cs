@@ -16,13 +16,13 @@ namespace RepositoryLayer.Interface
 
         public IEnumerable<Note>? GetNotesFromLabel(int LabelID);
 
-        public NoteLabel RemoveLabelFromNote(NoteLabel nl);
+        public NoteLabel RemoveLabelFromNote(NoteLabel nl, int userid);
         public  Task<List<NoteLabelsDTO>> getNotesWithLabels(int userid);
 
         public List<NoteLabelsDTO> getArchivedWithLabels(int userid);
 
         public List<NoteLabelsDTO> getTrashedWithLabels(int userid);
 
-        public NoteLabelsDTO getNoteWithLabelsById(int id);
+        public NoteLabelsDTO getNoteWithLabelsById(int id, int userid);
     }
 }

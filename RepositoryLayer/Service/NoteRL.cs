@@ -28,7 +28,7 @@ namespace RepositoryLayer.Service
         {
             this._db = _db;
             _cache = cache;
-            cacheKey = $"{123}:GET_ALL_NOTES";
+            
         }
         public NoteResponseModel addNote(NoteInputModel notemodel, int userId)
         {
@@ -36,6 +36,7 @@ namespace RepositoryLayer.Service
             {
                 try
                 {
+                    cacheKey = userId.ToString();
                     Note n = new Note();
                     NoteResponseModel response = new NoteResponseModel();
 
@@ -94,6 +95,7 @@ namespace RepositoryLayer.Service
                     _db.notes.Update(n);
                     _db.SaveChanges();
                     transaction.Commit();
+                    cacheKey = n.userId.ToString();
 
                     var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                     if (notesWithLabelsCache != null)
@@ -191,6 +193,7 @@ namespace RepositoryLayer.Service
                     _db.SaveChanges();
                     transaction.Commit();
 
+                    cacheKey = n.userId.ToString();
                     var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                     if (notesWithLabelsCache != null)
                     {
@@ -234,6 +237,7 @@ namespace RepositoryLayer.Service
                     _db.SaveChanges();
                     transaction.Commit();
 
+                    cacheKey = n.userId.ToString();
                     var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                     if (notesWithLabelsCache != null)
                     {
@@ -282,6 +286,7 @@ namespace RepositoryLayer.Service
                     response.Id = n.Id;
                     response.CreatedOn = n.CreatedOn;
 
+                    cacheKey = n.userId.ToString();
                     var notesWithLabelsCache = CacheService.GetFromCache<List<NoteLabelsDTO>>(cacheKey, _cache);
                     if (notesWithLabelsCache != null)
                     {

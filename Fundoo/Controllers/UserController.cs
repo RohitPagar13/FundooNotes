@@ -22,11 +22,13 @@ namespace Fundoo.Controllers
         private readonly IUserBL userBL;
         private readonly ResponseML responseML;
         private readonly RabbitMQProducer _rabbitMQProducer;
-        public UserController(IUserBL userBL, RabbitMQProducer rabbitMQProducer)
+        private readonly ILogger<UserController> _logger;
+        public UserController(IUserBL userBL, RabbitMQProducer rabbitMQProducer, ILogger<UserController> logger)
         {
             this.userBL = userBL;
             responseML = new ResponseML();
             _rabbitMQProducer = rabbitMQProducer;
+            _logger = logger;
         }
 
         [HttpPost("Register")]
@@ -41,6 +43,7 @@ namespace Fundoo.Controllers
                     responseML.Message = "Created successfully with id: "+result.ID;
                     responseML.Data = result;
                     _rabbitMQProducer.SendMessage(responseML.Message, result.Email, "Registration Successful");
+                    _logger.LogInformation($"User Created with id: {result.ID}");
                 }
                 return StatusCode(201, responseML);
             }
@@ -77,6 +80,7 @@ namespace Fundoo.Controllers
                     responseML.Message = "Login successful";
                     responseML.Data = token;
                     HttpContext.Session.SetString("Email",userLoginModel.Email);
+                    _logger.LogInformation($"User logged in successful with email: {userLoginModel.Email}");
                 }
                 return StatusCode(200, responseML);
             }

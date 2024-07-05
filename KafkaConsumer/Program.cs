@@ -10,20 +10,21 @@ namespace KafkaConsumer
             var config = new ConsumerConfig
             {
                 BootstrapServers = "localhost:9092",
-                AutoOffsetReset = AutoOffsetReset.Earliest,
+                AutoOffsetReset = AutoOffsetReset.Latest,
                 ClientId = "KafkaConsumerClient",
                 GroupId = "Fundoo",
                 BrokerAddressFamily = BrokerAddressFamily.V4,
             };
-            using var consumer = new ConsumerBuilder<Ignore,string>(config).Build();
+
+            using var consumer = new ConsumerBuilder<Ignore, string>(config).Build();
 
             consumer.Assign(new List<TopicPartitionOffset>
-            {
-                new TopicPartitionOffset(topic, 1, Offset.Beginning),
-                new TopicPartitionOffset(topic, 2, Offset.Beginning)
-            });
+        {
+            new TopicPartitionOffset(topic, 1, Offset.Beginning),
+            new TopicPartitionOffset(topic, 2, Offset.Beginning)
+        });
 
-            CancellationTokenSource cts = new CancellationTokenSource();
+            using CancellationTokenSource cts = new CancellationTokenSource();
 
             Console.CancelKeyPress += (_, e) =>
             {
@@ -32,21 +33,34 @@ namespace KafkaConsumer
                 Console.WriteLine("Exiting");
             };
 
+            Console.WriteLine("Consumer 1: Press Enter to Exit");
+
             try
             {
-                while (true)
+                while (!cts.Token.IsCancellationRequested)
                 {
-                    var consumeResult = consumer.Consume();
-                    Console.WriteLine($"Message received from {consumeResult.TopicPartitionOffset}: {consumeResult.Message.Value}");
+                    try
+                    {
+                        var consumeResult = consumer.Consume(cts.Token);
+                        Console.WriteLine($"Message received from {consumeResult.TopicPartitionOffset}: {consumeResult.Message.Value}: Partition no: {consumeResult.Partition.Value}");
+                    }
+                    catch (ConsumeException ex)
+                    {
+                        Console.WriteLine($"Consume error: {ex.Error.Reason}");
+                    }
                 }
-            } 
-            catch (OperationCanceledException ex) {
-                Console.WriteLine(ex.Message );
-            } 
-            finally {
+            }
+            catch (OperationCanceledException)
+            {
+                Console.WriteLine("Consumption was cancelled.");
+            }
+            finally
+            {
                 consumer.Close();
+                Console.WriteLine("Consumer closed.");
             }
         }
+
         static void Main(string[] args)
         {
             ReadMessage();

@@ -10,16 +10,16 @@ namespace KafkaConsumer2
             var config = new ConsumerConfig
             {
                 BootstrapServers = "localhost:9092",
-                AutoOffsetReset = AutoOffsetReset.Earliest,
+                AutoOffsetReset = AutoOffsetReset.Latest,
                 ClientId = "KafkaConsumerClient2",
                 GroupId = "Fundoo",
                 BrokerAddressFamily = BrokerAddressFamily.V4,
             };
             using var consumer = new ConsumerBuilder<Ignore, string>(config).Build();
-
+            
             consumer.Assign(new List<TopicPartitionOffset>
             {
-                new TopicPartitionOffset(topic, 3, Offset.Beginning)
+                new TopicPartitionOffset(topic, 0, Offset.Beginning)
             });
 
             CancellationTokenSource cts = new CancellationTokenSource();
@@ -31,12 +31,23 @@ namespace KafkaConsumer2
                 Console.WriteLine("Exiting");
             };
 
+            Console.WriteLine("Consumer 2: Press Enter to Exit");
+
             try
             {
-                while (true)
+                
+
+                while (!cts.Token.IsCancellationRequested)
                 {
-                    var consumeResult = consumer.Consume();
-                    Console.WriteLine($"Message received from {consumeResult.TopicPartitionOffset}: {consumeResult.Message.Value}");
+                    try
+                    {
+                        var consumeResult = consumer.Consume(cts.Token);
+                        Console.WriteLine($"Message received from {consumeResult.TopicPartitionOffset}: {consumeResult.Message.Value}: Partition no: {consumeResult.Partition.Value}");
+                    }
+                    catch (ConsumeException ex)
+                    {
+                        Console.WriteLine($"Consume error: {ex.Error.Reason}");
+                    }
                 }
             }
             catch (OperationCanceledException ex)
@@ -46,6 +57,7 @@ namespace KafkaConsumer2
             finally
             {
                 consumer.Close();
+                Console.WriteLine("Consumer closed.");
             }
         }
         static void Main(string[] args)

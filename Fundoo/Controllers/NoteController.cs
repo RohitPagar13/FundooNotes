@@ -18,10 +18,11 @@ namespace Fundoo.Controllers
         private readonly ResponseML responseML;
         private readonly KafkaProduser kafkaProduser;
 
-        public NoteController(INoteBL noteBL)
+        public NoteController(INoteBL noteBL, KafkaProduser kafkaProduser)
         {
             this.noteBL = noteBL;
             responseML = new ResponseML();
+            this.kafkaProduser = kafkaProduser;
         }
 
         [HttpPost]
@@ -236,11 +237,11 @@ namespace Fundoo.Controllers
                     responseML.Message = "Request successful for Trash";
                     responseML.Data = result;
                     int partitionKey;
-                    if(NoteId%3==0)
+                    if (NoteId % 3 == 0)
                     {
                         partitionKey = 0;
                     }
-                    else if(NoteId%3==1)
+                    else if (NoteId % 3 == 1)
                     {
                         partitionKey = 1;
                     }

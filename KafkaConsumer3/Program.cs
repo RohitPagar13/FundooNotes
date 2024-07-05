@@ -10,8 +10,8 @@ namespace KafkaConsumer3
             var config = new ConsumerConfig
             {
                 BootstrapServers = "localhost:9092",
-                AutoOffsetReset = AutoOffsetReset.Earliest,
-                ClientId = "KafkaConsumerClient2",
+                AutoOffsetReset = AutoOffsetReset.Latest,
+                ClientId = "KafkaConsumerClient3",
                 GroupId = "Fundoo2",
                 BrokerAddressFamily = BrokerAddressFamily.V4,
             };
@@ -21,7 +21,7 @@ namespace KafkaConsumer3
             {
                 new TopicPartitionOffset(topic, 1, Offset.Beginning),
                 new TopicPartitionOffset(topic, 2, Offset.Beginning),
-                new TopicPartitionOffset(topic, 3, Offset.Beginning)
+                new TopicPartitionOffset(topic, 0, Offset.Beginning)
             });
 
             CancellationTokenSource cts = new CancellationTokenSource();
@@ -33,12 +33,21 @@ namespace KafkaConsumer3
                 Console.WriteLine("Exiting");
             };
 
+            Console.WriteLine("Consumer 3: Press Enter to Exit");
+
             try
             {
-                while (true)
+                while (!cts.Token.IsCancellationRequested)
                 {
-                    var consumeResult = consumer.Consume();
-                    Console.WriteLine($"Message received from {consumeResult.TopicPartitionOffset}: {consumeResult.Message.Value}");
+                    try
+                    {
+                        var consumeResult = consumer.Consume(cts.Token);
+                        Console.WriteLine($"Message received from {consumeResult.TopicPartitionOffset}: {consumeResult.Message.Value}: Partition no: {consumeResult.Partition.Value}");
+                    }
+                    catch (ConsumeException ex)
+                    {
+                        Console.WriteLine($"Consume error: {ex.Error.Reason}");
+                    }
                 }
             }
             catch (OperationCanceledException ex)
@@ -48,6 +57,7 @@ namespace KafkaConsumer3
             finally
             {
                 consumer.Close();
+                Console.WriteLine("Consumer closed.");
             }
         }
         static void Main(string[] args)

@@ -10,30 +10,64 @@ namespace RepositoryLayer.Utilities
 {
     public class KafkaProduser
     {
+        private readonly string bootstrapServers;
+        private readonly string topicName;
+        private readonly int numPartitions;
+        private readonly short replicationFactor;
+
+        public KafkaProduser(string bootstrapServers = "localhost:9092", string topicName = "Trashed", int numPartitions = 3, short replicationFactor = 1)
+        {
+            this.bootstrapServers = bootstrapServers;
+            this.topicName = topicName;
+            this.numPartitions = numPartitions;
+            this.replicationFactor = replicationFactor;
+
+            CreateTopicIfNotExists().GetAwaiter().GetResult();
+        }
+
+        private async Task CreateTopicIfNotExists()
+        {
+            using var adminClient = new AdminClientBuilder(new AdminClientConfig { BootstrapServers = bootstrapServers }).Build();
+            try
+            {
+                    var topicSpecification = new TopicSpecification
+                    {
+                        Name = topicName,
+                        NumPartitions = numPartitions,
+                        ReplicationFactor = replicationFactor
+                    };
+                    await adminClient.CreateTopicsAsync(new List<TopicSpecification> { topicSpecification });
+                    Console.WriteLine($"Topic '{topicName}' created.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred creating the topic: {ex.Message}");
+            }
+        }
+
         public async Task CreateMessageAsync(string input, string? email, int partitionKey)
         {
-            
             var config = new ProducerConfig
             {
-                BootstrapServers = "localhost:9092",
+                BootstrapServers = bootstrapServers,
                 ClientId = email,
                 BrokerAddressFamily = BrokerAddressFamily.V4,
             };
 
-            using var adminClient = new AdminClientBuilder(new AdminClientConfig { BootstrapServers = config.BootstrapServers }).Build();
-            var topicSpecification = new TopicSpecification
-            {
-                Name = "Trashed",
-                NumPartitions = 3,
-                ReplicationFactor = 1 // Adjust replication factor as needed
-            };
-            await adminClient.CreateTopicsAsync(new List<TopicSpecification> { topicSpecification });
+            using var producer = new ProducerBuilder<int, string>(config).Build();
 
-            using var producer = new ProducerBuilder<int,
-                string>(config).Build();
-            
-            var deliveryReport = await producer.ProduceAsync(new TopicPartition(topicSpecification.Name, new Partition(partitionKey)), new Message<int, string> { Key = partitionKey, Value = input });
-            Console.WriteLine($"Message delivered to {deliveryReport.TopicPartitionOffset}");
+            try
+            {
+                var deliveryReport = await producer.ProduceAsync(
+                    new TopicPartition(topicName, new Partition(partitionKey)),
+                    new Message<int, string> { Key = partitionKey, Value = input });
+
+                Console.WriteLine($"Message delivered to {deliveryReport.TopicPartitionOffset}");
+            }
+            catch (ProduceException<int, string> ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Error.Reason}");
+            }
         }
     }
 }

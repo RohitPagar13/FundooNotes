@@ -245,7 +245,7 @@ namespace RepositoryLayer.Service
                         {
                             if (noteLabel.Id == noteId)
                             {
-                                noteLabel.isArchieve = n.isTrashed;
+                                noteLabel.isTrashed = n.isTrashed;
                             }
                         }
                     }

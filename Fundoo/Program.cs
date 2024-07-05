@@ -1,6 +1,7 @@
 
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
+using Confluent.Kafka;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -139,6 +140,9 @@ namespace Fundoo
                 //Nlog
                 builder.Logging.ClearProviders();
                 builder.Host.UseNLog();
+
+                //kafka
+                builder.Services.AddScoped<KafkaProduser>();
 
                 var app = builder.Build();
 

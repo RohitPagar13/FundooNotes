@@ -111,6 +111,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "Confluent.Kafka": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[4.6.0, )"

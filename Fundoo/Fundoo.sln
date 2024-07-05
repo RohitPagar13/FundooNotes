@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryLayer", "..\Repos
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelLayer", "..\ModelLayer\ModelLayer.csproj", "{62E10D97-FF19-4A70-A895-477B7E0820C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQConsumer", "..\RabbitMQConsumer\RabbitMQConsumer.csproj", "{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQConsumer", "..\RabbitMQConsumer\RabbitMQConsumer.csproj", "{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumer", "..\KafkaConsumer\KafkaConsumer.csproj", "{69080EA8-C0A5-44EE-BCB5-612C9AFCF115}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumer2", "..\KafkaConsumer2\KafkaConsumer2.csproj", "{C11CA504-6AAD-4C20-BB76-50D8915FC6F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumer3", "..\KafkaConsumer3\KafkaConsumer3.csproj", "{FD64128B-F570-4018-BFB9-DA615AA6566A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6A2A2D6-A5E7-45FA-A3AC-4C084AC3AA15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69080EA8-C0A5-44EE-BCB5-612C9AFCF115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69080EA8-C0A5-44EE-BCB5-612C9AFCF115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69080EA8-C0A5-44EE-BCB5-612C9AFCF115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69080EA8-C0A5-44EE-BCB5-612C9AFCF115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C11CA504-6AAD-4C20-BB76-50D8915FC6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11CA504-6AAD-4C20-BB76-50D8915FC6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11CA504-6AAD-4C20-BB76-50D8915FC6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11CA504-6AAD-4C20-BB76-50D8915FC6F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD64128B-F570-4018-BFB9-DA615AA6566A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD64128B-F570-4018-BFB9-DA615AA6566A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD64128B-F570-4018-BFB9-DA615AA6566A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD64128B-F570-4018-BFB9-DA615AA6566A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

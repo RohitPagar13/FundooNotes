@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "c+mXifn3HE1wH5+6TL61JJCwdxgDqoKGqbe3kKlMuZ4shiE5Zih+VNptXgIAV4ZR8HtVvw/fKrBD4oIqC/XoLg==",
+  "success": true,
+  "projectFilePath": "E:\\BridgeLabz\\ASP.net\\Fundoo\\KafkaProduser\\KafkaConsumer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\confluent.kafka\\2.4.0\\confluent.kafka.2.4.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\librdkafka.redist\\2.4.0\\librdkafka.redist.2.4.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

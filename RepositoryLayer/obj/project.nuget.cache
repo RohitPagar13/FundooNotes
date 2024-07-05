@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0Rf9g2oi/GkiG3S0gPBRV3SXNX16KXBoktAnfWb7qCg0DsNTtSLabvfWLw6G3GsP7sjnSmeIpCuhsS7PYROTgg==",
+  "dgSpecHash": "H78eJmRAL9+3wjeYjCxtQ+uTZOYyAgVSwozPjU69dcPAXDupOPshJXfY9WowljtoZMXoCML3DaVrqHkN3jSX7g==",
   "success": true,
   "projectFilePath": "E:\\BridgeLabz\\ASP.net\\Fundoo\\RepositoryLayer\\RepositoryLayer.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,9 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\confluent.kafka\\2.4.0\\confluent.kafka.2.4.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\librdkafka.redist\\2.4.0\\librdkafka.redist.2.4.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\mailkit\\4.6.0\\mailkit.4.6.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

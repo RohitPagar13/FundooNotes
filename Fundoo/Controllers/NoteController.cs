@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer;
 using RepositoryLayer.CustomException;
+using RepositoryLayer.Utilities;
 
 namespace Fundoo.Controllers
 {
@@ -15,6 +16,7 @@ namespace Fundoo.Controllers
     {
         private readonly INoteBL noteBL;
         private readonly ResponseML responseML;
+        private readonly KafkaProduser kafkaProduser;
 
         public NoteController(INoteBL noteBL)
         {
@@ -222,7 +224,7 @@ namespace Fundoo.Controllers
         [HttpPut]
         [Route("Trash/{NoteId}")]
         [Authorize]
-        public IActionResult Trashed(int NoteId)
+        public async Task<IActionResult> Trashed(int NoteId)
         {
             try
             {
@@ -233,6 +235,20 @@ namespace Fundoo.Controllers
                     responseML.Success = true;
                     responseML.Message = "Request successful for Trash";
                     responseML.Data = result;
+                    int partitionKey;
+                    if(NoteId%3==0)
+                    {
+                        partitionKey = 0;
+                    }
+                    else if(NoteId%3==1)
+                    {
+                        partitionKey = 1;
+                    }
+                    else
+                    {
+                        partitionKey = 2;
+                    }
+                    await kafkaProduser.CreateMessageAsync(responseML.Message, User.FindFirst("Email")?.Value, partitionKey);
                 }
                 return StatusCode(200, responseML);
             }

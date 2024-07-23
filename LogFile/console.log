@@ -8076,3 +8076,965 @@ WHERE [n].[Id] = @__p_0, EventId=20101, EventName=Microsoft.EntityFrameworkCore.
 2024-07-05 17:13:22.6847|Info|Application is shutting down... | 
 2024-07-05 17:13:22.6847|Debug|Hosting stopping |EventId=3, EventName=Stopping 
 2024-07-05 17:13:22.6939|Debug|Hosting stopped |EventId=4, EventName=Stopped 
+2024-07-10 13:10:04.6166|Debug|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider |ModelBinderProviders=Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider, EventId=12, EventName=RegisteredModelBinderProviders 
+2024-07-10 13:10:04.9771|Debug|Hosting starting |EventId=1, EventName=Starting 
+2024-07-10 13:10:05.0853|Info|User profile is available. Using 'C:\Users\Lenovo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. |FullName=C:\Users\Lenovo\AppData\Local\ASP.NET\DataProtection-Keys, EventId=63, EventName=UsingProfileAsKeyRepositoryWithDPAPI 
+2024-07-10 13:10:05.0853|Debug|Reading data from file 'C:\Users\Lenovo\AppData\Local\ASP.NET\DataProtection-Keys\key-0af5b98d-c919-45ff-ac6b-d1d467193aca.xml'. |FullPath=C:\Users\Lenovo\AppData\Local\ASP.NET\DataProtection-Keys\key-0af5b98d-c919-45ff-ac6b-d1d467193aca.xml, EventId=37, EventName=ReadingDataFromFile 
+2024-07-10 13:10:05.2807|Debug|Reading data from file 'C:\Users\Lenovo\AppData\Local\ASP.NET\DataProtection-Keys\key-340ac79e-208a-46a2-a6ff-0a7cbb6d2714.xml'. |FullPath=C:\Users\Lenovo\AppData\Local\ASP.NET\DataProtection-Keys\key-340ac79e-208a-46a2-a6ff-0a7cbb6d2714.xml, EventId=37, EventName=ReadingDataFromFile 
+2024-07-10 13:10:05.3086|Debug|Reading data from file 'C:\Users\Lenovo\AppData\Local\ASP.NET\DataProtection-Keys\key-da74334d-6e7c-4f22-b543-8bcebc34a17c.xml'. |FullPath=C:\Users\Lenovo\AppData\Local\ASP.NET\DataProtection-Keys\key-da74334d-6e7c-4f22-b543-8bcebc34a17c.xml, EventId=37, EventName=ReadingDataFromFile 
+2024-07-10 13:10:05.3421|Debug|Found key {0af5b98d-c919-45ff-ac6b-d1d467193aca}. |KeyId=0af5b98d-c919-45ff-ac6b-d1d467193aca, EventId=18, EventName=FoundKey 
+2024-07-10 13:10:05.3488|Debug|Found key {340ac79e-208a-46a2-a6ff-0a7cbb6d2714}. |KeyId=340ac79e-208a-46a2-a6ff-0a7cbb6d2714, EventId=18, EventName=FoundKey 
+2024-07-10 13:10:05.3488|Debug|Found key {da74334d-6e7c-4f22-b543-8bcebc34a17c}. |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, EventId=18, EventName=FoundKey 
+2024-07-10 13:10:05.3488|Debug|Considering key {da74334d-6e7c-4f22-b543-8bcebc34a17c} with expiration date 2024-09-08 08:34:53Z as default key. |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, ExpirationDate=09/08/2024 08:34:53 +00:00, EventId=13, EventName=ConsideringKeyWithExpirationDateAsDefaultKey 
+2024-07-10 13:10:05.3669|Debug|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 |FromType=Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, ToType=Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2024-07-10 13:10:05.3669|Debug|Decrypting secret element using Windows DPAPI. |EventId=51, EventName=DecryptingSecretElementUsingWindowsDPAPI 
+2024-07-10 13:10:05.3669|Debug|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 |FromType=Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, ToType=Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2024-07-10 13:10:05.3801|Debug|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC. |EncryptionAlgorithm=AES, EventId=4, EventName=OpeningCNGAlgorithmFromProviderWithChainingModeCBC 
+2024-07-10 13:10:05.3801|Debug|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC. |HashAlgorithm=SHA256, EventId=3, EventName=OpeningCNGAlgorithmFromProviderWithHMAC 
+2024-07-10 13:10:05.3801|Debug|Using key {da74334d-6e7c-4f22-b543-8bcebc34a17c} as the default key. |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, EventId=2, EventName=UsingKeyAsDefaultKey 
+2024-07-10 13:10:05.3801|Debug|Key ring with default key {da74334d-6e7c-4f22-b543-8bcebc34a17c} was loaded during application startup. |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, EventId=65, EventName=KeyRingWasLoadedOnStartup 
+2024-07-10 13:10:05.9203|Info|Now listening on: http://localhost:5255 |address=http://localhost:5255, EventId=14, EventName=ListeningOnAddress 
+2024-07-10 13:10:05.9203|Debug|Loaded hosting startup assembly Fundoo |assemblyName=Fundoo, EventId=13, EventName=HostingStartupAssemblyLoaded 
+2024-07-10 13:10:05.9203|Debug|Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh |assemblyName=Microsoft.AspNetCore.Watch.BrowserRefresh, EventId=13, EventName=HostingStartupAssemblyLoaded 
+2024-07-10 13:10:05.9203|Debug|Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net |assemblyName=Microsoft.WebTools.BrowserLink.Net, EventId=13, EventName=HostingStartupAssemblyLoaded 
+2024-07-10 13:10:05.9203|Info|Application started. Press Ctrl+C to shut down. | 
+2024-07-10 13:10:05.9203|Info|Hosting environment: Development |EnvName=Development 
+2024-07-10 13:10:05.9203|Info|Content root path: E:\BridgeLabz\ASP.net\Fundoo\Fundoo |ContentRoot=E:\BridgeLabz\ASP.net\Fundoo\Fundoo 
+2024-07-10 13:10:05.9203|Debug|Hosting started |EventId=2, EventName=Started 
+2024-07-10 13:10:06.0256|Debug|Connection id "0HN50ME260BTP" received FIN. |ConnectionId=0HN50ME260BTP, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:10:06.0256|Debug|Connection id "0HN50ME260BTP" accepted. |ConnectionId=0HN50ME260BTP, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:10:06.0256|Debug|Connection id "0HN50ME260BTP" started. |ConnectionId=0HN50ME260BTP, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:10:06.0433|Debug|Connection id "0HN50ME260BTP" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BTP, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:10:06.0433|Debug|Connection id "0HN50ME260BTP" disconnecting. |ConnectionId=0HN50ME260BTP, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:10:06.0433|Debug|Connection id "0HN50ME260BTP" stopped. |ConnectionId=0HN50ME260BTP, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:10:06.2631|Debug|Connection id "0HN50ME260BTQ" accepted. |ConnectionId=0HN50ME260BTQ, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:10:06.2631|Debug|Connection id "0HN50ME260BTQ" started. |ConnectionId=0HN50ME260BTQ, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:10:06.2631|Debug|Connection id "0HN50ME260BTR" accepted. |ConnectionId=0HN50ME260BTR, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:10:06.2631|Debug|Connection id "0HN50ME260BTR" started. |ConnectionId=0HN50ME260BTR, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:10:06.3773|Info|Request starting HTTP/1.1 GET http://localhost:5255/index.html - - |Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/index.html, EventId=1 
+2024-07-10 13:10:06.4447|Debug|Wildcard detected, all requests with hosts will be allowed. | 
+2024-07-10 13:10:06.4447|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:10:06.4775|Debug|No candidates found for the request path '/index.html' |Path=/index.html, EventId=1000, EventName=CandidatesNotFound 
+2024-07-10 13:10:06.4775|Debug|Request did not match any endpoints |EventId=2, EventName=MatchFailure 
+2024-07-10 13:10:06.5745|Debug|Response markup is scheduled to include browser refresh script injection. |EventId=1, EventName=SetUpResponseForBrowserRefresh 
+2024-07-10 13:10:06.8105|Debug|Response markup was updated to include browser refresh script injection. |EventId=2, EventName=BrowserConfiguredForRefreshes 
+2024-07-10 13:10:06.8105|Debug|Connection id "0HN50ME260BTS" accepted. |ConnectionId=0HN50ME260BTS, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:10:06.8105|Debug|Connection id "0HN50ME260BTQ" completed keep alive response. |ConnectionId=0HN50ME260BTQ, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:10:06.8105|Debug|Connection id "0HN50ME260BTS" started. |ConnectionId=0HN50ME260BTS, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:10:06.8105|Debug|Connection id "0HN50ME260BTT" accepted. |ConnectionId=0HN50ME260BTT, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:10:06.8105|Debug|Connection id "0HN50ME260BTT" started. |ConnectionId=0HN50ME260BTT, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:10:06.8105|Info|Request starting HTTP/1.1 GET http://localhost:5255/swagger-ui-bundle.js - - |Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/swagger-ui-bundle.js, EventId=1 
+2024-07-10 13:10:06.8105|Info|Request starting HTTP/1.1 GET http://localhost:5255/swagger-ui.css - - |Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/swagger-ui.css, EventId=1 
+2024-07-10 13:10:06.8105|Info|Request starting HTTP/1.1 GET http://localhost:5255/swagger-ui-standalone-preset.js - - |Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/swagger-ui-standalone-preset.js, EventId=1 
+2024-07-10 13:10:06.8105|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:10:06.8105|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:10:06.8105|Info|Request finished HTTP/1.1 GET http://localhost:5255/index.html - - - 200 - text/html;charset=utf-8 438.8714ms |ElapsedMilliseconds=438.8714, StatusCode=200, ContentType=text/html;charset=utf-8, Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/index.html, EventId=2 
+2024-07-10 13:10:06.8105|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:10:06.8170|Debug|No candidates found for the request path '/swagger-ui-bundle.js' |Path=/swagger-ui-bundle.js, EventId=1000, EventName=CandidatesNotFound 
+2024-07-10 13:10:06.8170|Debug|No candidates found for the request path '/swagger-ui-standalone-preset.js' |Path=/swagger-ui-standalone-preset.js, EventId=1000, EventName=CandidatesNotFound 
+2024-07-10 13:10:06.8170|Debug|No candidates found for the request path '/swagger-ui.css' |Path=/swagger-ui.css, EventId=1000, EventName=CandidatesNotFound 
+2024-07-10 13:10:06.8170|Debug|Request did not match any endpoints |EventId=2, EventName=MatchFailure 
+2024-07-10 13:10:06.8170|Debug|Request did not match any endpoints |EventId=2, EventName=MatchFailure 
+2024-07-10 13:10:06.8170|Debug|Request did not match any endpoints |EventId=2, EventName=MatchFailure 
+2024-07-10 13:10:06.8443|Trace|Range header's value is empty. | 
+2024-07-10 13:10:06.8443|Trace|Range header's value is empty. | 
+2024-07-10 13:10:06.8443|Trace|Range header's value is empty. | 
+2024-07-10 13:10:06.8443|Info|The file /swagger-ui.css was not modified |Path=/swagger-ui.css, EventId=6, EventName=FileNotModified 
+2024-07-10 13:10:06.8443|Info|The file /swagger-ui-standalone-preset.js was not modified |Path=/swagger-ui-standalone-preset.js, EventId=6, EventName=FileNotModified 
+2024-07-10 13:10:06.8443|Info|The file /swagger-ui-bundle.js was not modified |Path=/swagger-ui-bundle.js, EventId=6, EventName=FileNotModified 
+2024-07-10 13:10:06.8534|Debug|Handled. Status code: 304 File: /swagger-ui-standalone-preset.js |StatusCode=304, Path=/swagger-ui-standalone-preset.js, EventId=8, EventName=Handled 
+2024-07-10 13:10:06.8534|Debug|Handled. Status code: 304 File: /swagger-ui-bundle.js |StatusCode=304, Path=/swagger-ui-bundle.js, EventId=8, EventName=Handled 
+2024-07-10 13:10:06.8534|Debug|Handled. Status code: 304 File: /swagger-ui.css |StatusCode=304, Path=/swagger-ui.css, EventId=8, EventName=Handled 
+2024-07-10 13:10:06.8534|Debug|Connection id "0HN50ME260BTU" accepted. |ConnectionId=0HN50ME260BTU, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:10:06.8534|Debug|Connection id "0HN50ME260BTU" started. |ConnectionId=0HN50ME260BTU, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:10:06.8534|Debug|Connection id "0HN50ME260BTT" completed keep alive response. |ConnectionId=0HN50ME260BTT, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:10:06.8534|Debug|Connection id "0HN50ME260BTR" completed keep alive response. |ConnectionId=0HN50ME260BTR, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:10:06.8534|Debug|Connection id "0HN50ME260BTS" completed keep alive response. |ConnectionId=0HN50ME260BTS, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:10:06.8534|Info|Request starting HTTP/1.1 GET http://localhost:5255/_vs/browserLink - - |Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/_vs/browserLink, EventId=1 
+2024-07-10 13:10:06.8534|Info|Request finished HTTP/1.1 GET http://localhost:5255/swagger-ui-standalone-preset.js - - - 304 - text/javascript 38.2956ms |ElapsedMilliseconds=38.2956, StatusCode=304, ContentType=text/javascript, Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/swagger-ui-standalone-preset.js, EventId=2 
+2024-07-10 13:10:06.8534|Info|Request starting HTTP/1.1 GET http://localhost:5255/_framework/aspnetcore-browser-refresh.js - - |Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/_framework/aspnetcore-browser-refresh.js, EventId=1 
+2024-07-10 13:10:06.8534|Info|Request finished HTTP/1.1 GET http://localhost:5255/swagger-ui.css - - - 304 - text/css 48.4219ms |ElapsedMilliseconds=48.4219, StatusCode=304, ContentType=text/css, Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/swagger-ui.css, EventId=2 
+2024-07-10 13:10:06.8534|Info|Request finished HTTP/1.1 GET http://localhost:5255/swagger-ui-bundle.js - - - 304 - text/javascript 48.6467ms |ElapsedMilliseconds=48.6467, StatusCode=304, ContentType=text/javascript, Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/swagger-ui-bundle.js, EventId=2 
+2024-07-10 13:10:06.8674|Debug|Connection id "0HN50ME260BTQ" completed keep alive response. |ConnectionId=0HN50ME260BTQ, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:10:06.8674|Info|Request finished HTTP/1.1 GET http://localhost:5255/_framework/aspnetcore-browser-refresh.js - - - 200 12344 application/javascript;+charset=utf-8 11.5740ms |ElapsedMilliseconds=11.574, StatusCode=200, ContentType=application/javascript; charset=utf-8, ContentLength=12344, Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/_framework/aspnetcore-browser-refresh.js, EventId=2 
+2024-07-10 13:10:06.9112|Debug|Connection id "0HN50ME260BTU" completed keep alive response. |ConnectionId=0HN50ME260BTU, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:10:06.9112|Info|Request finished HTTP/1.1 GET http://localhost:5255/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 57.1314ms |ElapsedMilliseconds=57.1314, StatusCode=200, ContentType=text/javascript; charset=UTF-8, Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/_vs/browserLink, EventId=2 
+2024-07-10 13:10:07.2048|Info|Request starting HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - - |Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/swagger/v1/swagger.json, EventId=1 
+2024-07-10 13:10:07.2048|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:10:07.2048|Debug|No candidates found for the request path '/swagger/v1/swagger.json' |Path=/swagger/v1/swagger.json, EventId=1000, EventName=CandidatesNotFound 
+2024-07-10 13:10:07.2048|Debug|Request did not match any endpoints |EventId=2, EventName=MatchFailure 
+2024-07-10 13:10:07.3654|Debug|Connection id "0HN50ME260BTU" completed keep alive response. |ConnectionId=0HN50ME260BTU, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:10:07.3654|Info|Request finished HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 161.0215ms |ElapsedMilliseconds=161.0215, StatusCode=200, ContentType=application/json;charset=utf-8, Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/swagger/v1/swagger.json, EventId=2 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTT" received FIN. |ConnectionId=0HN50ME260BTT, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTS" received FIN. |ConnectionId=0HN50ME260BTS, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTR" received FIN. |ConnectionId=0HN50ME260BTR, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTQ" received FIN. |ConnectionId=0HN50ME260BTQ, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTU" received FIN. |ConnectionId=0HN50ME260BTU, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTT" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BTT, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTS" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BTS, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTR" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BTR, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTT" disconnecting. |ConnectionId=0HN50ME260BTT, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTS" disconnecting. |ConnectionId=0HN50ME260BTS, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTU" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BTU, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTQ" disconnecting. |ConnectionId=0HN50ME260BTQ, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTR" disconnecting. |ConnectionId=0HN50ME260BTR, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTQ" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BTQ, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTU" disconnecting. |ConnectionId=0HN50ME260BTU, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTU" stopped. |ConnectionId=0HN50ME260BTU, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTS" stopped. |ConnectionId=0HN50ME260BTS, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTT" stopped. |ConnectionId=0HN50ME260BTT, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:10:07.4832|Debug|Connection id "0HN50ME260BTR" stopped. |ConnectionId=0HN50ME260BTR, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:10:07.4906|Debug|Connection id "0HN50ME260BTQ" stopped. |ConnectionId=0HN50ME260BTQ, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:10:39.8088|Debug|Connection id "0HN50ME260BTV" accepted. |ConnectionId=0HN50ME260BTV, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:10:39.8088|Debug|Connection id "0HN50ME260BTV" started. |ConnectionId=0HN50ME260BTV, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:10:39.8088|Info|Request starting HTTP/1.1 POST http://localhost:5255/api/User/Login application/json 67 |Protocol=HTTP/1.1, Method=POST, ContentType=application/json, ContentLength=67, Scheme=http, Host=localhost:5255, Path=/api/User/Login, EventId=1 
+2024-07-10 13:10:39.8088|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:10:39.8088|Debug|1 candidate(s) found for the request path '/api/User/Login' |CandidateCount=1, Path=/api/User/Login, EventId=1001, EventName=CandidatesFound 
+2024-07-10 13:10:39.8229|Debug|Endpoint 'Fundoo.Controllers.UserController.LoginUser (Fundoo)' with route pattern 'api/User/Login' is valid for the request path '/api/User/Login' |Endpoint=Fundoo.Controllers.UserController.LoginUser (Fundoo), RoutePattern=api/User/Login, Path=/api/User/Login, EventId=1005, EventName=CandidateValid 
+2024-07-10 13:10:39.8229|Debug|Request matched endpoint 'Fundoo.Controllers.UserController.LoginUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.LoginUser (Fundoo), EventId=1, EventName=MatchSuccess 
+2024-07-10 13:10:39.8229|Debug|Static files was skipped as the request already matched an endpoint. |EventId=15, EventName=EndpointMatched 
+2024-07-10 13:10:41.6475|Debug|AuthenticationScheme: Bearer was not authenticated. |AuthenticationScheme=Bearer, EventId=9, EventName=AuthenticationSchemeNotAuthenticated 
+2024-07-10 13:10:41.6544|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:10:41.6544|Info|CORS policy execution failed. |EventId=5, EventName=PolicyFailure 
+2024-07-10 13:10:41.6544|Info|Request origin http://localhost:5255 does not have permission to access the resource. |origin=http://localhost:5255, EventId=6, EventName=OriginNotAllowed 
+2024-07-10 13:10:41.6544|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:10:41.6544|Info|CORS policy execution successful. |EventId=4, EventName=PolicySuccess 
+2024-07-10 13:10:41.6757|Trace|Performing protect operation to key {da74334d-6e7c-4f22-b543-8bcebc34a17c} with purposes ('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'). |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, Purposes=('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'), EventId=31, EventName=PerformingProtectOperationToKeyWithPurposes 
+2024-07-10 13:10:41.6757|Info|Executing endpoint 'Fundoo.Controllers.UserController.LoginUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.LoginUser (Fundoo) 
+2024-07-10 13:10:41.7205|Info|Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult LoginUser(ModelLayer.UserLoginModel) on controller Fundoo.Controllers.UserController (Fundoo). |RouteData={action = "LoginUser", controller = "User"}, MethodInfo=Microsoft.AspNetCore.Mvc.ActionResult LoginUser(ModelLayer.UserLoginModel), Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=102, EventName=ControllerActionExecuting 
+2024-07-10 13:10:41.7205|Debug|Execution plan of authorization filters (in the following order): None |FilterType=authorization, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:10:41.7205|Debug|Execution plan of resource filters (in the following order): None |FilterType=resource, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:10:41.7243|Debug|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) |FilterType=action, Filters="Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:10:41.7243|Debug|Execution plan of exception filters (in the following order): None |FilterType=exception, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:10:41.7243|Debug|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) |FilterType=result, Filters="Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:10:41.7243|Debug|Executing controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=1, EventName=ControllerFactoryExecuting 
+2024-07-10 13:10:42.9297|Debug|An 'IServiceProvider' was created for internal use by Entity Framework. |EventId=10401, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ServiceProviderCreated 
+2024-07-10 13:10:43.0043|Debug|Executed controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=2, EventName=ControllerFactoryExecuted 
+2024-07-10 13:10:43.0043|Debug|Attempting to bind parameter 'userLoginModel' of type 'ModelLayer.UserLoginModel' ... |ParameterName=userLoginModel, ModelType=ModelLayer.UserLoginModel, EventId=22, EventName=AttemptingToBindParameter 
+2024-07-10 13:10:43.0191|Debug|Attempting to bind parameter 'userLoginModel' of type 'ModelLayer.UserLoginModel' using the name '' in request data ... |ParameterName=userLoginModel, ModelType=ModelLayer.UserLoginModel, EventId=44, EventName=AttemptingToBindParameterModel 
+2024-07-10 13:10:43.0191|Debug|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'. |InputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter, ContentType=application/json, EventId=1, EventName=InputFormatterSelected 
+2024-07-10 13:10:43.0399|Debug|Connection id "0HN50ME260BTV", Request id "0HN50ME260BTV:00000001": started reading request body. |ConnectionId=0HN50ME260BTV, TraceIdentifier=0HN50ME260BTV:00000001, EventId=25, EventName=RequestBodyStart 
+2024-07-10 13:10:43.0399|Debug|Connection id "0HN50ME260BTV", Request id "0HN50ME260BTV:00000001": done reading request body. |ConnectionId=0HN50ME260BTV, TraceIdentifier=0HN50ME260BTV:00000001, EventId=26, EventName=RequestBodyDone 
+2024-07-10 13:10:43.0515|Debug|JSON input formatter succeeded, deserializing to type 'ModelLayer.UserLoginModel' |TypeName=ModelLayer.UserLoginModel, EventId=2, EventName=SystemTextJsonInputSuccess 
+2024-07-10 13:10:43.0515|Debug|Done attempting to bind parameter 'userLoginModel' of type 'ModelLayer.UserLoginModel'. |ParameterName=userLoginModel, ModelType=ModelLayer.UserLoginModel, EventId=45, EventName=DoneAttemptingToBindParameterModel 
+2024-07-10 13:10:43.0515|Debug|Done attempting to bind parameter 'userLoginModel' of type 'ModelLayer.UserLoginModel'. |ParameterName=userLoginModel, ModelType=ModelLayer.UserLoginModel, EventId=23, EventName=DoneAttemptingToBindParameter 
+2024-07-10 13:10:43.0515|Debug|Attempting to validate the bound parameter 'userLoginModel' of type 'ModelLayer.UserLoginModel' ... |ParameterName=userLoginModel, ModelType=ModelLayer.UserLoginModel, EventId=26, EventName=AttemptingToValidateParameter 
+2024-07-10 13:10:43.0686|Debug|Done attempting to validate the bound parameter 'userLoginModel' of type 'ModelLayer.UserLoginModel'. |ParameterName=userLoginModel, ModelType=ModelLayer.UserLoginModel, EventId=27, EventName=DoneAttemptingToValidateParameter 
+2024-07-10 13:10:43.0686|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:10:43.0686|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:10:43.0686|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:10:43.0686|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:10:43.0686|Info|Executing action method Fundoo.Controllers.UserController.LoginUser (Fundoo) - Validation state: Valid |ActionName=Fundoo.Controllers.UserController.LoginUser (Fundoo), ValidationState=Valid, EventId=101, EventName=ActionMethodExecuting 
+2024-07-10 13:10:43.0686|Trace|Executing action method Fundoo.Controllers.UserController.LoginUser (Fundoo) with arguments (ModelLayer.UserLoginModel) |ActionName=Fundoo.Controllers.UserController.LoginUser (Fundoo), Arguments="ModelLayer.UserLoginModel", EventId=102, EventName=ActionMethodExecutingWithArguments 
+2024-07-10 13:10:44.0534|Debug|The index {'noteId'} was not created on entity type 'NoteLabel' as the properties are already covered by the index {'noteId', 'labelId'}. |redundantIndexProperties={'noteId'}, firstEntityType=NoteLabel, otherIndexProperties={'noteId', 'labelId'}, EventId=10601, EventName=Microsoft.EntityFrameworkCore.Model.RedundantIndexRemoved 
+2024-07-10 13:10:44.4053|Debug|Entity Framework Core 7.0.20 initialized 'FundooContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.20' with options: None |version=7.0.20, contextType=FundooContext, provider=Microsoft.EntityFrameworkCore.SqlServer, providerVersion=7.0.20, options=None, EventId=10403, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextInitialized 
+2024-07-10 13:10:44.5157|Debug|Compiling query expression: 
+'DbSet<User>()
+    .Where(user => user.Email.Equals(__loginModel_Email_0))
+    .FirstOrDefault()' |newline=
+, queryExpression=DbSet<User>()
+    .Where(user => user.Email.Equals(__loginModel_Email_0))
+    .FirstOrDefault(), EventId=10111, EventName=Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting 
+2024-07-10 13:10:44.7858|Debug|Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<User>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.BirthDate (string) Required, 1], [Property: User.Email (string) Required, 2], [Property: User.FirstName (string) Required, 3], [Property: User.LastName (string) MaxLength(50), 4], [Property: User.Password (string) Required, 5], [Property: User.Phone (string) Required, 6] }
+        SELECT TOP(1) u.Id, u.BirthDate, u.Email, u.FirstName, u.LastName, u.Password, u.Phone
+        FROM users AS u
+        WHERE u.Email == @__loginModel_Email_0), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+    RepositoryLayer.Context.FundooContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()' |newline=
+, plan=queryContext => new SingleQueryingEnumerable<User>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.BirthDate (string) Required, 1], [Property: User.Email (string) Required, 2], [Property: User.FirstName (string) Required, 3], [Property: User.LastName (string) MaxLength(50), 4], [Property: User.Password (string) Required, 5], [Property: User.Phone (string) Required, 6] }
+        SELECT TOP(1) u.Id, u.BirthDate, u.Email, u.FirstName, u.LastName, u.Password, u.Phone
+        FROM users AS u
+        WHERE u.Email == @__loginModel_Email_0), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+    RepositoryLayer.Context.FundooContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault(), EventId=10107, EventName=Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned 
+2024-07-10 13:10:44.8234|Debug|Creating DbCommand for 'ExecuteReader'. |executionType=ExecuteReader, EventId=20103, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreating 
+2024-07-10 13:10:44.8234|Debug|Creating DbConnection. |EventId=20005, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreating 
+2024-07-10 13:10:44.8609|Debug|Created DbConnection. (30ms). |elapsed=30, EventId=20006, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreated 
+2024-07-10 13:10:44.8725|Debug|Created DbCommand for 'ExecuteReader' (47ms). |executionType=ExecuteReader, elapsed=47, EventId=20104, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreated 
+2024-07-10 13:10:44.8898|Debug|Initialized DbCommand for 'ExecuteReader' (67ms). |executionType=ExecuteReader, elapsed=67, EventId=20106, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandInitialized 
+2024-07-10 13:10:44.8898|Debug|Opening connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20000, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening 
+2024-07-10 13:10:47.4597|Debug|Opened connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20001, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened 
+2024-07-10 13:10:47.4597|Debug|Executing DbCommand [Parameters=[@__loginModel_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[Email], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Phone]
+FROM [users] AS [u]
+WHERE [u].[Email] = @__loginModel_Email_0 |parameters=@__loginModel_Email_0='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[Email], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Phone]
+FROM [users] AS [u]
+WHERE [u].[Email] = @__loginModel_Email_0, EventId=20100, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting 
+2024-07-10 13:10:47.6834|Info|Executed DbCommand (214ms) [Parameters=[@__loginModel_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[Email], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Phone]
+FROM [users] AS [u]
+WHERE [u].[Email] = @__loginModel_Email_0 |elapsed=214, parameters=@__loginModel_Email_0='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[Email], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Phone]
+FROM [users] AS [u]
+WHERE [u].[Email] = @__loginModel_Email_0, EventId=20101, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted 
+2024-07-10 13:10:47.7448|Debug|Context 'FundooContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |contextType=FundooContext, entityType=User, EventId=10806, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking 
+2024-07-10 13:10:47.7867|Debug|Closing data reader to 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20301, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderClosing 
+2024-07-10 13:10:47.7979|Debug|A data reader for 'Fundoo' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 105ms reading results. |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=105, EventId=20300, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing 
+2024-07-10 13:10:47.8019|Debug|Closing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20002, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing 
+2024-07-10 13:10:47.8019|Debug|Closed connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB' (6ms). |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=6, EventId=20003, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed 
+2024-07-10 13:10:48.8994|Info|User logged in successful with email: rohitpagar133@gmail.com | 
+2024-07-10 13:10:48.8994|Info|Executed action method Fundoo.Controllers.UserController.LoginUser (Fundoo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5809.465ms. |ActionName=Fundoo.Controllers.UserController.LoginUser (Fundoo), ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, ElapsedMilliseconds=5809.465, EventId=103, EventName=ActionMethodExecuted 
+2024-07-10 13:10:48.8994|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:10:48.8994|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:10:48.8994|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:10:48.8994|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:10:48.8994|Trace|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:10:48.8994|Trace|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:10:48.8994|Trace|Before executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=5, EventName=BeforeExecutingActionResult 
+2024-07-10 13:10:48.9109|Debug|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter |OutputFormatters=Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, EventId=11, EventName=RegisteredOutputFormatters 
+2024-07-10 13:10:48.9109|Debug|No information found on request to perform content negotiation. |EventId=4, EventName=NoAcceptForNegotiation 
+2024-07-10 13:10:48.9109|Debug|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. |EventId=8, EventName=SelectingOutputFormatterWithoutUsingContentTypes 
+2024-07-10 13:10:48.9109|Debug|Attempting to select the first formatter in the output formatters list which can write the result. |EventId=10, EventName=SelectingFirstCanWriteFormatter 
+2024-07-10 13:10:48.9109|Debug|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response. |OutputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, ContentType=application/json, EventId=2, EventName=FormatterSelected 
+2024-07-10 13:10:48.9109|Info|Executing ObjectResult, writing value of type 'ModelLayer.ResponseML'. |ObjectResultType=ObjectResult, Type=ModelLayer.ResponseML, EventId=1, EventName=ObjectResultExecuting 
+2024-07-10 13:10:48.9301|Trace|After executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=6, EventName=AfterExecutingActionResult 
+2024-07-10 13:10:48.9301|Trace|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:10:48.9301|Trace|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:10:48.9301|Info|Executed action Fundoo.Controllers.UserController.LoginUser (Fundoo) in 7204.9988ms |ActionName=Fundoo.Controllers.UserController.LoginUser (Fundoo), ElapsedMilliseconds=7204.9988, EventId=105, EventName=ActionExecuted 
+2024-07-10 13:10:48.9301|Info|Executed endpoint 'Fundoo.Controllers.UserController.LoginUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.LoginUser (Fundoo), EventId=1, EventName=ExecutedEndpoint 
+2024-07-10 13:10:48.9475|Info|Session started; Key:9102a52f-d25b-4b84-c2cc-56ee2aeaf5a0, Id:7749d64d-fc5c-1490-a53f-76309fee7d18 |sessionKey=9102a52f-d25b-4b84-c2cc-56ee2aeaf5a0, sessionId=7749d64d-fc5c-1490-a53f-76309fee7d18, EventId=3, EventName=SessionStarted 
+2024-07-10 13:10:48.9629|Debug|Session stored; Key:9102a52f-d25b-4b84-c2cc-56ee2aeaf5a0, Id:7749d64d-fc5c-1490-a53f-76309fee7d18, Count:1 |sessionKey=9102a52f-d25b-4b84-c2cc-56ee2aeaf5a0, sessionId=7749d64d-fc5c-1490-a53f-76309fee7d18, count=1, EventId=5, EventName=SessionStored 
+2024-07-10 13:10:48.9629|Debug|Connection id "0HN50ME260BTV" completed keep alive response. |ConnectionId=0HN50ME260BTV, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:10:48.9629|Debug|'FundooContext' disposed. |contextType=FundooContext, EventId=10407, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextDisposed 
+2024-07-10 13:10:49.0080|Debug|Disposing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20007, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposing 
+2024-07-10 13:10:49.0080|Debug|Disposed connection to database '' on server '' (3ms). |elapsed=3, EventId=20008, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposed 
+2024-07-10 13:10:49.0080|Info|Request finished HTTP/1.1 POST http://localhost:5255/api/User/Login application/json 67 - 200 - application/json;+charset=utf-8 9201.8156ms |ElapsedMilliseconds=9201.8156, StatusCode=200, ContentType=application/json; charset=utf-8, Protocol=HTTP/1.1, Method=POST, Scheme=http, Host=localhost:5255, Path=/api/User/Login, EventId=2 
+2024-07-10 13:10:52.5272|Debug|Connection id "0HN50ME260BTV" received FIN. |ConnectionId=0HN50ME260BTV, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:10:52.5272|Debug|Connection id "0HN50ME260BTV" disconnecting. |ConnectionId=0HN50ME260BTV, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:10:52.5272|Debug|Connection id "0HN50ME260BTV" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BTV, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:10:52.5350|Debug|Connection id "0HN50ME260BTV" stopped. |ConnectionId=0HN50ME260BTV, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:11:37.4452|Debug|Connection id "0HN50ME260BU0" accepted. |ConnectionId=0HN50ME260BU0, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:11:37.4452|Debug|Connection id "0HN50ME260BU0" started. |ConnectionId=0HN50ME260BU0, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:11:37.4452|Info|Request starting HTTP/1.1 POST http://localhost:5255/api/Note/Add application/json 53 |Protocol=HTTP/1.1, Method=POST, ContentType=application/json, ContentLength=53, Scheme=http, Host=localhost:5255, Path=/api/Note/Add, EventId=1 
+2024-07-10 13:11:37.4452|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:11:37.4452|Debug|1 candidate(s) found for the request path '/api/Note/Add' |CandidateCount=1, Path=/api/Note/Add, EventId=1001, EventName=CandidatesFound 
+2024-07-10 13:11:37.4452|Debug|Endpoint 'Fundoo.Controllers.NoteController.addNote (Fundoo)' with route pattern 'api/Note/Add' is valid for the request path '/api/Note/Add' |Endpoint=Fundoo.Controllers.NoteController.addNote (Fundoo), RoutePattern=api/Note/Add, Path=/api/Note/Add, EventId=1005, EventName=CandidateValid 
+2024-07-10 13:11:37.4452|Debug|Request matched endpoint 'Fundoo.Controllers.NoteController.addNote (Fundoo)' |EndpointName=Fundoo.Controllers.NoteController.addNote (Fundoo), EventId=1, EventName=MatchSuccess 
+2024-07-10 13:11:37.4452|Debug|Static files was skipped as the request already matched an endpoint. |EventId=15, EventName=EndpointMatched 
+2024-07-10 13:11:37.5488|Debug|Successfully validated the token. |EventId=2, EventName=TokenValidationSucceeded 
+2024-07-10 13:11:37.5527|Debug|AuthenticationScheme: Bearer was successfully authenticated. |AuthenticationScheme=Bearer, EventId=8, EventName=AuthenticationSchemeAuthenticated 
+2024-07-10 13:11:37.5527|Debug|Authorization was successful. |EventId=1, EventName=UserAuthorizationSucceeded 
+2024-07-10 13:11:37.5527|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:11:37.5527|Info|CORS policy execution failed. |EventId=5, EventName=PolicyFailure 
+2024-07-10 13:11:37.5527|Info|Request origin http://localhost:5255 does not have permission to access the resource. |origin=http://localhost:5255, EventId=6, EventName=OriginNotAllowed 
+2024-07-10 13:11:37.5527|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:11:37.5527|Info|CORS policy execution successful. |EventId=4, EventName=PolicySuccess 
+2024-07-10 13:11:37.5707|Trace|Performing unprotect operation to key {da74334d-6e7c-4f22-b543-8bcebc34a17c} with purposes ('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'). |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, Purposes=('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'), EventId=5, EventName=PerformingUnprotectOperationToKeyWithPurposes 
+2024-07-10 13:11:37.5707|Info|Executing endpoint 'Fundoo.Controllers.NoteController.addNote (Fundoo)' |EndpointName=Fundoo.Controllers.NoteController.addNote (Fundoo) 
+2024-07-10 13:11:37.5707|Info|Route matched with {action = "addNote", controller = "Note"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult addNote(ModelLayer.NoteInputModel) on controller Fundoo.Controllers.NoteController (Fundoo). |RouteData={action = "addNote", controller = "Note"}, MethodInfo=Microsoft.AspNetCore.Mvc.IActionResult addNote(ModelLayer.NoteInputModel), Controller=Fundoo.Controllers.NoteController, AssemblyName=Fundoo, EventId=102, EventName=ControllerActionExecuting 
+2024-07-10 13:11:37.5817|Debug|Execution plan of authorization filters (in the following order): None |FilterType=authorization, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:11:37.5817|Debug|Execution plan of resource filters (in the following order): None |FilterType=resource, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:11:37.5817|Debug|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) |FilterType=action, Filters="Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:11:37.5817|Debug|Execution plan of exception filters (in the following order): None |FilterType=exception, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:11:37.5817|Debug|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) |FilterType=result, Filters="Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:11:37.5817|Debug|Executing controller factory for controller Fundoo.Controllers.NoteController (Fundoo) |Controller=Fundoo.Controllers.NoteController, AssemblyName=Fundoo, EventId=1, EventName=ControllerFactoryExecuting 
+2024-07-10 13:12:39.2384|Debug|Executed controller factory for controller Fundoo.Controllers.NoteController (Fundoo) |Controller=Fundoo.Controllers.NoteController, AssemblyName=Fundoo, EventId=2, EventName=ControllerFactoryExecuted 
+2024-07-10 13:12:39.2384|Debug|Attempting to bind parameter 'noteModel' of type 'ModelLayer.NoteInputModel' ... |ParameterName=noteModel, ModelType=ModelLayer.NoteInputModel, EventId=22, EventName=AttemptingToBindParameter 
+2024-07-10 13:12:39.2384|Debug|Attempting to bind parameter 'noteModel' of type 'ModelLayer.NoteInputModel' using the name '' in request data ... |ParameterName=noteModel, ModelType=ModelLayer.NoteInputModel, EventId=44, EventName=AttemptingToBindParameterModel 
+2024-07-10 13:12:39.2384|Debug|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'. |InputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter, ContentType=application/json, EventId=1, EventName=InputFormatterSelected 
+2024-07-10 13:12:39.2428|Debug|Connection id "0HN50ME260BU0", Request id "0HN50ME260BU0:00000001": started reading request body. |ConnectionId=0HN50ME260BU0, TraceIdentifier=0HN50ME260BU0:00000001, EventId=25, EventName=RequestBodyStart 
+2024-07-10 13:12:39.2428|Debug|Connection id "0HN50ME260BU0", Request id "0HN50ME260BU0:00000001": done reading request body. |ConnectionId=0HN50ME260BU0, TraceIdentifier=0HN50ME260BU0:00000001, EventId=26, EventName=RequestBodyDone 
+2024-07-10 13:12:39.2428|Debug|JSON input formatter succeeded, deserializing to type 'ModelLayer.NoteInputModel' |TypeName=ModelLayer.NoteInputModel, EventId=2, EventName=SystemTextJsonInputSuccess 
+2024-07-10 13:12:39.2428|Debug|Done attempting to bind parameter 'noteModel' of type 'ModelLayer.NoteInputModel'. |ParameterName=noteModel, ModelType=ModelLayer.NoteInputModel, EventId=45, EventName=DoneAttemptingToBindParameterModel 
+2024-07-10 13:12:39.2428|Debug|Done attempting to bind parameter 'noteModel' of type 'ModelLayer.NoteInputModel'. |ParameterName=noteModel, ModelType=ModelLayer.NoteInputModel, EventId=23, EventName=DoneAttemptingToBindParameter 
+2024-07-10 13:12:39.2428|Debug|Attempting to validate the bound parameter 'noteModel' of type 'ModelLayer.NoteInputModel' ... |ParameterName=noteModel, ModelType=ModelLayer.NoteInputModel, EventId=26, EventName=AttemptingToValidateParameter 
+2024-07-10 13:12:39.2428|Debug|Done attempting to validate the bound parameter 'noteModel' of type 'ModelLayer.NoteInputModel'. |ParameterName=noteModel, ModelType=ModelLayer.NoteInputModel, EventId=27, EventName=DoneAttemptingToValidateParameter 
+2024-07-10 13:12:39.2428|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:12:39.2428|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:12:39.2428|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:12:39.2428|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:12:39.2428|Info|Executing action method Fundoo.Controllers.NoteController.addNote (Fundoo) - Validation state: Valid |ActionName=Fundoo.Controllers.NoteController.addNote (Fundoo), ValidationState=Valid, EventId=101, EventName=ActionMethodExecuting 
+2024-07-10 13:12:39.2428|Trace|Executing action method Fundoo.Controllers.NoteController.addNote (Fundoo) with arguments (ModelLayer.NoteInputModel) |ActionName=Fundoo.Controllers.NoteController.addNote (Fundoo), Arguments="ModelLayer.NoteInputModel", EventId=102, EventName=ActionMethodExecutingWithArguments 
+2024-07-10 13:12:39.2839|Debug|Entity Framework Core 7.0.20 initialized 'FundooContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.20' with options: None |version=7.0.20, contextType=FundooContext, provider=Microsoft.EntityFrameworkCore.SqlServer, providerVersion=7.0.20, options=None, EventId=10403, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextInitialized 
+2024-07-10 13:12:39.6559|Debug|Creating DbConnection. |EventId=20005, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreating 
+2024-07-10 13:12:39.6559|Debug|Created DbConnection. (1ms). |elapsed=1, EventId=20006, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreated 
+2024-07-10 13:12:39.6559|Debug|Opening connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20000, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening 
+2024-07-10 13:12:39.6559|Debug|Opened connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20001, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened 
+2024-07-10 13:12:39.6783|Debug|Beginning transaction with isolation level 'Unspecified'. |isolationLevel=Unspecified, EventId=20209, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionStarting 
+2024-07-10 13:12:39.6940|Debug|Began transaction with isolation level 'ReadCommitted'. |isolationLevel=ReadCommitted, EventId=20200, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionStarted 
+2024-07-10 13:12:39.7330|Debug|'"FundooContext"' generated a temporary value for the property '"Id"."Note"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |contextType=FundooContext, 2_entityType=Id, 1_property=Note, EventId=10808, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.ValueGenerated 
+2024-07-10 13:12:39.7762|Debug|Context 'FundooContext' started tracking 'Note' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |contextType=FundooContext, entityType=Note, EventId=10806, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking 
+2024-07-10 13:12:39.7762|Debug|SaveChanges starting for 'FundooContext'. |contextType=FundooContext, EventId=10004, EventName=Microsoft.EntityFrameworkCore.Update.SaveChangesStarting 
+2024-07-10 13:12:39.7859|Debug|DetectChanges starting for 'FundooContext'. |contextType=FundooContext, EventId=10800, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.DetectChangesStarting 
+2024-07-10 13:12:39.7859|Debug|DetectChanges completed for 'FundooContext'. |contextType=FundooContext, EventId=10801, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.DetectChangesCompleted 
+2024-07-10 13:12:39.9077|Debug|Creating transaction savepoint. |EventId=20212, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.CreatingTransactionSavepoint 
+2024-07-10 13:12:39.9313|Debug|Created transaction savepoint. |EventId=20213, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.CreatedTransactionSavepoint 
+2024-07-10 13:12:39.9313|Debug|Creating DbCommand for 'ExecuteReader'. |executionType=ExecuteReader, EventId=20103, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreating 
+2024-07-10 13:12:39.9313|Debug|Created DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20104, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreated 
+2024-07-10 13:12:39.9313|Debug|Initialized DbCommand for 'ExecuteReader' (2ms). |executionType=ExecuteReader, elapsed=2, EventId=20106, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandInitialized 
+2024-07-10 13:12:39.9313|Debug|Executing DbCommand [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [notes] ([CreatedOn], [Description], [Title], [isArchieve], [isTrashed], [userId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); |parameters=@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), commandType=Text, commandTimeout=30, newLine=
+, commandText=SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [notes] ([CreatedOn], [Description], [Title], [isArchieve], [isTrashed], [userId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);, EventId=20100, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting 
+2024-07-10 13:12:39.9807|Info|Executed DbCommand (44ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [notes] ([CreatedOn], [Description], [Title], [isArchieve], [isTrashed], [userId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); |elapsed=44, parameters=@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), commandType=Text, commandTimeout=30, newLine=
+, commandText=SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [notes] ([CreatedOn], [Description], [Title], [isArchieve], [isTrashed], [userId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);, EventId=20101, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted 
+2024-07-10 13:12:39.9953|Debug|The foreign key property 'Note.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values. |entityType=Note, property=Id, EventId=10803, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.ForeignKeyChangeDetected 
+2024-07-10 13:12:40.0036|Debug|Closing data reader to 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20301, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderClosing 
+2024-07-10 13:12:40.0036|Debug|A data reader for 'Fundoo' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 22ms reading results. |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=22, EventId=20300, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing 
+2024-07-10 13:12:40.0199|Debug|An entity of type 'Note' tracked by 'FundooContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |entityType=Note, contextType=FundooContext, oldState=Added, newState=Unchanged, EventId=10807, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.StateChanged 
+2024-07-10 13:12:40.0199|Debug|SaveChanges completed for 'FundooContext' with 1 entities written to the database. |contextType=FundooContext, savedCount=1, EventId=10005, EventName=Microsoft.EntityFrameworkCore.Update.SaveChangesCompleted 
+2024-07-10 13:12:40.0199|Debug|Committing transaction. |EventId=20210, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionCommitting 
+2024-07-10 13:12:40.0199|Debug|Committed transaction. |EventId=20202, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionCommitted 
+2024-07-10 13:12:40.0199|Debug|Closing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20002, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing 
+2024-07-10 13:12:40.0199|Debug|Closed connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB' (0ms). |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=0, EventId=20003, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed 
+2024-07-10 13:12:40.0456|Debug|Disposing transaction. |EventId=20204, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionDisposed 
+2024-07-10 13:12:40.0456|Info|Executed action method Fundoo.Controllers.NoteController.addNote (Fundoo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 793.1394ms. |ActionName=Fundoo.Controllers.NoteController.addNote (Fundoo), ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, ElapsedMilliseconds=793.1394, EventId=103, EventName=ActionMethodExecuted 
+2024-07-10 13:12:40.0456|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:12:40.0456|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:12:40.0456|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:12:40.0456|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:12:40.0456|Trace|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:12:40.0487|Trace|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:12:40.0487|Trace|Before executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=5, EventName=BeforeExecutingActionResult 
+2024-07-10 13:12:40.0487|Debug|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter |OutputFormatters=Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, EventId=11, EventName=RegisteredOutputFormatters 
+2024-07-10 13:12:40.0487|Debug|No information found on request to perform content negotiation. |EventId=4, EventName=NoAcceptForNegotiation 
+2024-07-10 13:12:40.0487|Debug|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. |EventId=8, EventName=SelectingOutputFormatterWithoutUsingContentTypes 
+2024-07-10 13:12:40.0487|Debug|Attempting to select the first formatter in the output formatters list which can write the result. |EventId=10, EventName=SelectingFirstCanWriteFormatter 
+2024-07-10 13:12:40.0487|Debug|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response. |OutputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, ContentType=application/json, EventId=2, EventName=FormatterSelected 
+2024-07-10 13:12:40.0487|Info|Executing ObjectResult, writing value of type 'ModelLayer.ResponseML'. |ObjectResultType=ObjectResult, Type=ModelLayer.ResponseML, EventId=1, EventName=ObjectResultExecuting 
+2024-07-10 13:12:40.0668|Trace|After executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=6, EventName=AfterExecutingActionResult 
+2024-07-10 13:12:40.0668|Trace|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:12:40.0668|Trace|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:12:40.0668|Info|Executed action Fundoo.Controllers.NoteController.addNote (Fundoo) in 62485.2927ms |ActionName=Fundoo.Controllers.NoteController.addNote (Fundoo), ElapsedMilliseconds=62485.2927, EventId=105, EventName=ActionExecuted 
+2024-07-10 13:12:40.0668|Info|Executed endpoint 'Fundoo.Controllers.NoteController.addNote (Fundoo)' |EndpointName=Fundoo.Controllers.NoteController.addNote (Fundoo), EventId=1, EventName=ExecutedEndpoint 
+2024-07-10 13:12:40.0800|Debug|Connection id "0HN50ME260BU0" completed keep alive response. |ConnectionId=0HN50ME260BU0, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:12:40.0800|Debug|'FundooContext' disposed. |contextType=FundooContext, EventId=10407, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextDisposed 
+2024-07-10 13:12:40.0800|Debug|Disposing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20007, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposing 
+2024-07-10 13:12:40.0800|Debug|Disposed connection to database '' on server '' (0ms). |elapsed=0, EventId=20008, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposed 
+2024-07-10 13:12:40.0800|Info|Request finished HTTP/1.1 POST http://localhost:5255/api/Note/Add application/json 53 - 201 - application/json;+charset=utf-8 62634.5828ms |ElapsedMilliseconds=62634.5828, StatusCode=201, ContentType=application/json; charset=utf-8, Protocol=HTTP/1.1, Method=POST, Scheme=http, Host=localhost:5255, Path=/api/Note/Add, EventId=2 
+2024-07-10 13:12:42.6774|Debug|Connection id "0HN50ME260BU0" received FIN. |ConnectionId=0HN50ME260BU0, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:12:42.6774|Debug|Connection id "0HN50ME260BU0" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BU0, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:12:42.6774|Debug|Connection id "0HN50ME260BU0" disconnecting. |ConnectionId=0HN50ME260BU0, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:12:42.6774|Debug|Connection id "0HN50ME260BU0" stopped. |ConnectionId=0HN50ME260BU0, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:14:33.9590|Debug|Connection id "0HN50ME260BU1" accepted. |ConnectionId=0HN50ME260BU1, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:14:33.9590|Debug|Connection id "0HN50ME260BU1" started. |ConnectionId=0HN50ME260BU1, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:14:33.9590|Info|Request starting HTTP/1.1 GET http://localhost:5255/api/NoteLabel/getlabelsbyNote/1 - - |Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/api/NoteLabel/getlabelsbyNote/1, EventId=1 
+2024-07-10 13:14:33.9590|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:14:33.9590|Debug|1 candidate(s) found for the request path '/api/NoteLabel/getlabelsbyNote/1' |CandidateCount=1, Path=/api/NoteLabel/getlabelsbyNote/1, EventId=1001, EventName=CandidatesFound 
+2024-07-10 13:14:33.9590|Debug|Endpoint 'Fundoo.Controllers.NoteLabelController.GetLabelsFromNote (Fundoo)' with route pattern 'api/NoteLabel/getlabelsbyNote/{NoteID}' is valid for the request path '/api/NoteLabel/getlabelsbyNote/1' |Endpoint=Fundoo.Controllers.NoteLabelController.GetLabelsFromNote (Fundoo), RoutePattern=api/NoteLabel/getlabelsbyNote/{NoteID}, Path=/api/NoteLabel/getlabelsbyNote/1, EventId=1005, EventName=CandidateValid 
+2024-07-10 13:14:33.9590|Debug|Request matched endpoint 'Fundoo.Controllers.NoteLabelController.GetLabelsFromNote (Fundoo)' |EndpointName=Fundoo.Controllers.NoteLabelController.GetLabelsFromNote (Fundoo), EventId=1, EventName=MatchSuccess 
+2024-07-10 13:14:33.9590|Debug|Static files was skipped as the request already matched an endpoint. |EventId=15, EventName=EndpointMatched 
+2024-07-10 13:14:33.9590|Info|Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token. |AuthenticationScheme=Bearer, FailureMessage=No SecurityTokenValidator available for token., EventId=7, EventName=AuthenticationSchemeNotAuthenticatedWithFailure 
+2024-07-10 13:14:33.9734|Info|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. |Reason=These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user., EventId=2, EventName=UserAuthorizationFailed 
+2024-07-10 13:14:33.9930|Info|AuthenticationScheme: Bearer was challenged. |AuthenticationScheme=Bearer, EventId=12, EventName=AuthenticationSchemeChallenged 
+2024-07-10 13:14:33.9930|Debug|Connection id "0HN50ME260BU1" completed keep alive response. |ConnectionId=0HN50ME260BU1, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:14:33.9930|Info|Request finished HTTP/1.1 GET http://localhost:5255/api/NoteLabel/getlabelsbyNote/1 - - - 401 0 - 33.9737ms |ElapsedMilliseconds=33.9737, StatusCode=401, ContentLength=0, Protocol=HTTP/1.1, Method=GET, Scheme=http, Host=localhost:5255, Path=/api/NoteLabel/getlabelsbyNote/1, EventId=2 
+2024-07-10 13:14:42.7830|Debug|Connection id "0HN50ME260BU1" received FIN. |ConnectionId=0HN50ME260BU1, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:14:42.7830|Debug|Connection id "0HN50ME260BU1" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BU1, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:14:42.7830|Debug|Connection id "0HN50ME260BU1" disconnecting. |ConnectionId=0HN50ME260BU1, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:14:42.7830|Debug|Connection id "0HN50ME260BU1" stopped. |ConnectionId=0HN50ME260BU1, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:24:25.5596|Debug|Connection id "0HN50ME260BU2" accepted. |ConnectionId=0HN50ME260BU2, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:24:25.5596|Debug|Connection id "0HN50ME260BU2" started. |ConnectionId=0HN50ME260BU2, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:24:25.5596|Info|Request starting HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 185 |Protocol=HTTP/1.1, Method=POST, ContentType=application/json, ContentLength=185, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=1 
+2024-07-10 13:24:25.5596|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:24:25.5596|Debug|1 candidate(s) found for the request path '/api/User/Register' |CandidateCount=1, Path=/api/User/Register, EventId=1001, EventName=CandidatesFound 
+2024-07-10 13:24:25.5596|Debug|Endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' with route pattern 'api/User/Register' is valid for the request path '/api/User/Register' |Endpoint=Fundoo.Controllers.UserController.RegisterUser (Fundoo), RoutePattern=api/User/Register, Path=/api/User/Register, EventId=1005, EventName=CandidateValid 
+2024-07-10 13:24:25.5596|Debug|Request matched endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=MatchSuccess 
+2024-07-10 13:24:25.5596|Debug|Static files was skipped as the request already matched an endpoint. |EventId=15, EventName=EndpointMatched 
+2024-07-10 13:24:25.5596|Info|Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token. |AuthenticationScheme=Bearer, FailureMessage=No SecurityTokenValidator available for token., EventId=7, EventName=AuthenticationSchemeNotAuthenticatedWithFailure 
+2024-07-10 13:24:25.5596|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:24:25.5596|Info|CORS policy execution failed. |EventId=5, EventName=PolicyFailure 
+2024-07-10 13:24:25.5596|Info|Request origin http://localhost:5255 does not have permission to access the resource. |origin=http://localhost:5255, EventId=6, EventName=OriginNotAllowed 
+2024-07-10 13:24:25.5596|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:24:25.5596|Info|CORS policy execution successful. |EventId=4, EventName=PolicySuccess 
+2024-07-10 13:24:25.5596|Trace|Performing unprotect operation to key {da74334d-6e7c-4f22-b543-8bcebc34a17c} with purposes ('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'). |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, Purposes=('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'), EventId=5, EventName=PerformingUnprotectOperationToKeyWithPurposes 
+2024-07-10 13:24:25.5674|Info|Executing endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo) 
+2024-07-10 13:24:25.5674|Info|Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel) on controller Fundoo.Controllers.UserController (Fundoo). |RouteData={action = "RegisterUser", controller = "User"}, MethodInfo=Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel), Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=102, EventName=ControllerActionExecuting 
+2024-07-10 13:24:25.5674|Debug|Execution plan of authorization filters (in the following order): None |FilterType=authorization, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:24:25.5674|Debug|Execution plan of resource filters (in the following order): None |FilterType=resource, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:24:25.5674|Debug|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) |FilterType=action, Filters="Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:24:25.5674|Debug|Execution plan of exception filters (in the following order): None |FilterType=exception, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:24:25.5674|Debug|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) |FilterType=result, Filters="Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:24:25.5674|Debug|Executing controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=1, EventName=ControllerFactoryExecuting 
+2024-07-10 13:24:25.5674|Debug|Executed controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=2, EventName=ControllerFactoryExecuted 
+2024-07-10 13:24:25.5674|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=22, EventName=AttemptingToBindParameter 
+2024-07-10 13:24:25.5816|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' using the name '' in request data ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=44, EventName=AttemptingToBindParameterModel 
+2024-07-10 13:24:25.5816|Debug|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'. |InputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter, ContentType=application/json, EventId=1, EventName=InputFormatterSelected 
+2024-07-10 13:24:25.5816|Debug|Connection id "0HN50ME260BU2", Request id "0HN50ME260BU2:00000001": started reading request body. |ConnectionId=0HN50ME260BU2, TraceIdentifier=0HN50ME260BU2:00000001, EventId=25, EventName=RequestBodyStart 
+2024-07-10 13:24:25.5816|Debug|Connection id "0HN50ME260BU2", Request id "0HN50ME260BU2:00000001": done reading request body. |ConnectionId=0HN50ME260BU2, TraceIdentifier=0HN50ME260BU2:00000001, EventId=26, EventName=RequestBodyDone 
+2024-07-10 13:24:25.5816|Debug|JSON input formatter succeeded, deserializing to type 'ModelLayer.UserModel' |TypeName=ModelLayer.UserModel, EventId=2, EventName=SystemTextJsonInputSuccess 
+2024-07-10 13:24:25.5816|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=45, EventName=DoneAttemptingToBindParameterModel 
+2024-07-10 13:24:25.5816|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=23, EventName=DoneAttemptingToBindParameter 
+2024-07-10 13:24:25.5816|Debug|Attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=26, EventName=AttemptingToValidateParameter 
+2024-07-10 13:24:25.6068|Debug|Done attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=27, EventName=DoneAttemptingToValidateParameter 
+2024-07-10 13:24:25.6068|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:24:25.6068|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:24:25.6068|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:24:25.6068|Debug|The request has model state errors, returning an error response. |EventId=1, EventName=ModelStateInvalidFilterExecuting 
+2024-07-10 13:24:25.6068|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:24:25.6068|Debug|Request was short circuited at action filter 'Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter'. |ActionFilter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=63, EventName=ActionFilterShortCircuit 
+2024-07-10 13:24:25.6068|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:24:25.6068|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:24:25.6068|Trace|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:24:25.6068|Trace|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:24:25.6068|Trace|Before executing action result Microsoft.AspNetCore.Mvc.BadRequestObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.BadRequestObjectResult, EventId=5, EventName=BeforeExecutingActionResult 
+2024-07-10 13:24:25.6068|Debug|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter |OutputFormatters=Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, EventId=11, EventName=RegisteredOutputFormatters 
+2024-07-10 13:24:25.6068|Debug|No information found on request to perform content negotiation. |EventId=4, EventName=NoAcceptForNegotiation 
+2024-07-10 13:24:25.6068|Debug|Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types 'application/problem+json, application/problem+xml, application/problem+json, application/problem+xml'. |ExplicitContentTypes="application/problem+json", "application/problem+xml", "application/problem+json", "application/problem+xml", EventId=9, EventName=SelectingOutputFormatterUsingContentTypes 
+2024-07-10 13:24:25.6068|Debug|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/problem+json' to write the response. |OutputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, ContentType=application/problem+json, EventId=2, EventName=FormatterSelected 
+2024-07-10 13:24:25.6068|Info|Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'. |ObjectResultType=BadRequestObjectResult, Type=Microsoft.AspNetCore.Mvc.ValidationProblemDetails, EventId=1, EventName=ObjectResultExecuting 
+2024-07-10 13:24:25.6068|Trace|After executing action result Microsoft.AspNetCore.Mvc.BadRequestObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.BadRequestObjectResult, EventId=6, EventName=AfterExecutingActionResult 
+2024-07-10 13:24:25.6225|Trace|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:24:25.6225|Trace|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:24:25.6225|Info|Executed action Fundoo.Controllers.UserController.RegisterUser (Fundoo) in 48.2079ms |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ElapsedMilliseconds=48.2079, EventId=105, EventName=ActionExecuted 
+2024-07-10 13:24:25.6225|Info|Executed endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=ExecutedEndpoint 
+2024-07-10 13:24:25.6225|Debug|Connection id "0HN50ME260BU2" completed keep alive response. |ConnectionId=0HN50ME260BU2, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:24:25.6225|Info|Request finished HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 185 - 400 - application/problem+json;+charset=utf-8 63.4937ms |ElapsedMilliseconds=63.4937, StatusCode=400, ContentType=application/problem+json; charset=utf-8, Protocol=HTTP/1.1, Method=POST, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=2 
+2024-07-10 13:24:33.6274|Debug|Connection id "0HN50ME260BU2" received FIN. |ConnectionId=0HN50ME260BU2, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:24:33.6274|Debug|Connection id "0HN50ME260BU2" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BU2, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:24:33.6274|Debug|Connection id "0HN50ME260BU2" disconnecting. |ConnectionId=0HN50ME260BU2, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:24:33.6274|Debug|Connection id "0HN50ME260BU2" stopped. |ConnectionId=0HN50ME260BU2, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:25:06.4082|Debug|Connection id "0HN50ME260BU3" accepted. |ConnectionId=0HN50ME260BU3, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:25:06.4082|Debug|Connection id "0HN50ME260BU3" started. |ConnectionId=0HN50ME260BU3, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:25:06.4082|Info|Request starting HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 182 |Protocol=HTTP/1.1, Method=POST, ContentType=application/json, ContentLength=182, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=1 
+2024-07-10 13:25:06.4082|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:25:06.4082|Debug|1 candidate(s) found for the request path '/api/User/Register' |CandidateCount=1, Path=/api/User/Register, EventId=1001, EventName=CandidatesFound 
+2024-07-10 13:25:06.4082|Debug|Endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' with route pattern 'api/User/Register' is valid for the request path '/api/User/Register' |Endpoint=Fundoo.Controllers.UserController.RegisterUser (Fundoo), RoutePattern=api/User/Register, Path=/api/User/Register, EventId=1005, EventName=CandidateValid 
+2024-07-10 13:25:06.4082|Debug|Request matched endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=MatchSuccess 
+2024-07-10 13:25:06.4082|Debug|Static files was skipped as the request already matched an endpoint. |EventId=15, EventName=EndpointMatched 
+2024-07-10 13:25:06.4082|Info|Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token. |AuthenticationScheme=Bearer, FailureMessage=No SecurityTokenValidator available for token., EventId=7, EventName=AuthenticationSchemeNotAuthenticatedWithFailure 
+2024-07-10 13:25:06.4082|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:25:06.4118|Info|CORS policy execution failed. |EventId=5, EventName=PolicyFailure 
+2024-07-10 13:25:06.4118|Info|Request origin http://localhost:5255 does not have permission to access the resource. |origin=http://localhost:5255, EventId=6, EventName=OriginNotAllowed 
+2024-07-10 13:25:06.4118|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:25:06.4118|Info|CORS policy execution successful. |EventId=4, EventName=PolicySuccess 
+2024-07-10 13:25:06.4118|Trace|Performing unprotect operation to key {da74334d-6e7c-4f22-b543-8bcebc34a17c} with purposes ('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'). |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, Purposes=('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'), EventId=5, EventName=PerformingUnprotectOperationToKeyWithPurposes 
+2024-07-10 13:25:06.4118|Info|Executing endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo) 
+2024-07-10 13:25:06.4118|Info|Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel) on controller Fundoo.Controllers.UserController (Fundoo). |RouteData={action = "RegisterUser", controller = "User"}, MethodInfo=Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel), Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=102, EventName=ControllerActionExecuting 
+2024-07-10 13:25:06.4118|Debug|Execution plan of authorization filters (in the following order): None |FilterType=authorization, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:06.4118|Debug|Execution plan of resource filters (in the following order): None |FilterType=resource, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:06.7503|Debug|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) |FilterType=action, Filters="Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:06.7503|Debug|Execution plan of exception filters (in the following order): None |FilterType=exception, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:06.7503|Debug|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) |FilterType=result, Filters="Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:06.7503|Debug|Executing controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=1, EventName=ControllerFactoryExecuting 
+2024-07-10 13:25:06.7586|Debug|Executed controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=2, EventName=ControllerFactoryExecuted 
+2024-07-10 13:25:06.7586|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=22, EventName=AttemptingToBindParameter 
+2024-07-10 13:25:06.7586|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' using the name '' in request data ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=44, EventName=AttemptingToBindParameterModel 
+2024-07-10 13:25:06.7586|Debug|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'. |InputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter, ContentType=application/json, EventId=1, EventName=InputFormatterSelected 
+2024-07-10 13:25:06.7586|Debug|Connection id "0HN50ME260BU3", Request id "0HN50ME260BU3:00000001": started reading request body. |ConnectionId=0HN50ME260BU3, TraceIdentifier=0HN50ME260BU3:00000001, EventId=25, EventName=RequestBodyStart 
+2024-07-10 13:25:06.7586|Debug|Connection id "0HN50ME260BU3", Request id "0HN50ME260BU3:00000001": done reading request body. |ConnectionId=0HN50ME260BU3, TraceIdentifier=0HN50ME260BU3:00000001, EventId=26, EventName=RequestBodyDone 
+2024-07-10 13:25:06.7586|Debug|JSON input formatter succeeded, deserializing to type 'ModelLayer.UserModel' |TypeName=ModelLayer.UserModel, EventId=2, EventName=SystemTextJsonInputSuccess 
+2024-07-10 13:25:06.7586|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=45, EventName=DoneAttemptingToBindParameterModel 
+2024-07-10 13:25:06.7586|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=23, EventName=DoneAttemptingToBindParameter 
+2024-07-10 13:25:06.7586|Debug|Attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=26, EventName=AttemptingToValidateParameter 
+2024-07-10 13:25:06.7586|Debug|Done attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=27, EventName=DoneAttemptingToValidateParameter 
+2024-07-10 13:25:06.7586|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:06.7586|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:06.7586|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:06.7586|Debug|The request has model state errors, returning an error response. |EventId=1, EventName=ModelStateInvalidFilterExecuting 
+2024-07-10 13:25:06.7586|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:06.7586|Debug|Request was short circuited at action filter 'Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter'. |ActionFilter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=63, EventName=ActionFilterShortCircuit 
+2024-07-10 13:25:06.7586|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:06.7586|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:06.7586|Trace|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:06.7586|Trace|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:06.7586|Trace|Before executing action result Microsoft.AspNetCore.Mvc.BadRequestObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.BadRequestObjectResult, EventId=5, EventName=BeforeExecutingActionResult 
+2024-07-10 13:25:06.7586|Debug|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter |OutputFormatters=Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, EventId=11, EventName=RegisteredOutputFormatters 
+2024-07-10 13:25:06.7586|Debug|No information found on request to perform content negotiation. |EventId=4, EventName=NoAcceptForNegotiation 
+2024-07-10 13:25:06.7704|Debug|Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types 'application/problem+json, application/problem+xml, application/problem+json, application/problem+xml'. |ExplicitContentTypes="application/problem+json", "application/problem+xml", "application/problem+json", "application/problem+xml", EventId=9, EventName=SelectingOutputFormatterUsingContentTypes 
+2024-07-10 13:25:06.7704|Debug|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/problem+json' to write the response. |OutputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, ContentType=application/problem+json, EventId=2, EventName=FormatterSelected 
+2024-07-10 13:25:06.7704|Info|Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'. |ObjectResultType=BadRequestObjectResult, Type=Microsoft.AspNetCore.Mvc.ValidationProblemDetails, EventId=1, EventName=ObjectResultExecuting 
+2024-07-10 13:25:06.7704|Trace|After executing action result Microsoft.AspNetCore.Mvc.BadRequestObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.BadRequestObjectResult, EventId=6, EventName=AfterExecutingActionResult 
+2024-07-10 13:25:06.7704|Trace|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:06.7704|Trace|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:06.7704|Info|Executed action Fundoo.Controllers.UserController.RegisterUser (Fundoo) in 21.6415ms |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ElapsedMilliseconds=21.6415, EventId=105, EventName=ActionExecuted 
+2024-07-10 13:25:06.7704|Info|Executed endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=ExecutedEndpoint 
+2024-07-10 13:25:06.7704|Debug|Connection id "0HN50ME260BU3" completed keep alive response. |ConnectionId=0HN50ME260BU3, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:25:06.7704|Info|Request finished HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 182 - 400 - application/problem+json;+charset=utf-8 366.0120ms |ElapsedMilliseconds=366.012, StatusCode=400, ContentType=application/problem+json; charset=utf-8, Protocol=HTTP/1.1, Method=POST, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=2 
+2024-07-10 13:25:20.1756|Info|Request starting HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 184 |Protocol=HTTP/1.1, Method=POST, ContentType=application/json, ContentLength=184, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=1 
+2024-07-10 13:25:20.1756|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:25:20.1756|Debug|1 candidate(s) found for the request path '/api/User/Register' |CandidateCount=1, Path=/api/User/Register, EventId=1001, EventName=CandidatesFound 
+2024-07-10 13:25:20.1756|Debug|Endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' with route pattern 'api/User/Register' is valid for the request path '/api/User/Register' |Endpoint=Fundoo.Controllers.UserController.RegisterUser (Fundoo), RoutePattern=api/User/Register, Path=/api/User/Register, EventId=1005, EventName=CandidateValid 
+2024-07-10 13:25:20.1756|Debug|Request matched endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=MatchSuccess 
+2024-07-10 13:25:20.1756|Debug|Static files was skipped as the request already matched an endpoint. |EventId=15, EventName=EndpointMatched 
+2024-07-10 13:25:20.1756|Info|Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token. |AuthenticationScheme=Bearer, FailureMessage=No SecurityTokenValidator available for token., EventId=7, EventName=AuthenticationSchemeNotAuthenticatedWithFailure 
+2024-07-10 13:25:20.1756|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:25:20.1756|Info|CORS policy execution failed. |EventId=5, EventName=PolicyFailure 
+2024-07-10 13:25:20.1756|Info|Request origin http://localhost:5255 does not have permission to access the resource. |origin=http://localhost:5255, EventId=6, EventName=OriginNotAllowed 
+2024-07-10 13:25:20.1756|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:25:20.1756|Info|CORS policy execution successful. |EventId=4, EventName=PolicySuccess 
+2024-07-10 13:25:20.1756|Trace|Performing unprotect operation to key {da74334d-6e7c-4f22-b543-8bcebc34a17c} with purposes ('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'). |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, Purposes=('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'), EventId=5, EventName=PerformingUnprotectOperationToKeyWithPurposes 
+2024-07-10 13:25:20.1756|Info|Executing endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo) 
+2024-07-10 13:25:20.1756|Info|Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel) on controller Fundoo.Controllers.UserController (Fundoo). |RouteData={action = "RegisterUser", controller = "User"}, MethodInfo=Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel), Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=102, EventName=ControllerActionExecuting 
+2024-07-10 13:25:20.1756|Debug|Execution plan of authorization filters (in the following order): None |FilterType=authorization, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:20.1756|Debug|Execution plan of resource filters (in the following order): None |FilterType=resource, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:20.1756|Debug|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) |FilterType=action, Filters="Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:20.1756|Debug|Execution plan of exception filters (in the following order): None |FilterType=exception, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:20.1756|Debug|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) |FilterType=result, Filters="Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:25:20.1756|Debug|Executing controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=1, EventName=ControllerFactoryExecuting 
+2024-07-10 13:25:20.1756|Debug|Executed controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=2, EventName=ControllerFactoryExecuted 
+2024-07-10 13:25:20.1756|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=22, EventName=AttemptingToBindParameter 
+2024-07-10 13:25:20.1756|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' using the name '' in request data ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=44, EventName=AttemptingToBindParameterModel 
+2024-07-10 13:25:20.1756|Debug|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'. |InputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter, ContentType=application/json, EventId=1, EventName=InputFormatterSelected 
+2024-07-10 13:25:20.1756|Debug|Connection id "0HN50ME260BU3", Request id "0HN50ME260BU3:00000002": started reading request body. |ConnectionId=0HN50ME260BU3, TraceIdentifier=0HN50ME260BU3:00000002, EventId=25, EventName=RequestBodyStart 
+2024-07-10 13:25:20.1756|Debug|Connection id "0HN50ME260BU3", Request id "0HN50ME260BU3:00000002": done reading request body. |ConnectionId=0HN50ME260BU3, TraceIdentifier=0HN50ME260BU3:00000002, EventId=26, EventName=RequestBodyDone 
+2024-07-10 13:25:20.1756|Debug|JSON input formatter succeeded, deserializing to type 'ModelLayer.UserModel' |TypeName=ModelLayer.UserModel, EventId=2, EventName=SystemTextJsonInputSuccess 
+2024-07-10 13:25:20.1756|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=45, EventName=DoneAttemptingToBindParameterModel 
+2024-07-10 13:25:20.1756|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=23, EventName=DoneAttemptingToBindParameter 
+2024-07-10 13:25:20.1756|Debug|Attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=26, EventName=AttemptingToValidateParameter 
+2024-07-10 13:25:20.1756|Debug|Done attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=27, EventName=DoneAttemptingToValidateParameter 
+2024-07-10 13:25:20.1756|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:20.1756|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:20.1756|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:20.1756|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:20.1756|Info|Executing action method Fundoo.Controllers.UserController.RegisterUser (Fundoo) - Validation state: Valid |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ValidationState=Valid, EventId=101, EventName=ActionMethodExecuting 
+2024-07-10 13:25:20.1756|Trace|Executing action method Fundoo.Controllers.UserController.RegisterUser (Fundoo) with arguments (ModelLayer.UserModel) |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), Arguments="ModelLayer.UserModel", EventId=102, EventName=ActionMethodExecutingWithArguments 
+2024-07-10 13:25:20.2747|Debug|Entity Framework Core 7.0.20 initialized 'FundooContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.20' with options: None |version=7.0.20, contextType=FundooContext, provider=Microsoft.EntityFrameworkCore.SqlServer, providerVersion=7.0.20, options=None, EventId=10403, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextInitialized 
+2024-07-10 13:25:20.2774|Debug|Creating DbConnection. |EventId=20005, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreating 
+2024-07-10 13:25:20.2774|Debug|Created DbConnection. (0ms). |elapsed=0, EventId=20006, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreated 
+2024-07-10 13:25:20.2774|Debug|Opening connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20000, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening 
+2024-07-10 13:25:21.6317|Debug|Opened connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20001, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened 
+2024-07-10 13:25:21.6317|Debug|Beginning transaction with isolation level 'Unspecified'. |isolationLevel=Unspecified, EventId=20209, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionStarting 
+2024-07-10 13:25:21.6317|Debug|Began transaction with isolation level 'ReadCommitted'. |isolationLevel=ReadCommitted, EventId=20200, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionStarted 
+2024-07-10 13:25:21.6438|Debug|Compiling query expression: 
+'DbSet<User>()
+    .Any(user => user.Email.Equals(__model_Email_0) && user.Phone.Equals(__model_Phone_1))' |newline=
+, queryExpression=DbSet<User>()
+    .Any(user => user.Email.Equals(__model_Email_0) && user.Phone.Equals(__model_Phone_1)), EventId=10111, EventName=Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting 
+2024-07-10 13:25:21.6672|Debug|Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM users AS u
+            WHERE (u.Email == @__model_Email_0) && (u.Phone == @__model_Phone_1))), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    RepositoryLayer.Context.FundooContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()' |newline=
+, plan=queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM users AS u
+            WHERE (u.Email == @__model_Email_0) && (u.Phone == @__model_Phone_1))), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    RepositoryLayer.Context.FundooContext, 
+    False, 
+    False, 
+    True
+)
+    .Single(), EventId=10107, EventName=Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned 
+2024-07-10 13:25:21.6834|Debug|Creating DbCommand for 'ExecuteReader'. |executionType=ExecuteReader, EventId=20103, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreating 
+2024-07-10 13:25:21.6834|Debug|Created DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20104, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreated 
+2024-07-10 13:25:21.6834|Debug|Initialized DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20106, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandInitialized 
+2024-07-10 13:25:21.6834|Debug|Executing DbCommand [Parameters=[@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END |parameters=@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, EventId=20100, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting 
+2024-07-10 13:25:21.6834|Info|Executed DbCommand (5ms) [Parameters=[@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END |elapsed=5, parameters=@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, EventId=20101, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted 
+2024-07-10 13:25:21.6834|Debug|Closing data reader to 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20301, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderClosing 
+2024-07-10 13:25:21.6834|Debug|A data reader for 'Fundoo' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 4ms reading results. |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=4, EventId=20300, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing 
+2024-07-10 13:25:21.9225|Debug|'"FundooContext"' generated a temporary value for the property '"Id"."User"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |contextType=FundooContext, 2_entityType=Id, 1_property=User, EventId=10808, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.ValueGenerated 
+2024-07-10 13:25:21.9225|Debug|Context 'FundooContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |contextType=FundooContext, entityType=User, EventId=10806, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking 
+2024-07-10 13:25:21.9225|Debug|SaveChanges starting for 'FundooContext'. |contextType=FundooContext, EventId=10004, EventName=Microsoft.EntityFrameworkCore.Update.SaveChangesStarting 
+2024-07-10 13:25:21.9267|Debug|DetectChanges starting for 'FundooContext'. |contextType=FundooContext, EventId=10800, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.DetectChangesStarting 
+2024-07-10 13:25:21.9267|Debug|DetectChanges completed for 'FundooContext'. |contextType=FundooContext, EventId=10801, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.DetectChangesCompleted 
+2024-07-10 13:25:21.9267|Debug|Creating transaction savepoint. |EventId=20212, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.CreatingTransactionSavepoint 
+2024-07-10 13:25:21.9267|Debug|Created transaction savepoint. |EventId=20213, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.CreatedTransactionSavepoint 
+2024-07-10 13:25:21.9267|Debug|Creating DbCommand for 'ExecuteReader'. |executionType=ExecuteReader, EventId=20103, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreating 
+2024-07-10 13:25:21.9267|Debug|Created DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20104, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreated 
+2024-07-10 13:25:21.9267|Debug|Initialized DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20106, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandInitialized 
+2024-07-10 13:25:21.9267|Debug|Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [users] ([BirthDate], [Email], [FirstName], [LastName], [Password], [Phone])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); |parameters=@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [users] ([BirthDate], [Email], [FirstName], [LastName], [Password], [Phone])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);, EventId=20100, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting 
+2024-07-10 13:25:21.9267|Info|Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [users] ([BirthDate], [Email], [FirstName], [LastName], [Password], [Phone])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); |elapsed=4, parameters=@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [users] ([BirthDate], [Email], [FirstName], [LastName], [Password], [Phone])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);, EventId=20101, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted 
+2024-07-10 13:25:21.9267|Debug|The foreign key property 'User.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values. |entityType=User, property=Id, EventId=10803, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.ForeignKeyChangeDetected 
+2024-07-10 13:25:21.9426|Debug|Closing data reader to 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20301, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderClosing 
+2024-07-10 13:25:21.9426|Debug|A data reader for 'Fundoo' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 4ms reading results. |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=4, EventId=20300, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing 
+2024-07-10 13:25:21.9426|Debug|An entity of type 'User' tracked by 'FundooContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |entityType=User, contextType=FundooContext, oldState=Added, newState=Unchanged, EventId=10807, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.StateChanged 
+2024-07-10 13:25:21.9426|Debug|SaveChanges completed for 'FundooContext' with 1 entities written to the database. |contextType=FundooContext, savedCount=1, EventId=10005, EventName=Microsoft.EntityFrameworkCore.Update.SaveChangesCompleted 
+2024-07-10 13:25:21.9426|Debug|Committing transaction. |EventId=20210, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionCommitting 
+2024-07-10 13:25:21.9426|Debug|Committed transaction. |EventId=20202, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionCommitted 
+2024-07-10 13:25:21.9426|Debug|Closing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20002, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing 
+2024-07-10 13:25:21.9426|Debug|Closed connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB' (0ms). |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=0, EventId=20003, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed 
+2024-07-10 13:25:21.9426|Debug|Disposing transaction. |EventId=20204, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionDisposed 
+2024-07-10 13:25:23.0046|Info|User Created with id: 2002 | 
+2024-07-10 13:25:23.0046|Info|Executed action method Fundoo.Controllers.UserController.RegisterUser (Fundoo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2818.3441ms. |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, ElapsedMilliseconds=2818.3441, EventId=103, EventName=ActionMethodExecuted 
+2024-07-10 13:25:23.0046|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:23.0046|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:23.0046|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:23.0046|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:23.0046|Trace|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:23.0046|Trace|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:23.0046|Trace|Before executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=5, EventName=BeforeExecutingActionResult 
+2024-07-10 13:25:23.0046|Debug|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter |OutputFormatters=Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, EventId=11, EventName=RegisteredOutputFormatters 
+2024-07-10 13:25:23.0046|Debug|No information found on request to perform content negotiation. |EventId=4, EventName=NoAcceptForNegotiation 
+2024-07-10 13:25:23.0046|Debug|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. |EventId=8, EventName=SelectingOutputFormatterWithoutUsingContentTypes 
+2024-07-10 13:25:23.0046|Debug|Attempting to select the first formatter in the output formatters list which can write the result. |EventId=10, EventName=SelectingFirstCanWriteFormatter 
+2024-07-10 13:25:23.0046|Debug|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response. |OutputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, ContentType=application/json, EventId=2, EventName=FormatterSelected 
+2024-07-10 13:25:23.0046|Info|Executing ObjectResult, writing value of type 'ModelLayer.ResponseML'. |ObjectResultType=ObjectResult, Type=ModelLayer.ResponseML, EventId=1, EventName=ObjectResultExecuting 
+2024-07-10 13:25:23.0046|Trace|After executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=6, EventName=AfterExecutingActionResult 
+2024-07-10 13:25:23.0046|Trace|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:25:23.0046|Trace|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:25:23.0046|Info|Executed action Fundoo.Controllers.UserController.RegisterUser (Fundoo) in 2832.0687ms |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ElapsedMilliseconds=2832.0687, EventId=105, EventName=ActionExecuted 
+2024-07-10 13:25:23.0046|Info|Executed endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=ExecutedEndpoint 
+2024-07-10 13:25:23.0046|Debug|Connection id "0HN50ME260BU3" completed keep alive response. |ConnectionId=0HN50ME260BU3, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:25:23.0046|Debug|'FundooContext' disposed. |contextType=FundooContext, EventId=10407, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextDisposed 
+2024-07-10 13:25:23.0046|Debug|Disposing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20007, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposing 
+2024-07-10 13:25:23.0046|Debug|Disposed connection to database '' on server '' (0ms). |elapsed=0, EventId=20008, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposed 
+2024-07-10 13:25:23.0046|Info|Request finished HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 184 - 201 - application/json;+charset=utf-8 2840.1655ms |ElapsedMilliseconds=2840.1655, StatusCode=201, ContentType=application/json; charset=utf-8, Protocol=HTTP/1.1, Method=POST, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=2 
+2024-07-10 13:25:23.6844|Debug|Connection id "0HN50ME260BU3" received FIN. |ConnectionId=0HN50ME260BU3, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:25:23.6919|Debug|Connection id "0HN50ME260BU3" disconnecting. |ConnectionId=0HN50ME260BU3, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:25:23.6919|Debug|Connection id "0HN50ME260BU3" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BU3, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:25:23.7027|Debug|Connection id "0HN50ME260BU3" stopped. |ConnectionId=0HN50ME260BU3, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:26:57.3417|Debug|Connection id "0HN50ME260BU4" accepted. |ConnectionId=0HN50ME260BU4, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:26:57.3417|Debug|Connection id "0HN50ME260BU4" started. |ConnectionId=0HN50ME260BU4, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:26:57.3417|Info|Request starting HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 184 |Protocol=HTTP/1.1, Method=POST, ContentType=application/json, ContentLength=184, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=1 
+2024-07-10 13:26:57.3417|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:26:57.3417|Debug|1 candidate(s) found for the request path '/api/User/Register' |CandidateCount=1, Path=/api/User/Register, EventId=1001, EventName=CandidatesFound 
+2024-07-10 13:26:57.3417|Debug|Endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' with route pattern 'api/User/Register' is valid for the request path '/api/User/Register' |Endpoint=Fundoo.Controllers.UserController.RegisterUser (Fundoo), RoutePattern=api/User/Register, Path=/api/User/Register, EventId=1005, EventName=CandidateValid 
+2024-07-10 13:26:57.3417|Debug|Request matched endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=MatchSuccess 
+2024-07-10 13:26:57.3417|Debug|Static files was skipped as the request already matched an endpoint. |EventId=15, EventName=EndpointMatched 
+2024-07-10 13:26:57.3417|Info|Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token. |AuthenticationScheme=Bearer, FailureMessage=No SecurityTokenValidator available for token., EventId=7, EventName=AuthenticationSchemeNotAuthenticatedWithFailure 
+2024-07-10 13:26:57.3417|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:26:57.3417|Info|CORS policy execution failed. |EventId=5, EventName=PolicyFailure 
+2024-07-10 13:26:57.3417|Info|Request origin http://localhost:5255 does not have permission to access the resource. |origin=http://localhost:5255, EventId=6, EventName=OriginNotAllowed 
+2024-07-10 13:26:57.3417|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:26:57.3417|Info|CORS policy execution successful. |EventId=4, EventName=PolicySuccess 
+2024-07-10 13:26:57.3417|Trace|Performing unprotect operation to key {da74334d-6e7c-4f22-b543-8bcebc34a17c} with purposes ('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'). |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, Purposes=('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'), EventId=5, EventName=PerformingUnprotectOperationToKeyWithPurposes 
+2024-07-10 13:26:57.3417|Info|Executing endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo) 
+2024-07-10 13:26:57.3417|Info|Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel) on controller Fundoo.Controllers.UserController (Fundoo). |RouteData={action = "RegisterUser", controller = "User"}, MethodInfo=Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel), Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=102, EventName=ControllerActionExecuting 
+2024-07-10 13:26:57.3417|Debug|Execution plan of authorization filters (in the following order): None |FilterType=authorization, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:26:57.3417|Debug|Execution plan of resource filters (in the following order): None |FilterType=resource, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:26:57.3417|Debug|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) |FilterType=action, Filters="Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:26:57.3485|Debug|Execution plan of exception filters (in the following order): None |FilterType=exception, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:26:57.3485|Debug|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) |FilterType=result, Filters="Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:26:57.3485|Debug|Executing controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=1, EventName=ControllerFactoryExecuting 
+2024-07-10 13:26:57.3485|Debug|Executed controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=2, EventName=ControllerFactoryExecuted 
+2024-07-10 13:26:57.3485|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=22, EventName=AttemptingToBindParameter 
+2024-07-10 13:26:57.3485|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' using the name '' in request data ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=44, EventName=AttemptingToBindParameterModel 
+2024-07-10 13:26:57.3485|Debug|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'. |InputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter, ContentType=application/json, EventId=1, EventName=InputFormatterSelected 
+2024-07-10 13:26:57.3485|Debug|Connection id "0HN50ME260BU4", Request id "0HN50ME260BU4:00000001": started reading request body. |ConnectionId=0HN50ME260BU4, TraceIdentifier=0HN50ME260BU4:00000001, EventId=25, EventName=RequestBodyStart 
+2024-07-10 13:26:57.3485|Debug|Connection id "0HN50ME260BU4", Request id "0HN50ME260BU4:00000001": done reading request body. |ConnectionId=0HN50ME260BU4, TraceIdentifier=0HN50ME260BU4:00000001, EventId=26, EventName=RequestBodyDone 
+2024-07-10 13:26:57.3485|Debug|JSON input formatter succeeded, deserializing to type 'ModelLayer.UserModel' |TypeName=ModelLayer.UserModel, EventId=2, EventName=SystemTextJsonInputSuccess 
+2024-07-10 13:26:57.3485|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=45, EventName=DoneAttemptingToBindParameterModel 
+2024-07-10 13:26:57.3485|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=23, EventName=DoneAttemptingToBindParameter 
+2024-07-10 13:26:57.3485|Debug|Attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=26, EventName=AttemptingToValidateParameter 
+2024-07-10 13:26:57.3485|Debug|Done attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=27, EventName=DoneAttemptingToValidateParameter 
+2024-07-10 13:26:57.3485|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:26:57.3485|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:26:57.3485|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:26:57.3485|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:26:57.3485|Info|Executing action method Fundoo.Controllers.UserController.RegisterUser (Fundoo) - Validation state: Valid |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ValidationState=Valid, EventId=101, EventName=ActionMethodExecuting 
+2024-07-10 13:26:57.3485|Trace|Executing action method Fundoo.Controllers.UserController.RegisterUser (Fundoo) with arguments (ModelLayer.UserModel) |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), Arguments="ModelLayer.UserModel", EventId=102, EventName=ActionMethodExecutingWithArguments 
+2024-07-10 13:26:57.3485|Debug|Entity Framework Core 7.0.20 initialized 'FundooContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.20' with options: None |version=7.0.20, contextType=FundooContext, provider=Microsoft.EntityFrameworkCore.SqlServer, providerVersion=7.0.20, options=None, EventId=10403, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextInitialized 
+2024-07-10 13:26:57.3749|Debug|Creating DbConnection. |EventId=20005, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreating 
+2024-07-10 13:26:57.3749|Debug|Created DbConnection. (0ms). |elapsed=0, EventId=20006, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreated 
+2024-07-10 13:26:57.3749|Debug|Opening connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20000, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening 
+2024-07-10 13:26:57.3749|Debug|Opened connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20001, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened 
+2024-07-10 13:26:57.3749|Debug|Beginning transaction with isolation level 'Unspecified'. |isolationLevel=Unspecified, EventId=20209, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionStarting 
+2024-07-10 13:26:57.3749|Debug|Began transaction with isolation level 'ReadCommitted'. |isolationLevel=ReadCommitted, EventId=20200, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionStarted 
+2024-07-10 13:26:57.3844|Debug|Creating DbCommand for 'ExecuteReader'. |executionType=ExecuteReader, EventId=20103, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreating 
+2024-07-10 13:26:57.3844|Debug|Created DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20104, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreated 
+2024-07-10 13:26:57.3844|Debug|Initialized DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20106, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandInitialized 
+2024-07-10 13:26:57.3844|Debug|Executing DbCommand [Parameters=[@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END |parameters=@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, EventId=20100, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting 
+2024-07-10 13:26:57.3844|Info|Executed DbCommand (7ms) [Parameters=[@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END |elapsed=7, parameters=@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, EventId=20101, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted 
+2024-07-10 13:26:57.3844|Debug|Closing data reader to 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20301, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderClosing 
+2024-07-10 13:26:57.3844|Debug|A data reader for 'Fundoo' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 0ms reading results. |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=0, EventId=20300, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing 
+2024-07-10 13:26:57.3844|Debug|Disposing transaction. |EventId=20204, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionDisposed 
+2024-07-10 13:26:57.3844|Debug|Closing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20002, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing 
+2024-07-10 13:26:57.3844|Debug|Closed connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB' (0ms). |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=0, EventId=20003, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed 
+2024-07-10 13:26:57.3992|Info|Executed action method Fundoo.Controllers.UserController.RegisterUser (Fundoo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 42.9734ms. |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, ElapsedMilliseconds=42.9734, EventId=103, EventName=ActionMethodExecuted 
+2024-07-10 13:26:57.3992|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:26:57.3992|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:26:57.3992|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:26:57.3992|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:26:57.3992|Trace|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:26:57.3992|Trace|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:26:57.3992|Trace|Before executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=5, EventName=BeforeExecutingActionResult 
+2024-07-10 13:26:57.3992|Debug|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter |OutputFormatters=Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, EventId=11, EventName=RegisteredOutputFormatters 
+2024-07-10 13:26:57.3992|Debug|No information found on request to perform content negotiation. |EventId=4, EventName=NoAcceptForNegotiation 
+2024-07-10 13:26:57.3992|Debug|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. |EventId=8, EventName=SelectingOutputFormatterWithoutUsingContentTypes 
+2024-07-10 13:26:57.3992|Debug|Attempting to select the first formatter in the output formatters list which can write the result. |EventId=10, EventName=SelectingFirstCanWriteFormatter 
+2024-07-10 13:26:57.3992|Debug|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response. |OutputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, ContentType=application/json, EventId=2, EventName=FormatterSelected 
+2024-07-10 13:26:57.3992|Info|Executing ObjectResult, writing value of type 'ModelLayer.ResponseML'. |ObjectResultType=ObjectResult, Type=ModelLayer.ResponseML, EventId=1, EventName=ObjectResultExecuting 
+2024-07-10 13:26:57.3992|Trace|After executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=6, EventName=AfterExecutingActionResult 
+2024-07-10 13:26:57.3992|Trace|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:26:57.3992|Trace|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:26:57.3992|Info|Executed action Fundoo.Controllers.UserController.RegisterUser (Fundoo) in 55.028ms |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ElapsedMilliseconds=55.028, EventId=105, EventName=ActionExecuted 
+2024-07-10 13:26:57.3992|Info|Executed endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=ExecutedEndpoint 
+2024-07-10 13:26:57.3992|Debug|Connection id "0HN50ME260BU4" completed keep alive response. |ConnectionId=0HN50ME260BU4, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:26:57.3992|Debug|'FundooContext' disposed. |contextType=FundooContext, EventId=10407, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextDisposed 
+2024-07-10 13:26:57.3992|Debug|Disposing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20007, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposing 
+2024-07-10 13:26:57.3992|Debug|Disposed connection to database '' on server '' (0ms). |elapsed=0, EventId=20008, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposed 
+2024-07-10 13:26:57.3992|Info|Request finished HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 184 - 202 - application/json;+charset=utf-8 64.0257ms |ElapsedMilliseconds=64.0257, StatusCode=202, ContentType=application/json; charset=utf-8, Protocol=HTTP/1.1, Method=POST, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=2 
+2024-07-10 13:27:03.8375|Debug|Connection id "0HN50ME260BU4" received FIN. |ConnectionId=0HN50ME260BU4, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:27:03.8411|Debug|Connection id "0HN50ME260BU4" disconnecting. |ConnectionId=0HN50ME260BU4, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:27:03.8411|Debug|Connection id "0HN50ME260BU4" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BU4, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:27:03.8411|Debug|Connection id "0HN50ME260BU4" stopped. |ConnectionId=0HN50ME260BU4, EventId=2, EventName=ConnectionStop 
+2024-07-10 13:29:03.4311|Debug|Connection id "0HN50ME260BU5" accepted. |ConnectionId=0HN50ME260BU5, EventId=39, EventName=ConnectionAccepted 
+2024-07-10 13:29:03.4311|Debug|Connection id "0HN50ME260BU5" started. |ConnectionId=0HN50ME260BU5, EventId=1, EventName=ConnectionStart 
+2024-07-10 13:29:03.4311|Info|Request starting HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 184 |Protocol=HTTP/1.1, Method=POST, ContentType=application/json, ContentLength=184, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=1 
+2024-07-10 13:29:03.4311|Trace|All hosts are allowed. |EventId=2, EventName=AllHostsAllowed 
+2024-07-10 13:29:03.4311|Debug|1 candidate(s) found for the request path '/api/User/Register' |CandidateCount=1, Path=/api/User/Register, EventId=1001, EventName=CandidatesFound 
+2024-07-10 13:29:03.4311|Debug|Endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' with route pattern 'api/User/Register' is valid for the request path '/api/User/Register' |Endpoint=Fundoo.Controllers.UserController.RegisterUser (Fundoo), RoutePattern=api/User/Register, Path=/api/User/Register, EventId=1005, EventName=CandidateValid 
+2024-07-10 13:29:03.4311|Debug|Request matched endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=MatchSuccess 
+2024-07-10 13:29:03.4311|Debug|Static files was skipped as the request already matched an endpoint. |EventId=15, EventName=EndpointMatched 
+2024-07-10 13:29:03.4311|Info|Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token. |AuthenticationScheme=Bearer, FailureMessage=No SecurityTokenValidator available for token., EventId=7, EventName=AuthenticationSchemeNotAuthenticatedWithFailure 
+2024-07-10 13:29:03.4311|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:29:03.4311|Info|CORS policy execution failed. |EventId=5, EventName=PolicyFailure 
+2024-07-10 13:29:03.4311|Info|Request origin http://localhost:5255 does not have permission to access the resource. |origin=http://localhost:5255, EventId=6, EventName=OriginNotAllowed 
+2024-07-10 13:29:03.4311|Debug|The request has an origin header: 'http://localhost:5255'. |origin=http://localhost:5255, EventId=2, EventName=RequestHasOriginHeader 
+2024-07-10 13:29:03.4311|Info|CORS policy execution successful. |EventId=4, EventName=PolicySuccess 
+2024-07-10 13:29:03.4311|Trace|Performing unprotect operation to key {da74334d-6e7c-4f22-b543-8bcebc34a17c} with purposes ('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'). |KeyId=da74334d-6e7c-4f22-b543-8bcebc34a17c, Purposes=('E:\BridgeLabz\ASP.net\Fundoo\Fundoo\', 'SessionMiddleware'), EventId=5, EventName=PerformingUnprotectOperationToKeyWithPurposes 
+2024-07-10 13:29:03.4311|Info|Executing endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo) 
+2024-07-10 13:29:03.4311|Info|Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel) on controller Fundoo.Controllers.UserController (Fundoo). |RouteData={action = "RegisterUser", controller = "User"}, MethodInfo=Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(ModelLayer.UserModel), Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=102, EventName=ControllerActionExecuting 
+2024-07-10 13:29:03.4311|Debug|Execution plan of authorization filters (in the following order): None |FilterType=authorization, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:29:03.4311|Debug|Execution plan of resource filters (in the following order): None |FilterType=resource, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:29:03.4311|Debug|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) |FilterType=action, Filters="Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:29:03.4311|Debug|Execution plan of exception filters (in the following order): None |FilterType=exception, Filters="None", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:29:03.4311|Debug|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) |FilterType=result, Filters="Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)", EventId=1, EventName=FilterExecutionPlan 
+2024-07-10 13:29:03.4311|Debug|Executing controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=1, EventName=ControllerFactoryExecuting 
+2024-07-10 13:29:03.4311|Debug|Executed controller factory for controller Fundoo.Controllers.UserController (Fundoo) |Controller=Fundoo.Controllers.UserController, AssemblyName=Fundoo, EventId=2, EventName=ControllerFactoryExecuted 
+2024-07-10 13:29:03.4311|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=22, EventName=AttemptingToBindParameter 
+2024-07-10 13:29:03.4311|Debug|Attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel' using the name '' in request data ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=44, EventName=AttemptingToBindParameterModel 
+2024-07-10 13:29:03.4311|Debug|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'. |InputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter, ContentType=application/json, EventId=1, EventName=InputFormatterSelected 
+2024-07-10 13:29:03.4311|Debug|Connection id "0HN50ME260BU5", Request id "0HN50ME260BU5:00000001": started reading request body. |ConnectionId=0HN50ME260BU5, TraceIdentifier=0HN50ME260BU5:00000001, EventId=25, EventName=RequestBodyStart 
+2024-07-10 13:29:03.4311|Debug|Connection id "0HN50ME260BU5", Request id "0HN50ME260BU5:00000001": done reading request body. |ConnectionId=0HN50ME260BU5, TraceIdentifier=0HN50ME260BU5:00000001, EventId=26, EventName=RequestBodyDone 
+2024-07-10 13:29:03.4311|Debug|JSON input formatter succeeded, deserializing to type 'ModelLayer.UserModel' |TypeName=ModelLayer.UserModel, EventId=2, EventName=SystemTextJsonInputSuccess 
+2024-07-10 13:29:03.4311|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=45, EventName=DoneAttemptingToBindParameterModel 
+2024-07-10 13:29:03.4311|Debug|Done attempting to bind parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=23, EventName=DoneAttemptingToBindParameter 
+2024-07-10 13:29:03.4311|Debug|Attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel' ... |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=26, EventName=AttemptingToValidateParameter 
+2024-07-10 13:29:03.4311|Debug|Done attempting to validate the bound parameter 'userModel' of type 'ModelLayer.UserModel'. |ParameterName=userModel, ModelType=ModelLayer.UserModel, EventId=27, EventName=DoneAttemptingToValidateParameter 
+2024-07-10 13:29:03.4311|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:29:03.4311|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:29:03.4311|Trace|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:29:03.4413|Trace|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:29:03.4413|Info|Executing action method Fundoo.Controllers.UserController.RegisterUser (Fundoo) - Validation state: Valid |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ValidationState=Valid, EventId=101, EventName=ActionMethodExecuting 
+2024-07-10 13:29:03.4413|Trace|Executing action method Fundoo.Controllers.UserController.RegisterUser (Fundoo) with arguments (ModelLayer.UserModel) |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), Arguments="ModelLayer.UserModel", EventId=102, EventName=ActionMethodExecutingWithArguments 
+2024-07-10 13:29:03.4413|Debug|Entity Framework Core 7.0.20 initialized 'FundooContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.20' with options: None |version=7.0.20, contextType=FundooContext, provider=Microsoft.EntityFrameworkCore.SqlServer, providerVersion=7.0.20, options=None, EventId=10403, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextInitialized 
+2024-07-10 13:29:03.4413|Debug|Creating DbConnection. |EventId=20005, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreating 
+2024-07-10 13:29:03.4413|Debug|Created DbConnection. (0ms). |elapsed=0, EventId=20006, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionCreated 
+2024-07-10 13:29:03.4413|Debug|Opening connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20000, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening 
+2024-07-10 13:29:03.4413|Debug|Opened connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20001, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened 
+2024-07-10 13:29:03.4413|Debug|Beginning transaction with isolation level 'Unspecified'. |isolationLevel=Unspecified, EventId=20209, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionStarting 
+2024-07-10 13:29:03.4413|Debug|Began transaction with isolation level 'ReadCommitted'. |isolationLevel=ReadCommitted, EventId=20200, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionStarted 
+2024-07-10 13:29:03.4413|Debug|Creating DbCommand for 'ExecuteReader'. |executionType=ExecuteReader, EventId=20103, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreating 
+2024-07-10 13:29:03.4413|Debug|Created DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20104, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreated 
+2024-07-10 13:29:03.4413|Debug|Initialized DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20106, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandInitialized 
+2024-07-10 13:29:03.4413|Debug|Executing DbCommand [Parameters=[@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END |parameters=@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, EventId=20100, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting 
+2024-07-10 13:29:03.4413|Info|Executed DbCommand (4ms) [Parameters=[@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END |elapsed=4, parameters=@__model_Email_0='?' (Size = 4000), @__model_Phone_1='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [users] AS [u]
+        WHERE [u].[Email] = @__model_Email_0 AND [u].[Phone] = @__model_Phone_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, EventId=20101, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted 
+2024-07-10 13:29:03.4413|Debug|Closing data reader to 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20301, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderClosing 
+2024-07-10 13:29:03.4413|Debug|A data reader for 'Fundoo' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 0ms reading results. |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=0, EventId=20300, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing 
+2024-07-10 13:29:03.6720|Debug|'"FundooContext"' generated a temporary value for the property '"Id"."User"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |contextType=FundooContext, 2_entityType=Id, 1_property=User, EventId=10808, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.ValueGenerated 
+2024-07-10 13:29:03.6720|Debug|Context 'FundooContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |contextType=FundooContext, entityType=User, EventId=10806, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking 
+2024-07-10 13:29:03.6720|Debug|SaveChanges starting for 'FundooContext'. |contextType=FundooContext, EventId=10004, EventName=Microsoft.EntityFrameworkCore.Update.SaveChangesStarting 
+2024-07-10 13:29:03.6720|Debug|DetectChanges starting for 'FundooContext'. |contextType=FundooContext, EventId=10800, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.DetectChangesStarting 
+2024-07-10 13:29:03.6720|Debug|DetectChanges completed for 'FundooContext'. |contextType=FundooContext, EventId=10801, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.DetectChangesCompleted 
+2024-07-10 13:29:03.6720|Debug|Creating transaction savepoint. |EventId=20212, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.CreatingTransactionSavepoint 
+2024-07-10 13:29:03.6720|Debug|Created transaction savepoint. |EventId=20213, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.CreatedTransactionSavepoint 
+2024-07-10 13:29:03.6758|Debug|Creating DbCommand for 'ExecuteReader'. |executionType=ExecuteReader, EventId=20103, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreating 
+2024-07-10 13:29:03.6758|Debug|Created DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20104, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandCreated 
+2024-07-10 13:29:03.6758|Debug|Initialized DbCommand for 'ExecuteReader' (0ms). |executionType=ExecuteReader, elapsed=0, EventId=20106, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandInitialized 
+2024-07-10 13:29:03.6758|Debug|Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [users] ([BirthDate], [Email], [FirstName], [LastName], [Password], [Phone])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); |parameters=@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [users] ([BirthDate], [Email], [FirstName], [LastName], [Password], [Phone])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);, EventId=20100, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting 
+2024-07-10 13:29:03.6758|Info|Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [users] ([BirthDate], [Email], [FirstName], [LastName], [Password], [Phone])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); |elapsed=2, parameters=@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 4000), commandType=Text, commandTimeout=30, newLine=
+, commandText=SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [users] ([BirthDate], [Email], [FirstName], [LastName], [Password], [Phone])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);, EventId=20101, EventName=Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted 
+2024-07-10 13:29:03.6758|Debug|The foreign key property 'User.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values. |entityType=User, property=Id, EventId=10803, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.ForeignKeyChangeDetected 
+2024-07-10 13:29:03.6758|Debug|Closing data reader to 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20301, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderClosing 
+2024-07-10 13:29:03.6758|Debug|A data reader for 'Fundoo' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 0ms reading results. |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=0, EventId=20300, EventName=Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing 
+2024-07-10 13:29:03.6758|Debug|An entity of type 'User' tracked by 'FundooContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. |entityType=User, contextType=FundooContext, oldState=Added, newState=Unchanged, EventId=10807, EventName=Microsoft.EntityFrameworkCore.ChangeTracking.StateChanged 
+2024-07-10 13:29:03.6758|Debug|SaveChanges completed for 'FundooContext' with 1 entities written to the database. |contextType=FundooContext, savedCount=1, EventId=10005, EventName=Microsoft.EntityFrameworkCore.Update.SaveChangesCompleted 
+2024-07-10 13:29:03.6758|Debug|Committing transaction. |EventId=20210, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionCommitting 
+2024-07-10 13:29:03.6758|Debug|Committed transaction. |EventId=20202, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionCommitted 
+2024-07-10 13:29:03.6758|Debug|Closing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20002, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing 
+2024-07-10 13:29:03.6758|Debug|Closed connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB' (0ms). |database=Fundoo, server=(localdb)\MSSQLLocalDB, elapsed=0, EventId=20003, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed 
+2024-07-10 13:29:03.6758|Debug|Disposing transaction. |EventId=20204, EventName=Microsoft.EntityFrameworkCore.Database.Transaction.TransactionDisposed 
+2024-07-10 13:29:03.7027|Info|User Created with id: 2003 | 
+2024-07-10 13:29:03.7027|Info|Executed action method Fundoo.Controllers.UserController.RegisterUser (Fundoo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 260.8747ms. |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, ElapsedMilliseconds=260.8747, EventId=103, EventName=ActionMethodExecuted 
+2024-07-10 13:29:03.7027|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:29:03.7027|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:29:03.7027|Trace|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:29:03.7027|Trace|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. |FilterType=Action Filter, Method=OnActionExecuted, Filter=Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:29:03.7027|Trace|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:29:03.7027|Trace|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuting, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:29:03.7027|Trace|Before executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=5, EventName=BeforeExecutingActionResult 
+2024-07-10 13:29:03.7027|Debug|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter |OutputFormatters=Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, EventId=11, EventName=RegisteredOutputFormatters 
+2024-07-10 13:29:03.7027|Debug|No information found on request to perform content negotiation. |EventId=4, EventName=NoAcceptForNegotiation 
+2024-07-10 13:29:03.7027|Debug|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. |EventId=8, EventName=SelectingOutputFormatterWithoutUsingContentTypes 
+2024-07-10 13:29:03.7027|Debug|Attempting to select the first formatter in the output formatters list which can write the result. |EventId=10, EventName=SelectingFirstCanWriteFormatter 
+2024-07-10 13:29:03.7027|Debug|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response. |OutputFormatter=Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter, ContentType=application/json, EventId=2, EventName=FormatterSelected 
+2024-07-10 13:29:03.7027|Info|Executing ObjectResult, writing value of type 'ModelLayer.ResponseML'. |ObjectResultType=ObjectResult, Type=ModelLayer.ResponseML, EventId=1, EventName=ObjectResultExecuting 
+2024-07-10 13:29:03.7027|Trace|After executing action result Microsoft.AspNetCore.Mvc.ObjectResult. |ActionResult=Microsoft.AspNetCore.Mvc.ObjectResult, EventId=6, EventName=AfterExecutingActionResult 
+2024-07-10 13:29:03.7027|Trace|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=52, EventName=BeforeExecutingMethodOnFilter 
+2024-07-10 13:29:03.7027|Trace|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. |FilterType=Result Filter, Method=OnResultExecuted, Filter=Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter, EventId=53, EventName=AfterExecutingMethodOnFilter 
+2024-07-10 13:29:03.7071|Info|Executed action Fundoo.Controllers.UserController.RegisterUser (Fundoo) in 269.5817ms |ActionName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), ElapsedMilliseconds=269.5817, EventId=105, EventName=ActionExecuted 
+2024-07-10 13:29:03.7071|Info|Executed endpoint 'Fundoo.Controllers.UserController.RegisterUser (Fundoo)' |EndpointName=Fundoo.Controllers.UserController.RegisterUser (Fundoo), EventId=1, EventName=ExecutedEndpoint 
+2024-07-10 13:29:03.7071|Debug|Connection id "0HN50ME260BU5" completed keep alive response. |ConnectionId=0HN50ME260BU5, EventId=9, EventName=ConnectionKeepAlive 
+2024-07-10 13:29:03.7071|Debug|'FundooContext' disposed. |contextType=FundooContext, EventId=10407, EventName=Microsoft.EntityFrameworkCore.Infrastructure.ContextDisposed 
+2024-07-10 13:29:03.7071|Debug|Disposing connection to database 'Fundoo' on server '(localdb)\MSSQLLocalDB'. |database=Fundoo, server=(localdb)\MSSQLLocalDB, EventId=20007, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposing 
+2024-07-10 13:29:03.7071|Debug|Disposed connection to database '' on server '' (0ms). |elapsed=0, EventId=20008, EventName=Microsoft.EntityFrameworkCore.Database.Connection.ConnectionDisposed 
+2024-07-10 13:29:03.7071|Info|Request finished HTTP/1.1 POST http://localhost:5255/api/User/Register application/json 184 - 201 - application/json;+charset=utf-8 277.5806ms |ElapsedMilliseconds=277.5806, StatusCode=201, ContentType=application/json; charset=utf-8, Protocol=HTTP/1.1, Method=POST, Scheme=http, Host=localhost:5255, Path=/api/User/Register, EventId=2 
+2024-07-10 13:29:04.0122|Debug|Connection id "0HN50ME260BU5" received FIN. |ConnectionId=0HN50ME260BU5, EventId=6, EventName=ConnectionReadFin 
+2024-07-10 13:29:04.0122|Debug|Connection id "0HN50ME260BU5" disconnecting. |ConnectionId=0HN50ME260BU5, EventId=10, EventName=ConnectionDisconnect 
+2024-07-10 13:29:04.0122|Debug|Connection id "0HN50ME260BU5" sending FIN because: "The Socket transport's send loop completed gracefully." |ConnectionId=0HN50ME260BU5, Reason=The Socket transport's send loop completed gracefully., EventId=7, EventName=ConnectionWriteFin 
+2024-07-10 13:29:04.0273|Debug|Connection id "0HN50ME260BU5" stopped. |ConnectionId=0HN50ME260BU5, EventId=2, EventName=ConnectionStop 

@@ -152,11 +152,12 @@ namespace Fundoo.Controllers
         {
             try
             {
-                userBL.ForgetPassword(email);
+                var model = userBL.ForgetPassword(email);
 
-                    responseML.Success = true;
-                    responseML.Message = "Request Successful, email has been sent";
-                    return StatusCode(200, responseML); 
+                responseML.Success = true;
+                responseML.Message = "Request Successful, email has been sent";
+                _rabbitMQProducer.SendMessage(model.Body, model.To,model.Subject);
+                return StatusCode(200, responseML); 
             }
             catch (Exception ex)
             {

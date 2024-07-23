@@ -13,8 +13,6 @@ namespace RepositoryLayer.Service
     public class UserRL : IUserRL
     {
         private readonly  FundooContext _db;
-
-
         public IConfiguration _configuration;
 
         public UserRL(FundooContext db, IConfiguration configuration)
@@ -123,7 +121,7 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public void ForgetPassword(string email)
+        public EmailModel ForgetPassword(string email)
         {
 
             var result = _db.users.Where(s => s.Email == email).FirstOrDefault();
@@ -138,8 +136,7 @@ namespace RepositoryLayer.Service
             model.To = result.Email;
             model.Subject = "Reset Password";
             model.Body = "http://localhost:5264/api/user/reset-password/jwttoken?" + jwtToken;
-
-            EmailSender.SendEmail(model, _configuration);
+            return model;
         }
 
 

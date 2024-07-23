@@ -29,11 +29,11 @@ namespace BusinessLayer.Service
             this.userRL = userRL;
         }
 
-        public void ForgetPassword(string email)
+        public EmailModel ForgetPassword(string email)
         {
             try
             {
-                userRL.ForgetPassword(email);
+                return userRL.ForgetPassword(email);
             }
             catch
             {

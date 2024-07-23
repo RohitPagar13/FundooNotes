@@ -8,7 +8,7 @@ namespace BusinessLayer.Interface
         public LoginResponse RegisterUser(UserModel model);
         public string LoginUser(UserLoginModel loginModel);
 
-        public void ForgetPassword(string email);
+        public EmailModel ForgetPassword(string email);
         public void ResetPassword(string email, string password);
 
         public LoginResponse getUser(string email);
